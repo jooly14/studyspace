@@ -1,14 +1,23 @@
 body{
     background-color:rgb(134, 191, 255);
+    color : white;
+    text-align: center;
+    margin-top: 200px;
+   font-size: 30px;
   }
+  /*
 .btn{
   cursor: pointer;
 }
 h1{
   color : #34495e;
-  transition :color 1s ease-in-out
+ transition :color 1s ease-in-out;
 }
+*/
 
+div.js-clock{
+  font-size: 80px;
+}
 .clicked{
   color : #7f8c8d;
 }
@@ -22,6 +31,7 @@ h1{
 
 .list-todolist{
   list-style:none;
+  margin-left: -50px;
 }
 
 @keyframes fadeIn{
@@ -39,4 +49,11 @@ h1{
   height: 100%;
   z-index: -1;
   animation : fadeIn .3s linear; 
+}
+span.js-weather{
+  position: absolute;
+  right:0px;
+  top: 0px;
+  margin-top :10px;
+  margin-right: 10px;
 }
