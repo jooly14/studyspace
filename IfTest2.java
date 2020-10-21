@@ -37,7 +37,10 @@ public class IfTest2{
 		}else if(i%5==0){
 			System.out.println("5의 배수 입니다.");
 		}
+		
+		
 	
+		
 	
 	}
 }

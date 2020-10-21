@@ -8,13 +8,21 @@ public class SwitchTest{
 			default : 실행구문;
 		}
 		*/
+		
 		String str;
 		switch("HI"){
-			case "안녕" : str = "한국어"; break;
-			case "HI" : str = "영어"; break;
-			case "HOLA" : str = "스페인어"; break;
+			case "안녕" : str = "한국어"; 
+			break;
+			case "HI" : str = "영어"; 
+			break;
+			case "HOLA" : str = "스페인어"; 
+			break;
 			default : str = "몰라"; 
 		}
-			System.out.println(str); 
+		
+		System.out.println(str); 
+		
+		
+		
 	}
 }
