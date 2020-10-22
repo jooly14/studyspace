@@ -1,4 +1,4 @@
-//월급
+//월급에서 세금 보험료를 계산하고 실수령액을 계산한다.
 public class Salary{
 	int salary;
 	double tax;
@@ -13,9 +13,13 @@ public class Salary{
 	}
 	void calInsurance(int insurance){
 		this.insurance = insurance;
+		calcTotal();
 	}
+	void calcTotal(){
+		this.total = salary*(1-tax)-insurance;
+	}
+	
 	void showRealSalary(){
-		total = salary*(1-tax)-insurance;
 		System.out.println("월급 "+salary+"만원, 세금" +(int)(tax*100)+"%, 보험료 "+insurance+"만원");
 		System.out.println("실 수령액 "+ (int)total +"만원");
 	}
