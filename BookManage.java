@@ -1,30 +1,25 @@
 import java.util.Scanner;
 public class BookManage{
-	String book1;
-	String book2;
-	String book3;
+	String book1, book2, book3;
 	Scanner sc;
-	
+	//스캐너 초기화 기능
 	void init(){
 		sc = new Scanner(System.in);
 	}
-	
+	//책제목을 입력받는 기능
 	void add(){
 		System.out.print("책 제목 입력 : ");
-		String title = sc.next();
-		book1 =title;
+		book1 = sc.next();
 		System.out.print("책 제목 입력 : ");
-		title = sc.next();
-		book2 =title;
+		book2 = sc.next();
 		System.out.print("책 제목 입력 : ");
-		title = sc.next();
-		book3 =title;		
+		book3 = sc.next();
 	}
-	
+	//책제목을 출력하는 기능
 	void showData(){
 		System.out.println(book1+", "+book2+", "+book3);
 	}
-	
+	//메뉴를 보여주고 기능을 선택하게 함. 책입력, 책제목 출력, 종료 가능
 	void selectMenu(){
 		init();
 		for(;;){

@@ -10,8 +10,8 @@ public class BookManage2{
 	void add(){
 		for(int i =0;i<3;i++){
 			System.out.print("책 제목을 입력하세요 : ");
-			String title = sc.next();
-			books[i] =title;
+			books[i] = sc.next();
+			
 		}
 	}
 	
