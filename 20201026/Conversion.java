@@ -4,10 +4,10 @@ public class Conversion{
 			System.out.println((char)i);
 			
 		}
-		
-		int x,y =0;
+		/*
+		int x,y =0;	//이런식으로는 x가 초기화되지 않는다.
 		System.out.println(x);
-	
+		*/
 		
 	}
 }
