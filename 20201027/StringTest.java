@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class StringTest{
 	public static void main(String args[]){
 		String proverb = "A barking dog";
@@ -18,5 +19,22 @@ public class StringTest{
 		System.out.println(proverb.replace("barking","sleeping"));
 		//replaceAll()은 정규식을 이용
 		System.out.println(proverb.toLowerCase());
+		System.out.println("====================================");
+		
+		String str = "abcdefghijklmnopqrstuvwxyz";
+		System.out.println(str.indexOf("f"));
+		System.out.println(str.substring(0,2));
+		/*
+		이를 이용하여 특정한 문자를 입력하면 (예를들어 bc)를 
+		입력하면 bc 이후의 모든 글자를 출력하게 하세요.
+		결과=> defghijklmn
+		hint: length() 메서드를 추가로 이용하면 쉽습니다.
+		*/
+		System.out.println("알파벳을 입력하시오 : ");
+		Scanner sc = new Scanner(System.in);
+		String user = sc.next();
+		int index = str.indexOf(user);
+		String result = str.substring(index+user.length());
+		System.out.println(result);
 	}
 }
