@@ -11,6 +11,7 @@ public class CallbackTest2{
 		try{  Thread.sleep(11000); } catch(InterruptedException e){ }
 			//timer클래스는 메인스레드가 반환되면서 자동으로 종료된다.
 			//그래서 일부러 스레드 반환을 지연시키고 있다.
+			//어쩐지 이 문장이 없었을때는 actionlistener가 하나도 작동하지 않고 프로그램이 종료되었다.
 	}	
 }
 class Counter implements ActionListener{
