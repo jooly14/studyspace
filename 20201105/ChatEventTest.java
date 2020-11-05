@@ -7,10 +7,11 @@ import java.text.SimpleDateFormat;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
+//setvisible 다음에 텍스트필드에 포커스를 줄수 있음
 public class ChatEventTest extends JFrame implements KeyListener,ActionListener{
 	JTextArea ta;
 	JTextField tf;
@@ -18,6 +19,7 @@ public class ChatEventTest extends JFrame implements KeyListener,ActionListener{
 	
 	public ChatEventTest(){
 		init();
+		
 	}
 	void init(){
 		setSize(500,500);
@@ -32,10 +34,19 @@ public class ChatEventTest extends JFrame implements KeyListener,ActionListener{
 		pnl.add(tf);
 		pnl.add(btn);
 		
+		/*
+		//처음 실행했을 때 텍스트필드에 포커스가 가도록 설정
+		this.addWindowListener( new WindowAdapter() { 
+				public void windowOpened( WindowEvent e ){
+					tf.requestFocus(); } 
+			});*/
+
 		
 		add(ta);
 		add(pnl,"South");
+		
 		setVisible(true);
+		tf.requestFocus();
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -51,12 +62,15 @@ public class ChatEventTest extends JFrame implements KeyListener,ActionListener{
 			ta.setText(str);
 			tf.setText("");
 			
+		}else{
+			ta.setText(str+"\n.....................작성중");
 		}
+	
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		ta.setText(str);
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -67,6 +81,7 @@ public class ChatEventTest extends JFrame implements KeyListener,ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+			
 			str = str+ "\n" + tf.getText();
 			ta.setText(str);
 			tf.setText("");

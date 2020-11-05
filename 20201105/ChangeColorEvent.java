@@ -3,6 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,16 +38,28 @@ public class ChangeColorEvent extends JFrame implements ActionListener, KeyListe
 		panel.add(btn1);
 		panel.add(btn2);
 		panel.add(btn3);
-		panel.addKeyListener(this);
+		/*panel.addKeyListener(this);
 		panel.requestFocus();
-		panel.setFocusable(true);
+		panel.setFocusable(true);*/
 		
 		btnCh = new JButton("traffic light turn on");
 		btnCh.addActionListener(this);
+		btnCh.addKeyListener(this);
+		
+		
+		
+		/*this.addWindowListener( new WindowAdapter() { 
+			public void windowOpened( WindowEvent e ){
+				btnCh.requestFocus();
+				btnCh.setFocusable(true); 
+			} 
+			
+		});*/
 		
 		add(panel);
 		add(btnCh,"South");
 		setVisible(true);
+		btnCh.requestFocus();
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -54,10 +68,11 @@ public class ChangeColorEvent extends JFrame implements ActionListener, KeyListe
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(++lightNum>=3){
+		/*if(++lightNum>=3){
 			lightNum =0;
-		}
+		}*/
 		
+		lightNum++;
 		if(lightNum==0){
 			btn3.setBackground(Color.white);
 			btn1.setBackground(Color.red);
@@ -68,7 +83,7 @@ public class ChangeColorEvent extends JFrame implements ActionListener, KeyListe
 		}else if(lightNum==2){
 			btn2.setBackground(Color.white);
 			btn3.setBackground(Color.green);
-			
+			lightNum =-1;
 		}
 	}
 	@Override
