@@ -50,16 +50,19 @@ public class RandomMakeRectangle extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==makeBtn){
-			JButton btn = new JButton();
-			int colorIndex =(int)(Math.random()*13);
-			int x =(int)(Math.random()*460);
-			int y =(int)(Math.random()*400);
-			int w =(int)(Math.random()*100)+1;
-			int h =(int)(Math.random()*100)+1;
-			btn.setBounds(x,y,w,h);
-			btn.setBackground(colors[colorIndex]);
-			btn.addActionListener(this);
-			pnl.add(btn);
+			for(int i=0;i<10;i++){
+				JButton btn = new JButton();
+				int colorIndex =(int)(Math.random()*13);
+				int x =(int)(Math.random()*460);
+				int y =(int)(Math.random()*400);
+				int w =(int)(Math.random()*100)+1;
+				int h =(int)(Math.random()*100)+1;
+				btn.setBounds(x,y,w,h);
+				btn.setBackground(colors[colorIndex]);
+				btn.addActionListener(this);
+				pnl.add(btn);
+				
+			}
 			repaint();
 			
 		}else{
