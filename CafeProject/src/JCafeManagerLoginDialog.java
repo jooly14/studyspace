@@ -49,9 +49,7 @@ public class JCafeManagerLoginDialog extends JDialog implements ActionListener{
 		setVisible(true);
 	}
 	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	@Override public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnOk){
 			if(idTf.getText().equals(id)&&pwF.getText().equals(pw)){
 				JOptionPane.showMessageDialog(this, "로그인되었습니다.");

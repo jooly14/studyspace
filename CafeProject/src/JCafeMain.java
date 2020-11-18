@@ -1,16 +1,8 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.Buffer;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,30 +16,46 @@ import javax.swing.table.DefaultTableModel;
 public class JCafeMain extends JFrame implements ActionListener{
 	JButton[] btnMenu;
 	JPanel pnlMenu;
-	String[] strMenu={"아메리카노","아이스 아메리카노","카페 라떼","아이스 카페라떼","바닐라 라떼","아이스 바닐라 라떼","토피넛 라떼","아이스 토피넛 라떼"};
+	String[][] strMenu2 = JCafeGetMenuToMakeButton.getInfo("coffee");
+	String[] strMenu = new String[strMenu2.length];
+	String[] strCnt = new String[strMenu2.length];
+	String[] strPrice = new String[strMenu2.length];
 	JPanel pnlMain;
-	JButton btnManager,btnCancel,btnPayment,btnNull;
+	JButton btnManager,btnCancel,btnPayment,btnStemp;
 	JTable tableOrderList;
 	String[][]strOrderList;
 	String[]strOrderListHead={"이름","수량","금액"};
 	DefaultTableModel model;
 	JScrollPane spOrderList;
 	boolean loginChk;
+	int saleNum;
+	int saleNum2;
+	JButton[] categoryBtns = new JButton[5];
+	String[] categoryTitle = {"coffee","latte","tea","",""};	
+	JPanel pnlCategory;
+	
 	void init(){
-		setTitle("JCafe Management System");
 		setSize(600,800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		btnMenu=new JButton[25];
-		
+		JCafeGetMenuToMakeButton.setData(strMenu2,strMenu,strCnt,strPrice);
 		btnManager=new JButton("관리자");
 		btnCancel=new JButton("취소");		
 		btnPayment=new JButton("결제");
+		btnStemp=new JButton("스템프");
 		
-		btnNull=new JButton();
 		pnlMenu=new JPanel();
 		
-		model=new DefaultTableModel(strOrderList, strOrderListHead);
-		
+		model=new DefaultTableModel(strOrderList, strOrderListHead)
+		{
+			public boolean isCellEditable(int row, int column){
+				return false;
+			}
+		};//테이블 수정안되게 하는거
+		for(int i=0;i<categoryTitle.length;i++){
+			categoryBtns[i] = new JButton(categoryTitle[i]);
+			categoryBtns[i].addActionListener(this);
+		}
 		
 		tableOrderList=new JTable(model);
 		spOrderList=new JScrollPane(tableOrderList);
@@ -64,16 +72,17 @@ public class JCafeMain extends JFrame implements ActionListener{
 		init();
 		
 		JPanel pnlNorth=new JPanel();
-		JPanel pnlMenu=new JPanel(new GridLayout(0,5,2,2));
+		pnlMenu=new JPanel(new GridLayout(0,5,2,2));
 		JPanel pnlSouth=new JPanel(new GridLayout(0,2));
 		
+		btnStemp.addActionListener(this);
 		btnManager.addActionListener(this);
 		btnCancel.addActionListener(this);
 		btnPayment.addActionListener(this);
 		
 		JPanel pnlSouthRight=new JPanel(new GridLayout(2,2,5,5));
 		pnlSouthRight.add(btnManager);
-		pnlSouthRight.add(btnNull);
+		pnlSouthRight.add(btnStemp);
 		pnlSouthRight.add(btnPayment);
 		pnlSouthRight.add(btnCancel);
 		JPanel pnlTable=new JPanel(new BorderLayout());
@@ -90,52 +99,105 @@ public class JCafeMain extends JFrame implements ActionListener{
 		pnlNorth.setBounds(10,10,560,100);
 		this.add(pnlNorth);
 		
-		pnlMenu.setBounds(10,120,560,400);
+		pnlMenu.setBounds(10, 170, 560, 350);		
 		this.add(pnlMenu);
 		pnlSouth.setBounds(10,530,560,220);
 		this.add(pnlSouth);
-		JPanel pnl=new JPanel();
-		pnl.setBounds(150, 150, 300, 500);
-		this.add(pnl);
+		
+		pnlCategory = new JPanel(new GridLayout(1,0));
+		for(int i=0;i<categoryBtns.length;i++){
+			if(!(categoryBtns[i].getText().equals(""))){
+				pnlCategory.add(categoryBtns[i]);
+			}
+		}
+		pnlCategory.setBounds(10,120,560,40);
+		this.add(pnlCategory);
 		
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
-	public static void main(String[] args) {
-		new JCafeMain();
+	void logIn(){loginChk = true;}
+	void logOut(){loginChk = false;}
+	
+	void clickMenu(ActionEvent e) {
+		int currentRow = -1;
+		for (int j = 0; j < strMenu.length; j++) {
+			if (e.getSource() == btnMenu[j]) {
+				for (int i = 0; i < tableOrderList.getRowCount(); i++) {
+					if (tableOrderList.getValueAt(i, 0).equals(strMenu[j])) {
+						currentRow = i;
+						break;
+					}
+				} // 이미 있는지 확인! 있으면 있는 줄의 위치를 currentRow에 담음
+
+				if (currentRow != -1) { // 한줄이라도 있다면
+					String cnt = (Integer.parseInt((String) tableOrderList.getValueAt(currentRow, 1)) + 1) + ""; // 수량
+					String price = (Integer.parseInt((String) tableOrderList.getValueAt(currentRow, 2))
+							+ (Integer.parseInt((String) strPrice[j]))) + ""; // 가격
+					tableOrderList.setValueAt(cnt, currentRow, 1);
+					tableOrderList.setValueAt(price, currentRow, 2);
+				} else {
+					String[] menu = { strMenu[j], strCnt[j], strPrice[j] };
+					model.addRow(menu);
+				}
+			}
 		}
+	}
+	void selRowDelete(){		//선택된 Row 삭제
+		boolean isSelect = false;
+		for(int i = 0; i < tableOrderList.getRowCount(); i++){
+			isSelect = tableOrderList.isRowSelected(i);
+			if(isSelect == true){	//선택된 Row가 없을때 error 안나게
+				int selRow = tableOrderList.getSelectedRow();
+				model.removeRow(selRow);
+			}else{
+			}
+		}
+	}
 	@Override public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==btnPayment){
+		if(e.getSource()==btnPayment){ //결제
 			JCafePayment cp=new JCafePayment(this);
 			cp.setBounds(150,150,300,500);
-			String[] ex1 = {"아이스 아메리카노","2","4100"};
-			String[] ex2 = {"고구마 라떼","5","4100"};
+			JCafeSaveSalesData.saveSalesData(model);
 			
-			model.addRow(ex1);
-			model.addRow(ex2);
-			
-			SaveSalesData.saveSalesData(model);	//결제 이후 결제내역이 판매내역에 추가(어떤 메뉴가 얼마나 팔렸는지 집계)
-			repaint();
-			revalidate();
-		}else if(e.getSource()==btnManager){
+			model.setNumRows(0);
+		}
+		else if(e.getSource()==btnManager){ // 관리자
 			if(loginChk==false){
 				new JCafeManagerLoginDialog(this);
 			}else{
 				new JCafeManagerMenu(this);
 			}
-		}else if(e.getSource()== btnCancel){
-			int row = model.getRowCount();
-			for(int i=0;i<row;i++){
-				model.removeRow(0);
-			}
 		}
+		else if(e.getSource()==btnStemp){ // 스템프
+			new JCafeStempTable(this);
+		}else if(e.getSource() == btnCancel){ // 취소
+			selRowDelete();
+		}else if(((JButton)(e.getSource())).getParent().equals(pnlCategory)){
+			strMenu2 = JCafeGetMenuToMakeButton.getInfo(((JButton)e.getSource()).getText());
+			strMenu = new String[strMenu2.length];
+			strCnt = new String[strMenu2.length];
+			strPrice = new String[strMenu2.length];
+			JCafeGetMenuToMakeButton.setData(strMenu2, strMenu, strCnt, strPrice);
+			pnlMenu.removeAll();
+			for (int i = 0; i < 25; i++) {
+				if (strMenu.length > i) {
+					btnMenu[i] = new JButton(strMenu[i]);
+					btnMenu[i].addActionListener(this);
+					pnlMenu.add(btnMenu[i]);
+				} else
+					btnMenu[i] = new JButton();
+			}
+			pnlMenu.setLayout(new GridLayout(0, 5, 2, 2));
+			pnlMenu.setBounds(10, 170, 560, 350);
+		}else{
+			clickMenu(e);
+		}
+		repaint();
+		revalidate();
 	}
 	
-	//JCafeManagerLoginDialog에서 사용
-	void logIn(){
-		loginChk = true;
-	}
-	void logOut(){
-		loginChk = false;
-	}
+	public static void main(String[] args) {
+		new JCafeMain();
+		}
 }

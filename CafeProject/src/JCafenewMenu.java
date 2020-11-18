@@ -5,7 +5,7 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class JCafenewMenu extends JFrame implements ActionListener{
+public class JCafenewMenu extends JDialog implements ActionListener{
 	JTable table;
 	JTextField tname,tpay,tcont;//새메뉴,금액,수량 받는 text
 	int cnt;//수량 int형 변환
@@ -20,20 +20,20 @@ public class JCafenewMenu extends JFrame implements ActionListener{
 	FileReader fr=null;
 	PrintWriter pw=null;//save
 	FileWriter fw = null;
-	String fstr="files/coffe.txt";
-
+	String fstr="files/coffee.txt";
 	
 	int row;//마우스로 클릭한 위치
 	
 	JComboBox comboMenu;
 	
-	JCafenewMenu(){
+	JCafenewMenu(JCafeManagerMenu c){
+		super(c);
 		this.setSize(500,550);
-		this.setDefaultCloseOperation(3);
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		JLabel title=new JLabel("메뉴관리");
 		JPanel titlep=new JPanel();
 		
-		String str[]={"coffe","latte","tea"};
+		String str[]={"coffee","latte","tea"};
 		comboMenu=new JComboBox(str);
 		comboMenu.addActionListener(this);
 		titlep.add(title,"Center");
@@ -57,8 +57,6 @@ public class JCafenewMenu extends JFrame implements ActionListener{
 		tpay=new JTextField(5);
 		JLabel cont=new JLabel("수량");
 		tcont=new JTextField(5);
-		//String scont=tcont.getText();
-		//cnt=Integer.parseInt(scont);//수량 int형 변환
 		newMenu=new JButton("메뉴추가");
 		delMenu=new JButton("메뉴삭제");
 		
@@ -105,9 +103,9 @@ public class JCafenewMenu extends JFrame implements ActionListener{
 			minusidx++;
 		}
 		fileSave();
-		if(combo=="coffe"){
+		if(combo=="coffee"){
 			fileClose();
-			fstr="files/coffe.txt";
+			fstr="files/coffee.txt";
 			fileOpen();
 		}	
 		else if(combo=="latte"){
@@ -191,9 +189,5 @@ public class JCafenewMenu extends JFrame implements ActionListener{
 			model.removeRow(idx-1+plusidx-minusidx);
 			}
 		
-	}
-
-	public static void main(String[] args) {
-		new JCafenewMenu();
 	}
 }
