@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -13,10 +15,10 @@ import javax.swing.JPanel;
 
 public class JCafeGetStockData extends JFrame {
 	int[] useTotal; //useTotal stackNameArray 두 배열 다 같은 순서로 되어 있어서 배열인덱스를 같이 써도 됨
-	String[][] inventoryArray = new String[3][];
+	String[][] inventoryArray = new String[3][];	//이름 갯수 단위
 	public JCafeGetStockData() {
 		stockManage();
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		/*setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JPanel pnl = new JPanel();
 		pnl.setLayout(new GridLayout(0, 5));
 		for (int i = 0; i < useTotal.length; i++) {
@@ -28,7 +30,7 @@ public class JCafeGetStockData extends JFrame {
 		}
 		add(pnl);
 		pack();
-		setVisible(true);
+		setVisible(true);*/
 	}
 
 	void stockManage() {
@@ -80,10 +82,14 @@ public class JCafeGetStockData extends JFrame {
 		
 		
 		useTotal = new int[inventoryArray[0].length];	// 총 사용된 재료양을 담을 예정
+		
+		Date date = new Date();
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyyMMdd");
+		String dt = transFormat.format(date);
 
-		getUsingMaterialTotal("files/coffe.txt","files/coffe_material.txt");
-		getUsingMaterialTotal("files/latte.txt","files/latte_material.txt");
-		getUsingMaterialTotal("files/tea.txt","files/tea_material.txt");
+		getUsingMaterialTotal("jcafe_"+dt+"/coffee.txt","files/coffee_material.txt");
+		getUsingMaterialTotal("jcafe_"+dt+"/latte.txt","files/latte_material.txt");
+		getUsingMaterialTotal("jcafe_"+dt+"/tea.txt","files/tea_material.txt");
 					//매개변수 : 오늘의 판매자료(초기화자료에 판매량 반영된 자료),음료당 사용 재료 저장파일
 
 		
@@ -148,8 +154,8 @@ public class JCafeGetStockData extends JFrame {
 				br = new BufferedReader(fr);
 				String readData = null;
 				int idx = 0;
-				for (int i = 0; i < drinkIdxArray.length; i++) {
-					while ((readData = br.readLine()) != null) {
+				for (int i = 0; i < drinkIdxArray.length; i++) {	//인덱스 몇번 음료를 마셨냐
+					while ((readData = br.readLine()) != null) {	//음료 재료 소비량을 줄 단위로 읽어온다
 						/*System.out.print(idx + " ");
 						System.out.println(readData);*/
 						if (idx == Integer.parseInt(drinkIdxArray[i])) {

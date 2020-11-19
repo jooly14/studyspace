@@ -108,7 +108,7 @@ class DeadLineRegistration extends JDialog implements ActionListener{ //마감등록
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==stock){
-			
+			new JCafeDeadLineList();
 		}
 		else if(e.getSource()==order){
 			

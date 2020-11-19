@@ -2,7 +2,12 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,12 +16,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class JCafeMain extends JFrame implements ActionListener{
 	JButton[] btnMenu;
 	JPanel pnlMenu;
-	String[][] strMenu2 = JCafeGetMenuToMakeButton.getInfo("coffee");
+	String[][] strMenu2 = JCafeGetMenuToMakeButton.getInfo("coffe");
 	String[] strMenu = new String[strMenu2.length];
 	String[] strCnt = new String[strMenu2.length];
 	String[] strPrice = new String[strMenu2.length];
@@ -28,11 +34,12 @@ public class JCafeMain extends JFrame implements ActionListener{
 	DefaultTableModel model;
 	JScrollPane spOrderList;
 	boolean loginChk;
-	int saleNum;
-	int saleNum2;
 	JButton[] categoryBtns = new JButton[5];
-	String[] categoryTitle = {"coffee","latte","tea","",""};	
+	String[] categoryTitle = {"coffe","latte","tea","",""};	
 	JPanel pnlCategory;
+	JPanel totalPnl;
+	JTextField totalTf, cntTf, priceTf;
+	
 	
 	void init(){
 		setSize(600,800);
@@ -71,6 +78,7 @@ public class JCafeMain extends JFrame implements ActionListener{
 	public JCafeMain() {
 		init();
 		
+		totalPricePnl();
 		JPanel pnlNorth=new JPanel();
 		pnlMenu=new JPanel(new GridLayout(0,5,2,2));
 		JPanel pnlSouth=new JPanel(new GridLayout(0,2));
@@ -87,6 +95,7 @@ public class JCafeMain extends JFrame implements ActionListener{
 		pnlSouthRight.add(btnCancel);
 		JPanel pnlTable=new JPanel(new BorderLayout());
 		pnlTable.add(spOrderList);
+		pnlTable.add(totalPnl, "South");
 		pnlSouth.add(pnlTable);
 		pnlSouth.add(pnlSouthRight);
 		
@@ -121,8 +130,11 @@ public class JCafeMain extends JFrame implements ActionListener{
 	
 	void clickMenu(ActionEvent e) {
 		int currentRow = -1;
+		int intCnt = 1;
 		for (int j = 0; j < strMenu.length; j++) {
 			if (e.getSource() == btnMenu[j]) {
+				cntTf.setText((intCnt+(Integer.parseInt(cntTf.getText())))+"");		//버튼을 누를때 마다 total 개수가 증가함
+				priceTf.setText(((Integer.parseInt(strPrice[j]))+(Integer.parseInt(priceTf.getText())))+"");	//버튼을 누를때 마다 total 가격이 증가함
 				for (int i = 0; i < tableOrderList.getRowCount(); i++) {
 					if (tableOrderList.getValueAt(i, 0).equals(strMenu[j])) {
 						currentRow = i;
@@ -154,13 +166,26 @@ public class JCafeMain extends JFrame implements ActionListener{
 			}
 		}
 	}
+	void totalPricePnl(){
+		totalPnl = new JPanel(new GridLayout(0,3));
+		totalTf = new JTextField("합계");
+		cntTf  = new JTextField("0");
+		priceTf = new JTextField("0");
+		totalTf.setEditable(false);
+		cntTf.setEditable(false);
+		priceTf.setEditable(false);
+		totalPnl.add(totalTf);
+		totalPnl.add(cntTf);
+		totalPnl.add(priceTf);
+	}
 	@Override public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnPayment){ //결제
-			JCafePayment cp=new JCafePayment(this);
-			cp.setBounds(150,150,300,500);
-			JCafeSaveSalesData.saveSalesData(model);
-			
-			model.setNumRows(0);
+			JCafePayment jcp=new JCafePayment(this);
+			if(jcp.payment){
+				model=jcp.model;
+				JCafeSaveSalesData.saveSalesData(model);
+				model.setNumRows(0);
+			}
 		}
 		else if(e.getSource()==btnManager){ // 관리자
 			if(loginChk==false){
@@ -173,7 +198,7 @@ public class JCafeMain extends JFrame implements ActionListener{
 			new JCafeStempTable(this);
 		}else if(e.getSource() == btnCancel){ // 취소
 			selRowDelete();
-		}else if(((JButton)(e.getSource())).getParent().equals(pnlCategory)){
+		}else if(((JButton)(e.getSource())).getParent().equals(pnlCategory)){//
 			strMenu2 = JCafeGetMenuToMakeButton.getInfo(((JButton)e.getSource()).getText());
 			strMenu = new String[strMenu2.length];
 			strCnt = new String[strMenu2.length];

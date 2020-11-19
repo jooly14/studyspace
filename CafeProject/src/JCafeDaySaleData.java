@@ -17,6 +17,8 @@ class JCafeDaySaleData{
 		
 		saveData();
 		jp.dispose();
+		jc.cntTf.setText("0");
+		jc.priceTf.setText("0");
 	}
 	void saveData(){
 		Date date = new Date();

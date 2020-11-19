@@ -21,14 +21,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 
 class JCafePayment extends JDialog implements ActionListener{
 	JButton btnCard1,btnCard2,btnCash1,btnCash2,btnPayment,btnGoBack,btnStemp1,btnStemp2;
 	JTextField tfInstallment,tfCardNumber;
 	JButton btnReceipts,btnProofOfExpenditure,btnNull;
 	JPanel pnlCash,pnlCard;
-	boolean Receipts;
+	DefaultTableModel model;
+//	boolean Receipts;
 	
+	boolean payment;
 	JCafeMain jc;
 	
 	void init(){
@@ -63,10 +66,9 @@ class JCafePayment extends JDialog implements ActionListener{
 	public JCafePayment(JCafeMain jc) {
 		super(jc,true);
 		this.jc = jc;
+		model=jc.model;
 		init();
 		setSize(300,330);
-		
-		
 		
 		JPanel pnlSouth=new JPanel();
 		
@@ -137,35 +139,38 @@ class JCafePayment extends JDialog implements ActionListener{
 		revalidate();
 	}
 	void clickReceipts(){
-		Receipts=true;
 		btnProofOfExpenditure.setBackground(Color.WHITE);
 		btnReceipts.setBackground(Color.pink);
 		repaint();
 		revalidate();
 	}
 	void clickProofOfExpenditure(){
-		Receipts=false;
-		btnReceipts.setBackground(Color.WHITE);
 		btnProofOfExpenditure.setBackground(Color.pink);
+		btnReceipts.setBackground(Color.WHITE);
 		repaint();
 		revalidate();
 	}
 	
-	
 	@Override public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==btnStemp1||e.getSource()==btnStemp2)
-			new UseStemp(this);
-		if(e.getSource()==btnCash1||e.getSource()==btnCash2)
-			clickCash();
-		if(e.getSource()==btnCard1||e.getSource()==btnCard2)
-			clickCard();
-		if(e.getSource()==btnPayment) 
-			new JCafeDaySaleData(jc, this); // 결제완료시 데이터 저장 (파일이름:당일날짜, 저장유형 : 시:분:초/메뉴명/수량/가격)
-		if(e.getSource()==btnGoBack)
+		if(e.getSource()==btnStemp1||e.getSource()==btnStemp2){//스템프 버튼
+			JCafeUseStamp us=new JCafeUseStamp(this);
+			if(us.save){
+				model=us.model;
+				
+			}
+		}
+		if(e.getSource()==btnCash1||e.getSource()==btnCash2) clickCash(); // 현금버튼
+		if(e.getSource()==btnCard1||e.getSource()==btnCard2) clickCard(); // 카드버튼
+		if(e.getSource()==btnPayment) {
+			new JCafeDaySaleData(jc, this);// 결제완료시 데이터 저장 (파일이름:당일날짜, 저장유형 : 시:분:초/메뉴명/수량/가격)
+			payment=true;
+			
+		}
+		if(e.getSource()==btnGoBack){
 			dispose();
-		if(e.getSource()==btnProofOfExpenditure)
-			clickProofOfExpenditure();
-		if(e.getSource()==btnReceipts)
-			clickReceipts();
+			payment=false;
+		}
+		if(e.getSource()==btnProofOfExpenditure) clickProofOfExpenditure(); // 사업자 지출증빙 버튼
+		if(e.getSource()==btnReceipts) clickReceipts(); // 개인 현금영수증 버튼
 	}
 }
