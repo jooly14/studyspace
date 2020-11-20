@@ -35,16 +35,16 @@ public class JCafePhoneNum extends JDialog implements ActionListener{
 		
 		this.setVisible(true);
 	}
-	JCafePhoneNum(JCafeStempTable jcst){
+	public JCafePhoneNum(JCafeStempTable jcst){
 		super(jcst,true);
 		init();
 	}
-/*	JCafePhoneNum(JCafeStempTable jcst){
-		super(jcst,true);
-		init();
-	}*/
 	
-	String getPhoneNum(){
+	public JCafePhoneNum(JCafePayment jpn) {
+		super(jpn,true);
+		init();
+	}
+	String getPhoneNum(){ // 입력된 번호를 반환해줌
 		String phoneNumber="";
 		for(int i=0;i<pN_numbers.length;i++)
 			phoneNumber=phoneNumber+pN_numbers[i].getText();
@@ -54,17 +54,13 @@ public class JCafePhoneNum extends JDialog implements ActionListener{
 		pN_numbers = new JLabel[11];
 		int j=0;
 		for(int i=0;i<pN_numbers.length;i++,j++){
-			if(i==3||i==8)j++;
+			if(i==3||i==7)j++;
 			pN_numbers[i] = pN_lb[j];
 		}
 	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
+	@Override public void actionPerformed(ActionEvent e) {
 		JButton pN_cbtn = (JButton)e.getSource();	
-		
 		getNum();
-		
 		if(pN_cbtn == pN_btn[11]){			//'정정'
 			pN_cnt--;
 			pN_numbers[pN_cnt].setText("_");
@@ -82,17 +78,8 @@ public class JCafePhoneNum extends JDialog implements ActionListener{
 			if(pN_dashCount > 1){
 				JOptionPane.showMessageDialog(this, "번호를 입력해주세요.", "경고", JOptionPane.WARNING_MESSAGE);
 			}else if(pN_dashCount == 0){
-//				[ 10,000 단위로 스템프 1개  (예)-> 20,000~29,000원사이는 스템프2개 ]
-//				int x = 0;
-//				x = x + 10000;
-//				if(moneyTotal >= (x)){
-//					stamp++;
-//				}
-				JOptionPane.showMessageDialog(null, "적립되었습니다. \n 스탬프 : "+ pN_stamp);
 				dispose();
 			}
-			
-			
 		}else if(pN_cbtn == pN_btn[13]){		//'초기화'
 			for(int i = 0; i < pN_numbers.length; i++){
 				pN_numbers[i].setText("_");

@@ -40,7 +40,6 @@ public class JCafeMain extends JFrame implements ActionListener{
 	JPanel totalPnl;
 	JTextField totalTf, cntTf, priceTf;
 	
-	
 	void init(){
 		setSize(600,800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -163,10 +162,18 @@ public class JCafeMain extends JFrame implements ActionListener{
 				int selRow = tableOrderList.getSelectedRow();
 				model.removeRow(selRow);
 			}else{
+				model.setNumRows(0);
 			}
 		}
 	}
-	void totalPricePnl(){
+	void clickManager(){//관리자 클릭 이벤트
+		if(loginChk==false){
+			new JCafeManagerLoginDialog(this);
+		}else{
+			new JCafeManagerMenu(this);
+		}
+	}
+	void totalPricePnl(){ //합계금액 표시
 		totalPnl = new JPanel(new GridLayout(0,3));
 		totalTf = new JTextField("합계");
 		cntTf  = new JTextField("0");
@@ -178,27 +185,18 @@ public class JCafeMain extends JFrame implements ActionListener{
 		totalPnl.add(cntTf);
 		totalPnl.add(priceTf);
 	}
+	void clickPayment(){ //결제 클릭 이벤트
+		JCafePayment jcp=new JCafePayment(this);
+		if(jcp.payment){
+			model.setNumRows(0);
+		}
+	}
 	@Override public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==btnPayment){ //결제
-			JCafePayment jcp=new JCafePayment(this);
-			if(jcp.payment){
-				model=jcp.model;
-				JCafeSaveSalesData.saveSalesData(model);
-				model.setNumRows(0);
-			}
-		}
-		else if(e.getSource()==btnManager){ // 관리자
-			if(loginChk==false){
-				new JCafeManagerLoginDialog(this);
-			}else{
-				new JCafeManagerMenu(this);
-			}
-		}
-		else if(e.getSource()==btnStemp){ // 스템프
-			new JCafeStempTable(this);
-		}else if(e.getSource() == btnCancel){ // 취소
-			selRowDelete();
-		}else if(((JButton)(e.getSource())).getParent().equals(pnlCategory)){//
+		if(e.getSource()==btnPayment) clickPayment();//결제
+		else if(e.getSource()==btnManager) clickManager();//관리자
+		else if(e.getSource()==btnStemp) new JCafeStempTable(this); // 스템프
+		else if(e.getSource() == btnCancel)selRowDelete(); // 취소
+		else if(((JButton)(e.getSource())).getParent().equals(pnlCategory)){//메뉴탭 
 			strMenu2 = JCafeGetMenuToMakeButton.getInfo(((JButton)e.getSource()).getText());
 			strMenu = new String[strMenu2.length];
 			strCnt = new String[strMenu2.length];
@@ -215,9 +213,7 @@ public class JCafeMain extends JFrame implements ActionListener{
 			}
 			pnlMenu.setLayout(new GridLayout(0, 5, 2, 2));
 			pnlMenu.setBounds(10, 170, 560, 350);
-		}else{
-			clickMenu(e);
-		}
+		}else clickMenu(e);// 메뉴클릭
 		repaint();
 		revalidate();
 	}

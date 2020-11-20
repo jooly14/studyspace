@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -30,12 +31,15 @@ class GetTimesale extends JDialog implements ActionListener{  //´çÀÏ ÆÇ¸ÅÇ¥¸¦ ÆÄ
 		this.setSize(500,500);
 		this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		
-		JPanel panel=new JPanel();                
+		JPanel panel=new JPanel();
+		JPanel panel1=new JPanel();
 		JPanel panel2=new JPanel();
+		
 		String[] header={"½Ã°£","Ç°¸ñ","¼ö·®","±Ý¾×"};                      //table ¸¸µé±â
 		model=new DefaultTableModel(contents,header);
 		dleTable=new JTable(model);
 		JScrollPane dleSp=new JScrollPane(dleTable);
+
 		panel.add(dleSp);
 		dleSp.getViewport().setBackground(Color.WHITE);//table ¹è°æ»ö ¼³Á¤ 
 		
@@ -53,6 +57,16 @@ class GetTimesale extends JDialog implements ActionListener{  //´çÀÏ ÆÇ¸ÅÇ¥¸¦ ÆÄ
 		
 		
 		fileOpen();
+		
+		JLabel label=new JLabel(dleTable.getValueAt(0, 0)+" ÆÇ¸Å³»¿ª");
+		panel1.add(label);
+		
+		panel1.setBackground(Color.pink);
+		panel.setBackground(Color.pink);
+		panel2.setBackground(Color.pink);
+		this.setBackground(Color.pink);
+		
+		this.add(panel1,"North");
 		this.add(panel);
 		this.add(panel2,"South");
 		this.setLocationRelativeTo(null);
@@ -128,18 +142,23 @@ public class JCafeCloseSale extends JDialog implements ActionListener{  //±ÝÀÏ Æ
 	JTable closeTable;
 	String contents[][]={};
 	JButton close,cancel;
+	JLabel totalLabel,tm1,title;//ÃÑ ÆÇ¸Å±Ý¾×ÀÌ µé¾î°¥ ·¹ÀÌºí,½Ã°£,³¯Â¥
+	String totalc;
 	DefaultTableModel model;
 	BufferedReader br=null;
 	FileReader fr=null;
 	PrintWriter pw=null;
 	FileWriter fw=null;
-	int idx,minusidx;//»èÁ¦µÈÁÙÀÇ °³¼ö
+	int idx;//»èÁ¦µÈÁÙÀÇ °³¼ö
 	UtilDateModel dmodel;
-	String day1,day2;
+	String day1,day2,day3;
 	int row;//¸¶¿ì½º Å¬¸¯À§Ä¡
 	JComboBox tm2;
-	String combo[];
+	String combo[],fcombo[];
 	int cnt=0;//ÄÞº¸¹Ú½º ½Ã°£ Ä«¿îÆ®
+	int total;
+	JPanel titlep;
+	JDatePickerImpl datePicker;
 	
 	PrintWriter pw2=null;//¼±ÅÃÇÑ ½Ã°£¿¡ ÆÈ¸°°Í ÆÄÀÏ·Î µû·Î ÀúÀå
 	FileWriter fw2=null;
@@ -148,22 +167,27 @@ public class JCafeCloseSale extends JDialog implements ActionListener{  //±ÝÀÏ Æ
 		this.setSize(500,550);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		//this.setDefaultCloseOperation(3);
-		JPanel titlep=new JPanel();
-		JLabel tm1=new JLabel("½Ã°£");
+		titlep=new JPanel();
+		tm1=new JLabel("½Ã°£");
 		
 		
-		JLabel title=new JLabel("³¯Â¥");
+		title=new JLabel("³¯Â¥");
 	
-		titlep.add(title);
+		//titlep.add(title);
 		
 		//³¯Â¥ ¼±ÅÃ º°µµ ÆÄÀÏ ´Ù¿î¹Þ¾Æ¾ßÇÔ
 		dmodel=new UtilDateModel();
 		JDatePanelImpl datePanel=new JDatePanelImpl(dmodel);
-		JDatePickerImpl datePicker=new JDatePickerImpl(datePanel);
-		titlep.add(datePicker);
+		datePicker=new JDatePickerImpl(datePanel);
+		//titlep.add(datePicker);
 		day1=(dmodel.getYear()+""+(dmodel.getMonth()+1)+""+dmodel.getDay());
+		day2=(dmodel.getYear()+"³â "+(dmodel.getMonth()+1)+"¿ù "+dmodel.getDay()+"ÀÏ ");
 		//System.out.println(day1); //Å×½ºÆ®ÆÄÀÏ
 		datePicker.addActionListener(this);
+		
+		SimpleDateFormat format=new SimpleDateFormat("yyyy³âMM¿ù");
+		Date day=new Date();
+		day3=format.format(day);
 		
 		
 		//±ÝÀÏ ÆÇ¸Å·®ÀÌµé¾î°¥ Å×ÀÌºí
@@ -175,14 +199,16 @@ public class JCafeCloseSale extends JDialog implements ActionListener{  //±ÝÀÏ Æ
 		panel.add(closeSp);
 		closeSp.getViewport().setBackground(Color.WHITE);//table ¹è°æ»ö ¼³Á¤ 
 		
-		closeTable.getColumn("½Ã°£").setPreferredWidth(60);
+		closeTable.getColumn("½Ã°£").setPreferredWidth(60); //table °¡·Î ±æÀÌ °¢°¢ Á¶Á¤
 		closeTable.getColumn("Ç°¸ñ").setPreferredWidth(200);
 		closeTable.getColumn("¼ö·®").setPreferredWidth(20);
 		closeTable.getColumn("±Ý¾×").setPreferredWidth(50);
 		
-		cancel=new JButton("ÆÇ¸ÅÃë¼Ò");
+		totalLabel=new JLabel();
+		cancel=new JButton("µ¹¾Æ°¡±â");
 		cancel.addActionListener(this);
 		JPanel panel2=new JPanel();
+		panel2.add(totalLabel);
 		panel2.add(cancel);
 		
 		titlep.setBackground(Color.PINK);
@@ -191,50 +217,73 @@ public class JCafeCloseSale extends JDialog implements ActionListener{  //±ÝÀÏ Æ
 		
 		fileOpen();//ÆÄÀÏÀ» Å×ÀÌºí¿¡ ¿­¾î¾ß ½Ã°£Á¤º¸¸¦ ¹Þ¾Æ¿Í ÄÞº¸¹Ú½º¿¡ ³ÖÀ» ¼ö ÀÖ´Ù./////////////////////////////////
 		//ÄÞº¸¹Ú½º¿¡ ½Ã°£ ³Ö¾îÁÖ±â
-		combo=new String[closeTable.getRowCount()];
 		
-		if(closeTable.getRowCount()==1){
-			combo[cnt++]=closeTable.getValueAt(0,0).toString();
-		}
-		for(int i=1;i<closeTable.getRowCount();i++){
-			String s1=closeTable.getValueAt(i-1,0).toString();
-			String s2=closeTable.getValueAt(i,0).toString();
-			if(i<closeTable.getRowCount()-1){
-				if(s1.equals(s2)!=true){
-					combo[cnt++]=s1;
-					}
-			}
-			else if(i==closeTable.getRowCount()-1){
-				//System.out.println(s1+" "+s2);Å×½ºÆ®ÄÚµå
-				//System.out.println(s1.equals(s2));
-				if(s1.equals(s2)!=true){
-					combo[cnt++]=s1;
-					combo[cnt++]=s2;
-				}
-				else{
-					combo[cnt++]=s2;
-				}
-			}	
-		}
-		
-		tm2=new JComboBox(combo);
-		tm2.addActionListener(this);
+		//tm2=new JComboBox(fcombo);
+		//tm2.addActionListener(this);
 		titlep.add(tm1);
 		titlep.add(tm2);
 		
 		this.add(titlep,"North");
 		this.add(panel,"Center");
 		this.add(panel2,"South");
-		this.setLocationRelativeTo(null);
+		this.setLocationRelativeTo(null);//´ÙÀÌ¾óÀÌ Áß°£¿¡ ¶ç¿öÁöµµ·Ï
 		this.setVisible(true);
 		
 	}
+	void setcomboBox(){//½Ã°£¼±ÅÃÃ¢¿¡ ³ª¿Ã ½Ã°£µéÀ» ÄÞº¸¹Ú½º¿¡ ³Ö¾îÁØ´Ù.
+		combo=new String[closeTable.getRowCount()];//Å×ÀÌºíÀÇ Row¸¸Å­ ÄÞº¸ Å©±â¸¦ Å°¿öÁØ´Ù
+		if(closeTable.getRowCount()==1){//Ã¹ÁÖ¹®ÀÌ 1ÀÜ¸¸ µé¾î¿ÔÀ»‹š 
+			combo[cnt++]=closeTable.getValueAt(0,0).toString();
+		}
+		for(int i=1;i<closeTable.getRowCount();i++){
+			String s1=closeTable.getValueAt(i-1,0).toString();
+			String s2=closeTable.getValueAt(i,0).toString();
+			if(i<closeTable.getRowCount()-1){
+				if(s1.equals(s2)!=true){//¾Õ½Ã°£°ú µÞ½Ã°£À» ºñ±³ ´Ù¸£¸é ¾Õ½Ã°£À» ³Ö¾îÁØ´Ù
+					combo[cnt++]=s1;
+					}
+			}
+			else if(i==closeTable.getRowCount()-1){//¸¶Áö¸· ÁÖ¹®ÀÇ °æ¿ì
+				//System.out.println(s1+" "+s2);Å×½ºÆ®ÄÚµå
+				//System.out.println(s1.equals(s2));
+				if(s1.equals(s2)!=true){//¾Õ½Ã°£°ú ÁÖ¹®½Ã°£ÀÌ °°Áö ¾ÊÀ¸¸é ¾Õ°ú µÚ ÁÖ¹® ¸ðµÎÀÇ ½Ã°£À» ÀúÀå
+					combo[cnt++]=s1;
+					combo[cnt++]=s2;
+				}
+				else{//¾Õ½Ã°£°ú ÁÖ¹®½Ã°£ÀÌ °°À¸¸é µÞ½Ã°£ ÀúÀå
+					combo[cnt++]=s2;
+				}
+			}	
+		}
+		fcombo=new String[cnt];
+		for(int i=0;i<cnt;i++){
+			fcombo[i]=combo[i];
+		}/*
+		int x=fcombo.length;    //Å×½ºÆ®ÄÚµå ÄÞº¸¹Ú½º¿¡ Àß µé¾î°¡°í ÀÖ´ÂÁö
+		System.out.println("-------------------------");
+		for(int j=0;j<x;j++){
+			System.out.println(fcombo[j]);
+		}*/
+		cnt=0;
+		tm2=new JComboBox(fcombo);
+		tm2.addActionListener(this);
+		titlep.removeAll();
+		
+		titlep.add(title);
+		titlep.add(datePicker);
+		titlep.add(tm1);
+		titlep.add(tm2);
+		
+		this.repaint();
+		this.revalidate();
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {                              //ActionListener
 		if(e.getSource()==tm2){
-			String getCombo=tm2.getSelectedItem().toString();
+			String getCombo=tm2.getSelectedItem().toString();//ÄÞº¸¹Ú½º¿¡¼­ ¼±ÅÃÇÑ ½Ã°£
 					try {
-						fw2=new FileWriter("files/Delete");       //¿øÇÏ´Â ½Ã°£´ëÀÇ ÁÖ¹®¸¸ µû·Î ÆÄÀÏ¿¡ ³Ö¾î¼­ Å×ÀÌºí¿¡ º¸¿©ÁÙ ¿¹Á¤
+						fw2=new FileWriter("files/Delete");       //¿øÇÏ´Â ½Ã°£´ëÀÇ ÁÖ¹®¸¸ µû·Î DeleteÆÄÀÏ¿¡ ³Ö¾îÁØ´Ù.
 						pw2=new PrintWriter(fw2);
 						for(int i=0;i<closeTable.getRowCount();i++){
 							String getRow=closeTable.getValueAt(i,0).toString();
@@ -265,17 +314,21 @@ public class JCafeCloseSale extends JDialog implements ActionListener{  //±ÝÀÏ Æ
 				fileOpen();// »èÁ¦ÇÑµÚ ÆÄÀÏÀ» »õ·Î ¿­¾îÁÖ¾ßÇÔ
 			}
 		}
+		else if(e.getSource()==cancel){
+			dispose();
+		}
 		else {
-			//day1=(dmodel.getYear()+(dmodel.getMonth()+1)+dmodel.getDay()+"");
-			System.out.println(day1); //Å×½ºÆ®ÄÚµå
+			day1=(dmodel.getYear()+""+(dmodel.getMonth()+1)+""+dmodel.getDay()+"");
+			day2=(dmodel.getYear()+"³â "+(dmodel.getMonth()+1)+"¿ù "+dmodel.getDay()+"ÀÏ ");
+			//System.out.println(day1); //Å×½ºÆ®ÄÚµå
 			fileOpen();
-			fileSave();
-			
-		}	
+			//fileSave();
+		}
 	}
 	
 	void fileOpen(){//±× ³¯Â¥ÀÇ ÆÄÀÏ ¿­±â
 		fileClose();//ÀÌÀü ÆÄÀÏÀ» ´Ý¾Æ¾ß ´ÙÀ½ ÆÄÀÏÀÌ ¿­¸®°Ô
+		total=0;//¼±ÅÃÇÑ ³¯Â¥ ÆÇ¸Å ÃÑ±Ý¾× ÃÊ±âÈ­
 		try {
 			fr=new FileReader("JCafeDaySaleData/"+day1+".txt");//ÆÄÀÏÀÌ¸§À» ¹Þ¾Æ¿Â ³¯Â¥·Î ÁöÁ¤
 			br=new BufferedReader(fr);
@@ -297,39 +350,33 @@ public class JCafeCloseSale extends JDialog implements ActionListener{  //±ÝÀÏ Æ
 			} catch(IOException e){
 				e.printStackTrace();
 			}
-		}	
-	}
-	void fileSave(){//ÆÇ¸Å Á¤º¸°¡ °»½ÅµÉ¶§ ¸¶´Ù »õ·ÎÀúÀå
-		
-		try {
-			fw=new FileWriter("JCafeDaySaleData//"+day1+".txt");
-			pw=new PrintWriter(fw);
-			
-			String dataA="";
-			for(int i=0;i<closeTable.getRowCount();i++){
-				dataA=closeTable.getValueAt(i,0)+"/"+closeTable.getValueAt(i,1)+"/"+closeTable.getValueAt(i, 2)+"/"+closeTable.getValueAt(i, 3);
-				pw.println(dataA);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}finally{
-			if(fw!=null)
-				try {
-					fw.close();
-					if(pw!=null)pw.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
 		}
+		
+		setcomboBox(); 
+		
+		//////////±×³¯ ¸ÅÃâ
+		for(int i=0;i<closeTable.getRowCount();i++){
+			String str=(String) closeTable.getValueAt(i, 3);
+			total+=Integer.parseInt(str);
+		}			
+		//System.out.println(total); Å×½ºÆ®ÄÚµå
+		DecimalFormat dc=new DecimalFormat("#,###");
+		totalc=String.format("%,d", total);     //3ÀÚ¸®¸¶´Ù , Âï¾îÁÜ
+		totalLabel.setText(day2+"ÃÑ ¼öÀÔ : "+totalc+"¿ø");		
+	}
+	
+	String totalReturn(){//////////////////////ÇÏ·ç ÆÇ¸Å¼öÀÔ ¹ÝÈ¯ÇØÁÖ´Â ¸Þ¼Òµå
+		return day2+"/"+totalc+"¿ø /";
+		
 	}
 	void fileClose(){//»õ·Î ÆÄÀÏ ¿­¶§ ±ò²ûÇÏµµ·Ï Áö¿öÁÜ
-		for(int i=0;i<idx-minusidx;idx--){
-			model.removeRow(idx-1-minusidx);
+		for(int i=0;i<idx;idx--){
+			model.removeRow(idx-1);
 		}
 	}
 	void fileSave2(){
 		try {
-			fw=new FileWriter("JCafeDaySaleData//"+day1+".txt");
+			fw=new FileWriter("JCafeDaySaleData/"+day1+".txt");
 			pw=new PrintWriter(fw);
 			String getCombo=tm2.getSelectedItem().toString();
 			String dataA="";

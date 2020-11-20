@@ -21,7 +21,7 @@ class JCafeStempTable extends JDialog implements ActionListener{
 	FileReader fr;
 	DefaultTableModel model;
 	JTable table;
-	void init(Boolean b){ //값 초기화(Boolean으로 스템프 테이블 true or false 하는 기능)
+	void init(Boolean b){ //값 초기화(Boolean으로 스템프 테이블 선택 가능or불가능 하게)
 		setSize(400,500);
 		
 		model=new DefaultTableModel(strTable,strHeader);
@@ -106,8 +106,8 @@ class JCafeStempTable extends JDialog implements ActionListener{
 		}
 	@Override public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnRefresh)
-			showData();
+			showData();//데이터 보여주세용
 		if(e.getSource()==btnChangeNumber)
-			numDataChange();
+			numDataChange();//번호바꿔주세용
 	}
 }

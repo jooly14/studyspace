@@ -19,6 +19,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
@@ -29,12 +30,12 @@ class JCafePayment extends JDialog implements ActionListener{
 	JButton btnReceipts,btnProofOfExpenditure,btnNull;
 	JPanel pnlCash,pnlCard;
 	DefaultTableModel model;
-//	boolean Receipts;
-	
+	int useStempCnt,userStemp,coffeeCnt;
+	String userPhoneNum;
 	boolean payment;
 	JCafeMain jc;
 	
-	void init(){
+	void init(){// 컴포넌트 추가& 이벤트 추가
 		pnlCard=new JPanel(null);
 		pnlCash=new JPanel(null);
 		tfInstallment=new JTextField(3);
@@ -63,10 +64,12 @@ class JCafePayment extends JDialog implements ActionListener{
 		btnPayment.addActionListener(this);
 		btnGoBack.addActionListener(this);
 	}
-	public JCafePayment(JCafeMain jc) {
+	public JCafePayment(JCafeMain jc) {//모델 넘겨받고 UI 설정, 전역변수처리
 		super(jc,true);
 		this.jc = jc;
 		model=jc.model;
+		for(int i=0;i<jc.tableOrderList.getRowCount();i++)// 주문되는 음료 수량 저장
+			coffeeCnt+=Integer.parseInt((String) jc.tableOrderList.getValueAt(i,1));
 		init();
 		setSize(300,330);
 		
@@ -122,7 +125,8 @@ class JCafePayment extends JDialog implements ActionListener{
 		setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
-	void clickCash(){
+	
+	void clickCash(){// 현금버튼 클릭 이벤트
 		btnCard1.setBackground(Color.white);
 		btnCash1.setBackground(Color.pink);
 		this.remove(pnlCard);
@@ -130,7 +134,7 @@ class JCafePayment extends JDialog implements ActionListener{
 		repaint();
 		revalidate();
 	}
-	void clickCard(){
+	void clickCard(){// 카드버튼 클릭 이벤트
 		btnCard2.setBackground(Color.pink);
 		btnCash2.setBackground(Color.white);
 		this.remove(pnlCash);
@@ -138,38 +142,50 @@ class JCafePayment extends JDialog implements ActionListener{
 		repaint();
 		revalidate();
 	}
-	void clickReceipts(){
+	void clickReceipts(){// 현금영수증 개인버튼 클릭 이벤트
 		btnProofOfExpenditure.setBackground(Color.WHITE);
 		btnReceipts.setBackground(Color.pink);
 		repaint();
 		revalidate();
 	}
-	void clickProofOfExpenditure(){
+	void clickProofOfExpenditure(){// 현금영수증 사업자버튼 클릭 이벤트
 		btnProofOfExpenditure.setBackground(Color.pink);
 		btnReceipts.setBackground(Color.WHITE);
 		repaint();
 		revalidate();
 	}
+	void clickStemp(){//스템프버튼 클릭 이벤트
+		JCafeUseStamp jus=new JCafeUseStamp(this);
+		if(jus.save){//스템프사용 완료되면 실행될 조건문
+			model=jus.model;
+			useStempCnt=jus.useStemp*5;	//사용한 스템프 갯수
+			userStemp=jus.stempNum;		//남은 스템프 갯수
+			userPhoneNum=jus.userNumber;//사용자 전화번호
+			coffeeCnt=jus.coffeeCnt;	//커피 수
+		}
+	}
+	void clickPayment(){// 결제버튼 클릭 이벤트
+		JCafeSaveSalesData.saveSalesData(model);
+		new JCafeDaySaleData(jc, this, model);// JCafeDaySaleData폴더에 파일명(당일날짜)로 데이터 저장하는 클래스
+		payment=true; // 결제 했는지 안했는지 저장
+		if(userPhoneNum==null){ //번호입력 후 전역변수로 빼주는 조건문
+			JCafePhoneNum jcpn=new JCafePhoneNum(this);
+			userPhoneNum=jcpn.getPhoneNum();
+		}
+		new JCafeUseStempToSave(userPhoneNum,userStemp);//스탬프 갯수 데이터화(파일에 저장)
+		new JCafeStempAdd(userPhoneNum, (coffeeCnt - (useStempCnt/5) ) ); // 스템프 추가 (스탬프로 결제한 커피 수 만큼 스탬프 쌓이지않음)
+	}
+	void clickGoBack(){// 이전화면버튼 클릭 이벤트
+		dispose();
+		payment=false;
+	}
 	
 	@Override public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==btnStemp1||e.getSource()==btnStemp2){//스템프 버튼
-			JCafeUseStamp us=new JCafeUseStamp(this);
-			if(us.save){
-				model=us.model;
-				
-			}
-		}
-		if(e.getSource()==btnCash1||e.getSource()==btnCash2) clickCash(); // 현금버튼
-		if(e.getSource()==btnCard1||e.getSource()==btnCard2) clickCard(); // 카드버튼
-		if(e.getSource()==btnPayment) {
-			new JCafeDaySaleData(jc, this);// 결제완료시 데이터 저장 (파일이름:당일날짜, 저장유형 : 시:분:초/메뉴명/수량/가격)
-			payment=true;
-			
-		}
-		if(e.getSource()==btnGoBack){
-			dispose();
-			payment=false;
-		}
+		if(e.getSource()==btnStemp1||e.getSource()==btnStemp2) clickStemp();	//스템프 버튼
+		if(e.getSource()==btnCash1||e.getSource()==btnCash2) clickCash();	// 현금버튼
+		if(e.getSource()==btnCard1||e.getSource()==btnCard2) clickCard();	// 카드버튼
+		if(e.getSource()==btnPayment)clickPayment();// 결제버튼
+		if(e.getSource()==btnGoBack) clickGoBack(); // 이전화면 버튼
 		if(e.getSource()==btnProofOfExpenditure) clickProofOfExpenditure(); // 사업자 지출증빙 버튼
 		if(e.getSource()==btnReceipts) clickReceipts(); // 개인 현금영수증 버튼
 	}

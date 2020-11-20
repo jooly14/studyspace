@@ -6,19 +6,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JDialog;
+import javax.swing.table.DefaultTableModel;
 
 class JCafeDaySaleData{
 	JCafeMain jc;
 	JCafePayment jp;
+	DefaultTableModel model;
 	
-	public JCafeDaySaleData(JCafeMain jc, JCafePayment jp){
+	public JCafeDaySaleData(JCafeMain jc, JCafePayment jp, DefaultTableModel model) {
 		this.jc = jc;
 		this.jp = jp;
+		this.model=model;
 		
 		saveData();
 		jp.dispose();
-		jc.cntTf.setText("0");
-		jc.priceTf.setText("0");
 	}
 	void saveData(){
 		Date date = new Date();
@@ -36,15 +37,15 @@ class JCafeDaySaleData{
 				fw = new FileWriter(file, true);
 				bfw = new BufferedWriter(fw);
 				
-				for(int x = 0; x < jc.tableOrderList.getRowCount(); x++){
+				for(int x = 0; x < model.getRowCount(); x++){
 					Date data = new Date();
 					SimpleDateFormat transFormat2 = new SimpleDateFormat("HH:mm:ss");
 					String dt2 = transFormat2.format(data);
 					bfw.write(dt2);
 					bfw.write("/");
-						bfw.write((String)(jc.tableOrderList.getValueAt(x, 0))+"/"
-						+(String)(jc.tableOrderList.getValueAt(x, 1))+"/"
-						+(String)(jc.tableOrderList.getValueAt(x, 2)));
+						bfw.write((String)(model.getValueAt(x, 0))+"/"
+						+(String)(model.getValueAt(x, 1))+"/"
+						+(String)(model.getValueAt(x, 2)));
 					bfw.newLine();
 				}
 				bfw.newLine();
@@ -66,15 +67,15 @@ class JCafeDaySaleData{
 				fw = new FileWriter(filename, true);
 				bfw = new BufferedWriter(fw);
 				
-				for(int x = 0; x < jc.tableOrderList.getRowCount(); x++){
+				for(int x = 0; x < model.getRowCount(); x++){
 					Date time = new Date();
 					SimpleDateFormat transFormat2 = new SimpleDateFormat("HH:mm:ss");
 					String dt2 = transFormat2.format(time);
 					bfw.write(dt2);
 					bfw.write("/");
-						bfw.write((String)(jc.tableOrderList.getValueAt(x, 0))+"/"
-								+(String)(jc.tableOrderList.getValueAt(x, 1))+"/"
-								+(String)(jc.tableOrderList.getValueAt(x, 2)));
+						bfw.write((String)(model.getValueAt(x, 0))+"/"
+								+(String)(model.getValueAt(x, 1))+"/"
+								+(String)(model.getValueAt(x, 2)));
 					bfw.newLine();
 				}
 				bfw.close();

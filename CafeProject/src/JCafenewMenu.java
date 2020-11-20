@@ -26,8 +26,9 @@ public class JCafenewMenu extends JDialog implements ActionListener{
 	
 	JComboBox comboMenu;
 	
-	JCafenewMenu(JCafeManagerMenu c){
+	JCafenewMenu(JCafeManagerMenu c, JCafeNewMenuPnl np){
 		super(c);
+		
 		this.setSize(500,550);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		JLabel title=new JLabel("메뉴관리");
@@ -191,3 +192,4 @@ public class JCafenewMenu extends JDialog implements ActionListener{
 		
 	}
 }
+

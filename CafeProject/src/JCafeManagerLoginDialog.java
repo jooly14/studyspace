@@ -1,9 +1,12 @@
 import java.awt.GridLayout;
+import java.awt.Window;
+import java.awt.GraphicsDevice.WindowTranslucency;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,6 +23,7 @@ public class JCafeManagerLoginDialog extends JDialog implements ActionListener{
 	
 	public JCafeManagerLoginDialog(JCafeMain mainFrame){
 		this.mainFrame = mainFrame;
+		this.setLocation(mainFrame.getX(),mainFrame.getY());
 		setTitle(" 관리자 로그인 ");
 		JPanel pnlCenter = new JPanel(new GridLayout(0,1));
 		JPanel pnlId = new JPanel();
