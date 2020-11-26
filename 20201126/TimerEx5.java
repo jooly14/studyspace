@@ -1,11 +1,9 @@
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
@@ -89,7 +87,7 @@ public class TimerEx5 extends JFrame{
 		timerS = new Timer(5000, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				s_x = ran.nextInt(80)+320;
+				s_x = ran.nextInt(150)+280;
 				s_y = ran.nextInt(380);
 				star.setLocation(s_x,s_y);
 				pnl.repaint();
@@ -103,7 +101,7 @@ public class TimerEx5 extends JFrame{
 				if(m_x>400){
 					pnl.remove(missile);
 				}
-				if((m_x > s_x-79)&&(m_y > s_y-29)&&(m_y < s_y+49)){
+				if((m_x > s_x-79)&&(m_x < s_x+49)&&(m_y > s_y-29)&&(m_y < s_y+49)){
 					point += 10;
 					pointLbl.setText(point+"");
 					pnl.remove(missile);
