@@ -38,30 +38,27 @@ class CycleSignPnl extends JPanel{
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setFont(new Font("Serif",Font.BOLD,30));
 		if(two ==3){
-			System.out.println(3);
 			x-=10;
 			x2-=10;
 			g2.drawString("우리는 스레드로 애니메이션을 할 수 있어요! ", x, 30);
 			g2.drawString("나는 스레드로 애니메이션을 할 수 있어요! ", x2, 30);
-			if(x<-450){
+			if(x<-600){
 				two =2;
 				x = 300;
-			}else if(x2<-500){
+			}else if(x2<-600){
 				two=1;
 				x2 =300;
 			}
 		}else if(two ==1){
-			System.out.println(1);
 			g2.drawString("우리는 스레드로 애니메이션을 할 수 있어요! ", x, 30);
 			x-=10;
-			if(x<-400){
+			if(x<-330){
 				two =3;
 			}
 		}else if(two ==2){
-			System.out.println(2);
 			x2-=10;
 			g2.drawString("나는 스레드로 애니메이션을 할 수 있어요! ", x2, 30);
-			if(x2<-400){
+			if(x2<-330){
 				two =3;
 			}
 		}
