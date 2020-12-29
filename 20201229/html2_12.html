@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <style>
+       label{
+           font-weight: bold;
+       }
+    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1>상품 주문서</h1>
+    <form>
+        <fieldset>
+            <legend><font color="purple"><h3>개인 정보</h3></font></legend>
+            <table cellpadding="5">
+                <tr>
+                    <td><label>이름</label></td>
+                    <td><input type="text" placeholder="여백없이 입력"></td>
+                </tr>
+                <tr>
+                    <td><label>연락처</label></td>
+                    <td><input type="text" placeholder="연락가능한 번호"></td>
+                </tr>
+            </table>
+            
+        </fieldset>
+        <fieldset>
+          
+            <legend><font color="purple"><h3>배송지 정보</h3></font></legend>
+             <table cellpadding="5">
+               <tr>
+                   <td><label>주소</label></td>
+                   <td><input size="40" type="text"></td>
+               </tr>
+               <tr>
+                   <td><label>전화번호</label></td>
+                   <td> <input type="tel"></td>
+               </tr>
+               <tr>
+                   <td><label for="id">메  &nbsp;모</label></td>
+                   <td rowspan="2"> <textarea id="id" rows="5" cols="30"></textarea></td>
+               </tr><tr>
+                   <td height="50"></td>
+               </tr>
+           </table>
+        </fieldset>
+        <fieldset>
+            <legend><font color="purple"><h3>주문 정보</h3></font></legend>
+            <table>
+                <tr>
+                    <td><input type="checkbox">과테말라 안티구아 (100g) <input type="text" value="0" size="2">개</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox">인도네시아 만델링 (100g) <input type="text" value="0" size="2">개</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox">탐라는도다(블렌딩) (100g) <input type="text" value="0" size="2">개</td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <div align="center">
+        <input type="submit" value="주문하기">
+        <input type="reset" value="다시 작성">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+        <input type="text" disabled value="111"><br>
+        <input type="text" readonly value="111"><br>
+        <input type="text" autofocus><br>
+        <input type="text" maxlength="5"><br>
+        <input type="text" minlength="5"><br>
+        <input type="text" placeholder="id"><br>
+        <input type="text" required="true"><br>
+        <input type="submit">
+        <input type="submit" value="값입력">
+        <input type="reset" value="초기화"><br>
+        <input type="email" required><br>
+        
+        <textarea wrap="hard" cols="5"></textarea><br>
+        
+        <select multiple>
+            <optgroup label="남성용">
+                <option>280mm</option>
+                <option>270mm</option>
+                <option>260mm</option>
+            </optgroup>
+            <optgroup label="여성용">
+                <option>250mm</option>
+                <option>240mm</option>
+                <option>230mm</option>
+            </optgroup>
+            <optgroup label="아동용">
+                <option>220mm</option>
+                <option>210mm</option>
+                <option>200mm</option>
+            </optgroup>
+        </select><br>
+        <br>
+        <label for="id">아이디</label>
+        <input type="text" id="id">
+        <br>
+        <input type="text" list="list1">
+        <datalist id="list1">
+            <option>sss</option>
+            <option>sss</option>
+            <option>sss</option>
+        </datalist>
+    </form>
+</body>
+</html>
