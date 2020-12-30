@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{/*전체 선택자*/
+            border: solid black 1px;
+        }
+        p{/*태그 선택자*/
+            font-size: 30px;
+        }
+        .d2{/*클래스 선택자*/
+            background-color: red;
+        }
+        #d4{/*아이디 선택자*/
+            background-color: aqua;
+        }
+        #d5{
+            background-color: green;
+        }
+        p, span{/*그룹 선택자*/
+            color: blueviolet;
+            font-family: 궁서, 돋움, 굴림;
+        }
+        span.d2{
+            background-color: aquamarine;
+        }
+        #d6{
+            color: darksalmon;
+        }
+        .c1{
+            color: fuchsia;
+        }
+        div{
+            color: firebrick !important;
+        }
+    </style>
+</head>
+<body>
+   <p>p tag</p>
+   <div>div tag</div>
+   <div class="d2">div tag2</div>
+   <div class="d2">div tag3</div>
+   <div id="d4">div tag4</div>
+   <div id="d5">div tag5</div>
+   <span>span tag</span>
+   <span class="d2">span tag2</span>
+    <div id="d6" class="c1">확인용</div>
+</body>
+</html>

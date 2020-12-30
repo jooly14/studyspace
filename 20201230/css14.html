@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            border: 10px dotted black;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-image: url(back.jpg);
+            margin: 100px;
+             background-origin: border-box;
+        }
+        #dv1{
+            background-size: contain;/*이미지를 기준으로*/
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: aquamarine;
+            background-clip: padding-box;
+        }
+        #dv2{
+            background-position: bottom -10px;
+            background-size: cover;/*div를 기준으로*/
+        }
+        #dv3{
+           background-position:right bottom;
+        }
+    </style>
+</head>
+<body>
+  <div>배경 사이즈가 안 맞추어짐</div>
+   <div id="dv1"></div>
+    <div id="dv2"></div>
+    <div id="dv3"></div>
+</body>
+</html>
