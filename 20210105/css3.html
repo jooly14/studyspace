@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container{
+            margin: 30px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        label{
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            display: inline-block;
+            background-color: pink;
+            position: absolute;
+            top: 460px;
+            z-index: 3;
+        }
+        label[for="chk1"]{
+            left: 180px;
+        }
+        label[for="chk2"]{
+            left: 230px;
+        }
+        label[for="chk3"]{
+            left: 280px;
+        }
+        input[id="chk1"]:checked ~ label[for="chk1"]{
+            background-color: hotpink;
+        } input[id="chk2"]:checked ~ label[for="chk2"]{
+            background-color: hotpink;
+        } input[id="chk3"]:checked ~ label[for="chk3"]{
+            background-color: hotpink;
+        } 
+        img{
+            width:100%;
+            position: absolute;
+            display: none;
+        }
+        input[id="chk1"]:checked ~ .img1{
+            display: block;
+        } input[id="chk2"]:checked ~ .img2{
+            display: block;
+        } input[id="chk3"]:checked ~ .img3{
+             display: block;
+        }
+        
+    </style>
+</head>
+<body>
+   <div id="container">
+        <input type="radio" id="chk1" name ="group" checked>
+        <input type="radio" id="chk2" name ="group">
+        <input type="radio" id="chk3" name ="group">
+        <label for="chk1"></label>
+        <label for="chk2"></label>
+        <label for="chk3"></label>
+        <img class="img1" src="smile.png">
+        <img class="img2" src="soso.png">
+        <img class="img3" src="bad.png">
+        
+    </div>
+</body>
+</html>

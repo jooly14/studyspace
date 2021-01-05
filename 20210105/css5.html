@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        table.tbl1{
+            margin: 30px;
+        }
+        .env_title{
+            width: 120px;
+        }
+        td{
+            margin: 5px;
+        }
+        tr{
+            height: 80px;
+            padding: 10px;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        label{
+            width: 70px;
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 40px;
+            text-align:center;
+            display: inline-block;
+            padding: 6px 0 0 0;
+        }
+        #avg:checked ~ label[for="avg"],#max:checked ~ label[for="max"],#min:checked ~ label[for="min"]{
+            background-color: deepskyblue;
+            color: white;
+        }
+        #val25:checked ~ label[for="val25"],#val210:checked ~ label[for="val210"],#val260:checked ~ label[for="val260"],#val2600:checked ~ label[for="val2600"],#val21800:checked ~ label[for="val21800"],#val23600:checked ~ label[for="val23600"]{
+            background-color: deepskyblue;
+            color: white;
+        }
+        .output_set, .output_range, .set_date{
+            padding-left: 20px;
+        }
+        .set_date>input[type="text"]{
+            border-radius: 5px;
+            width: 100px;
+            height: 24px;
+        }
+        .env_title{
+            text-align: center;
+            border-bottom: 3px solid lightgray;
+        }
+        
+        .env_btn{
+            text-align: center;
+        }
+        .env_btn>input[type="button"]{
+            width: 100px;
+            height: 25px;
+            border: 3px solid gray;
+            border-radius: 5px;
+        }
+        .tbl12{
+            margin: 20px;
+        }
+        .tbl12 td{
+            text-align: right;
+        }
+        .tbl12 td[rowspan="2"]{
+            margin: 0px;
+            padding: 0px;
+            width: 80px;;
+            table-layout: fixed;
+            height: 30px;
+            text-align: center;
+            font-weight: 900;
+        }
+        .tbl12 tr{
+            height: 30px;
+        }
+        .tbl12 td input[type="text"]{
+            width: 50px;
+            border-radius: 5px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <table class="tbl1">
+                    <tr>
+                        <td><div class="env_title">출력값 설정</div></td>
+                        <td class="output_set">                            
+                            <input type="radio" name="val1" value="Avg" id="avg" checked>
+                            <label for="avg">평균값</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val1" value="Max" id="max">
+                            <label for="max">최대값</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val1" value="Min" id="min">
+                            <label for="min">최소값</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="env_title">표시간격</div></td>
+                        <td class="output_range">
+                            <input type="radio" name="val2" value="5" id="val25">
+                            <label for="val25">5</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val2" value="10"  id="val210" checked>
+                            <label for="val210">10</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val2" value="60" id="val260">
+                            <label for="val260">60</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val2" value="600" id="val2600">
+                            <label for="val2600">600</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val2" value="1800" id="val21800">
+                            <label for="val21800">1800</label>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="val2" value="3600" id="val23600">
+                            <label for="val23600">3600</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="env_title">값 설정 범위</div></td>
+                        <td>
+                            <table class="tbl12">
+                                <tr class="tbl12_dis">
+                                    <td rowspan="2">온도</td>                          
+                                    <td>H : <input type="text" name="th"></td>
+                                    <td rowspan="2">전도도</td>
+                                    <td>H : <input type="text" name="eh"></td>
+                                    <td rowspan="2">이온</td>
+                                    <td>H : <input type="text" name="ph"></td>
+                                </tr>
+                                <tr>
+                                    <td>L : <input type="text" name="tl"></td>
+                                    <td>L : <input type="text" name="el"></td>
+                                    <td>L : <input type="text" name="pl"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div  class="env_title">출력 날짜 설정</div></td>
+                        <td class="set_date">                                        
+                            <input type="text">년
+                            <input type="text">월
+                            <input type="text">일
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="env_btn">
+                            <input type="button" value="저장">
+                        </td>
+                    </tr>
+                 </table>
+</body>
+</html>
