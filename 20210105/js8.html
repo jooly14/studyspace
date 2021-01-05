@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+         var abc = "가나다라 마바사아 자차카타 파하";
+        document.write("charAt:",abc.charAt(3),"<br>");
+        document.write("indexOf:",abc.indexOf("자"),"<br>");
+        document.write("indexOf:",abc.indexOf("좌"),"<br>");
+        document.write("indexOf:",abc.lastIndexOf(" "),"<br>");
+        document.write("match:",abc.match("사아"),"<br>");
+        document.write("match:",abc.match("사자"),"<br>");
+        document.write("replace:",abc.replace("아 자","아빠사자"),"<br>");
+        document.write("search:",abc.search("자"),"<br>");
+        document.write("search:",abc.search("좌"),"<br>");
+        document.write("trim:"," ab c ".trim(),"<br>");
+        document.write("concat:","abc".concat("def"),"<br>");
+        document.write("length:","abc".length,"<br>");
+        document.write("toUpperCase:","aBc".toUpperCase(),"<br>");
+        document.write("toLowerCase:","aBc".toLowerCase(),"<br>");
+        document.write("split:",abc.split(" "),"<br>");
+        document.write("charCodeAt:",abc.charCodeAt(0),"<br>");
+        document.write("String.fromCharCode:",String.fromCharCode(65),"<br>");
+        document.write("substr:",abc.substr(3,6),"<br>");
+        document.write("<hr>");
+        
+        var userName = prompt("name?","");
+        document.write("이름 : ",userName.toUpperCase(),"<br>");
+        var userPhone = prompt("phone number?","");
+        if(userPhone.length>=4){
+            document.write("phone : ",userPhone.substring(0,userPhone.length-4),"****<br>");
+        }else{
+            document.write("no phone<br>");
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+    <script>
+        var i = 0;
+        while(i<10){
+            document.write("안녕하세요 "+i,"<br>");
+            i++;
+        }
+        
+        document.write("end","<hr>");
+        var j = 20;
+        while(j>=10){
+            if(j%2==0){
+                document.write("<p class='blue'>"+j+"</p>");
+            }else{
+                document.write("<p class='red'>"+j+"</p>");
+            }
+            j--;
+        }
+        var l=0;
+        document.write("<table border=1>");
+        for(var k=0; k<3;k++){
+            document.write("<tr>");
+            for(var m=0; m<3;m++,l++){
+                document.write("<td>",l,"</td>");
+            }
+            document.write("</tr>");
+        }
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var num = 0;
+        var auto_1 = setInterval(function(){
+            console.log(num++);
+        },1000);
+    </script>
+</head>
+<body>
+    <input type=button onclick="window.close();" value ="창 닫기">
+    <button onclick="clearInterval(auto_1)">증가 정지</button>
+    <button onclick="location.reload()">새로고침</button>
+    <button onclick="location.href='http://www.naver.com'">naver</button>
+    <button onclick="location.href='js8.html'">js8</button>
+    <button onclick="history.go(1)">forward</button>
+</body>
+</html>

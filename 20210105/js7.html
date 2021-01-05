@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var tv = new Object();
+        tv.color ="white";
+        tv.price =300000;
+        tv.info =function(){
+            document.write("tv 색상 : "+this.color,"<br>");
+            document.write("tv 가격 : "+this.price,"<br>");
+        }
+        
+        var car = {
+            color:"black",
+            price:5000000,
+            info:function(){
+                document.write("car 색상 : "+this.color,"<br>");
+                document.write("car 가격 : "+this.price,"<br>");
+            }
+        }
+        
+        document.write("<h1>tv 객체 메서드 호출</h1>");
+        tv.info();
+        document.write("<h1>car 객체 메서드 호출</h1>");
+        car.info();
+        
+        document.write("<hr>");
+        
+        var today = new Date();
+        var nowYear = today.getFullYear();
+        var diffDate = new Date(nowYear,11,31).getTime()-today.getTime();
+        document.write("연말까지 남은 날은 "+Math.ceil(diffDate/(1000*60*60*24))+"일 입니다.","<hr>");
+        
+        var today = new Date();
+        var nowDay;
+        if(today.getDay()==0){
+            nowDay="일";
+        }else if(today.getDay()==1){
+            nowDay="월";
+        }else if(today.getDay()==2){
+            nowDay="화";
+        }else if(today.getDay()==3){
+            nowDay="수";
+        }else if(today.getDay()==4){
+            nowDay="목";
+        }else if(today.getDay()==5){
+            nowDay="금";
+        }else if(today.getDay()==6){
+            nowDay="토";
+        }
+        document.write("년 : ",today.getFullYear(),"<br>");
+        document.write("월 : ",today.getMonth()+1,"<br>");
+        document.write("일 : ",today.getDate(),"<br>");
+        document.write("요일 : ",nowDay,"<br>");
+        
+        document.write("<hr>");
+        
+        var num = 2.1234;
+        
+        var maxNum = Math.max(10,5,8,20),
+            minNum = Math.min(10,5,8,20),
+            roundNum = Math.round(num);
+            floorNum = Math.floor(num);
+            ceilNum = Math.ceil(num);
+            rndNum = Math.random();
+            piNum = Math.PI;
+        
+        document.write(maxNum,"<br>");
+        document.write(minNum,"<br>");
+        document.write(roundNum,"<br>");
+        document.write(floorNum,"<br>");
+        document.write(ceilNum,"<br>");
+        document.write(rndNum,"<br>");
+        document.write(piNum,"<br>");
+
+        document.write("<hr>");
+        
+        var arr = [30,"따르릉",true];
+        document.write("<h3>배열값 가져오기-1</h3>");
+        document.write(arr[0],"<br>");
+        document.write(arr[1],"<br>");
+        document.write(arr[2],"<br>");
+        
+        document.write("<h3>배열값 가져오기-2</h3>");
+        for(var i=0; i<arr.length;i++){
+            document.write(arr[i],"<br>");
+        }
+        
+        document.write("<h3>배열값 가져오기-3</h3>");
+        for(i in arr){
+            document.write(arr[i],"<br>");
+        }
+        
+        document.write("<hr>");
+        
+        var arr1 = ["가","나","다","라"];
+        var arr2 =  [1,2,3,4];
+        
+        document.write("concat ",arr1.concat(arr2),"<br>");
+        document.write("join ",arr1.join("-"),"<br>");
+        document.write("reverse ",arr1.reverse(),"<br>");
+        document.write("reverse and sort ",arr1.reverse().sort(),"<br>");
+        document.write("slice ",arr1.slice(2,3),"<br>");
+        document.write("splice ",arr1.splice(2,1,"카","타"),"<br>");
+        document.write("splice ",arr1,"<br>");
+        document.write("pop ",arr1.pop(),"<br>");
+        arr1.push("파");
+        document.write("push ",arr1,"<br>");
+        arr1.unshift("한글");
+        document.write("unshift ",arr1,"<br>");
+        document.write("shift ",arr1.shift(),"<br>");
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
