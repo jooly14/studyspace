@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input:focus{
+            background-color: pink;
+        
+        }
+        :root{
+            border: 1px solid black;
+        }
+        li:nth-of-type(3){
+            color: turquoise;
+        }
+        #ul1:target{background-color: gray;}
+        #ul2:target{background-color: yellow;}
+        ul:not(#ul2){
+            border: 2px dotted black;
+        }
+        p::first-letter{
+            color: chartreuse;
+        } 
+        p::first-line{
+            color: brown;
+        }
+        #ul1 li:first-child::after{
+            font-size: 39px;
+            color: red;
+            content: "ddddd";
+        }
+        li:nth-child(2n){
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <a href="#ul2" >ul2</a><br>
+    <a href="#ul1" >ul1</a>
+    <ul id="ul1">
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+    </ul>
+    <ul id="ul2">
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+    </ul>
+    <p>sfdjfjakldjf skdfjlksadj saf kljasl<br>
+    jakfjasldj sakjflkd
+    </p>
+</body>
+</html>
