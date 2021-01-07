@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrap{
+         width: 300px;
+            height: 250px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .base-rec{
+            background-color: cadetblue;
+            width: 100px;
+            height: 100px;
+        }
+        .top-rec{
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            transition: all, 3s;
+             transform-origin: left top;
+        }
+        .top-rec:hover{
+            transform: rotate(-45deg);
+            
+        }
+        .place2{
+            justify-content: flex-start;
+            padding-left: 30px;
+            height: 200px;
+        }
+        .stretch-rec{
+            width: 30px;
+            height: 30px;
+            background-color: cadetblue;
+            transition: all, 3s;
+             transform-origin: left top;
+        }
+        .stretch-rec:hover{
+            background-color: yellowgreen;
+            transform: scaleX(7);
+           
+        }
+        .img-rotate img{
+            width: 150px;
+            
+        }
+        .img-rotate{
+            transition: all, 3s;
+            
+        }
+        .img-rotate:hover{
+            transform: scale(2,2) rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+   <div class="wrap">
+    <div class="base-rec">
+        <div class="top-rec"></div>
+    </div>
+    </div>
+    <div class="wrap place2">
+        <div class="stretch-rec"></div>
+    </div>
+    <div class="wrap">
+        <div class="img-rotate"><img src="../20210106/bg.jpg"></div>
+    </div>
+</body>
+</html>
