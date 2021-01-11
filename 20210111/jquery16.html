@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+           $("div").animate({left:"+=500px"},2000,"linear");
+           $("div").animate({top:"+=500px"},2000,"linear");
+            $("div").queue(function(){
+               $(this).css("background-color","purple");
+                $(this).dequeue();
+            });
+           $("div").animate({left:"0px"},2000,"linear");
+           $("div").animate({top:"0px"},2000,"linear");
+        });
+    </script>
+    <style>
+        *{
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

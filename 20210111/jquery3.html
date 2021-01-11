@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            console.log($("#form_1 #chk2").prop("checked"));
+            $("#chk3").prop("checked","true");
+            console.log($("#form_1 #chk3").prop("checked"));
+            console.log($("#form_1 #se_1").prop("selectedIndex"));  console.log($("#form_1 #se_1").prop("tagName"));
+            console.log($("#form_1 #chk1").prop("tagName"));
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <form action="#" id="form_1">
+        <input type="checkbox" name="chk1" id="chk1">
+        <label for="chk1">chk1</label>
+        <input type="checkbox" name="chk2" id="chk2" checked>
+        <label for="chk2">chk2</label>
+        <input type="checkbox" name="chk3" id="chk3">
+        <label for="chk3">chk3</label>
+    <br>
+    <select name="se_1" id="se_1">
+        <option value="op_1">option1</option>
+        <option value="op_2">option2</option>
+        <option value="op_3" selected>option3</option>
+    </select>
+    </form>
+</body>
+</html>

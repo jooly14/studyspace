@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".wrap_1 p:first").text("내용");
+            $(".wrap_1 p.active").removeClass("active").addClass("on");
+            $(".wrap_1 p:eq(2) a").attr("href","http://www.naver.com");
+            $(".wrap_1 p:eq(3) input").val("Korea");
+            $(".wrap_2 p:first").after("<p>추가 after</p>");
+            $(".wrap_2 p:first").before("<p>추가 before</p>");
+            $(".wrap_3 p").unwrap().wrapInner("<strong/>");
+            $(".wrap_4 #myList li").not($(".wrap_4 #myList li:nth-child(1)")).css("background-color","yellow");
+            $(".wrap_4 #myList li:nth-child(3)").css("border"," 1px solid red");
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap_1">
+        <p>p1</p>
+        <p class="active">p2</p>
+        <p><a href="#">naver</a></p>
+        <p>
+            <input type="text" value="hello">
+        </p>
+    </div>
+    <div class="wrap_2">
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+    <div class="wrap_3">
+        <div>
+            <p>p7</p>
+            <p>p8</p>
+        </div>
+    </div>
+    <div class="wrap_4">
+        <ul id="myList">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        
+    </div>
+</body>
+</html>

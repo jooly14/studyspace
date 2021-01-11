@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+               url:"dataset.xml",
+                dataType:"xml",
+                success: function(data){
+                    var $data = $(data).find("record");
+                    if($data.length>0){
+                        var tb = $("<table/>");
+                        $.each($data,function(i,o){
+                           var $id = $(o).find("id").text(); 
+                           var $first_name = $(o).find("first_name").text(); 
+                           var $last_name = $(o).find("last_name").text(); 
+                           var $email = $(o).find("email").text(); 
+                            var row = $("<tr/>").append(
+                                 $("<td/>").text($id),
+                                        $("<td/>").text($first_name),
+                                        $("<td/>").text($last_name),
+                                        $("<td/>").text($email)
+                                
+                            );
+                            tb.append(row);
+                        });
+                        $("#list").append(tb);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="list"></div>
+</body>
+</html>

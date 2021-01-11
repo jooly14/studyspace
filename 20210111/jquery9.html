@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+           $(window).on({"scroll":function(){
+            $("#wrap1 p:nth-child(1) span").text($(this).scrollTop());   
+                $("#wrap1 p:nth-child(2) span").text($(this).scrollLeft()); 
+            }
+                         
+            });
+        });
+    </script>
+    <style>
+        *{
+            width: 2000px;
+            height: 2000px;
+            position: relative;
+        }
+        #wrap1{
+            width: 200px;
+            height: 100px;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            border: 1px solid black;
+        }
+        #wrap1 p{
+            width: 100%;
+            height: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap1">
+        <p>scrollTop:<span>0</span></p>
+        <p>scrollLeft:<span>0</span></p>
+    </div>
+    
+</body>
+</html>
