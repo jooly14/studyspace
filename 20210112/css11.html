@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+        }
+         .container div{
+            min-width: 150px;
+            min-height: 150px;
+            color: #fff;
+        }
+         .c1{
+            background-color: hotpink;
+        }
+        .c2{
+            background-color: violet;
+        }
+        .c3{
+            background-color: darkviolet;
+        }
+        .c1,.c2,.c3{
+            width: 100%;
+        }
+        @media (min-width:600px){
+             .c1{
+                width: 60%;
+                 order: 2;
+            }
+            .c2{
+                width: 40%;
+                order: 1;
+            }
+            .c3{
+                width: 100%;
+                order: 3;
+            }
+        }
+         @media (min-width:800px){
+            .c2,.c3{
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="c1">
+            <p>열 끌어놓기</p>
+        </div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+    </div>
+</body>
+</html>
