@@ -17,14 +17,12 @@
         }
         #wrap{
             position: relative;
-            height: 10000px;
         }
 /*********************************************************************/
         .p1{
             position: relative;
             width: 100%;
             height: 700px;
-            
         }
         header .back1{
             width: 100%;
@@ -77,29 +75,45 @@
         }
         .nav1 li{
             display: inline-block;
-            font-weight: bold;
             font-size: 13px;
             margin-right: 20px;
         }
 /*********************************************************************/
         .nav2{
-            z-index: 100;
+            z-index: 300;
             width: 100%;
             position: fixed;
             top: 30px;
             height: 50px;
         }
-        .nav2 ul{
-            width: 60%;
+        .nav2>ul{
+            width: 80%;
             height: 100%;
+            margin: 0 auto;
               display: flex;
-            justify-content: space-around;
+            justify-content: flex-end;
             align-items: center;
         }
-        .nav2 li{
+        .nav2>ul>.div1>li, .nav2>ul>.div1>a>li{
+            width: 15%;
             list-style: none;
             display: inline-block;
-            font-size: 18px;
+            font-size: 19px;
+            text-align: center;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+        .nav2>ul>.div1>a{
+            width: 15%;
+        }
+        .nav2>ul>.div1>a:visited{
+            color: black;
+        }
+        .nav2>ul>.div1>a:hover{
+            color: #023B47;
+        }
+        .nav2>ul>.div1>a>li{
+            width: 100%;
         }
         .navgroup .logo-img{
             z-index: 30;
@@ -107,19 +121,27 @@
             height: 50%;
             margin-top: 25px;
         }
+          .navgroup .logo-box a{
+             width: 180px;
+            height: 100%;
+              z-index: 3000;
+               position: relative;
+        }
         .navgroup .logo-box{
             width: 80%;
             height: 100%;
             margin: 0 auto;
+           
+            
         }
         .nav2 .div1{
             height: 100%;
-            width: 80%;
-            margin: 0 auto;
+            width: 90%;
              display: flex;
-            justify-content: flex-end;
+            justify-content:flex-end;
             align-items: center;
         }
+
         .navgroup{
              z-index: 100;
             width: 100%;
@@ -179,7 +201,7 @@
             justify-content: center;
             align-content: center;
             letter-spacing: 5px;
-            background-color: rgba(253,249,239,1);
+            background-color: ;
         }
         .p2 .notice-title{
             width: 60%;
@@ -286,7 +308,7 @@
             justify-content: center;
             align-content: center;
             letter-spacing: 5px;
-            background-color:#F1E5E4;
+            background-color:rgba(253,249,239,1);
         }
         .p4 h1{
             font-size: 25px;
@@ -488,31 +510,376 @@
 /*********************************************************************/
         .p-quickmenu{
             width: 100%;
-            height: 400px;
-            border: 1px solid black;
+            height: 220px;
+/*
             background-image: url("img/jess-bailey-l3N9Q27zULw-unsplash.jpg");
             background-size: 100% 100%;
+*/
+            background-color: #ACCACC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .p-quickmenu .qm1{
+            width: 120px;
+            height: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .p-quickmenu .qm1:nth-child(10){
+        }
+        .p-quickmenu img{
+             width: 100px;
+            height: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+        .p-quickmenu .menu-wrapin1,.p-quickmenu .menu-wrapin2{
+            width: 100%;
+             display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-around;
+        }
+        .p-quickmenu .menu-wrap{
+            height: 80%;
+            width: 80%;
+             display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+        }
+/*********************************************************************/
+        .navgroup .nav2 .popup{
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: white;
+            z-index: 600;
+/*            display: none;*/
+            height: 0px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid rgba(235,235,235,1);
+            transition: all .5s;
+        }
+        .navgroup .nav2>ul:hover .popup{
+            height: 500px;
+        }
+        .nav2 .popup ul{
+            border-right: 1px solid rgba(235,235,235,1);
+            width: 13.5%;
+        }
+        .nav2 .popup ul:nth-child(1){
+            border-left: 1px solid rgba(235,235,235,1);
+        }
+        .nav2 .popup ul li{
+            display: block;
+            font-size: 17px;
+            margin: 15px 0;
+            padding:0 13px;
+            position: relative;
+        }
+        .nav2 .popup .div2{
+            width: 80%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .nav2 .popup ul a{
+            color: black;
+            text-decoration: none;
+        }
+        .nav2 .popup ul li span{
+            font-size: 17px;
+            padding-bottom: 3px;
+        }
+        .nav2 .popup ul a:hover li span{
+            color:#295E52;
+            border-bottom: 2px solid;
+        }
+        
+/*********************************************************************/
+        footer{
+            height: 170px;
+            width: 100%;
+        }
+        footer .f1{
+            width: 100%;
+            height: 30px;
+            background-color: gray;
+        }
+        footer .f1 ul{
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        footer .f1 ul li{
+            font-size: 15px;
+            display: inline-block;
+            color: white;
+            width: 17%;
+            text-align: center;
+            border-left: 1px solid white;
+        }
+        footer .f1 ul li:nth-child(1){
+            border-left: none;
+        }
+        footer .f3{
+            line-height: 25px;
+            text-align: left;
+            font-size: 14px;
+            color: dimgray;
+        }
+        footer .f-img{
+            background-image: url(img/logo_copy.png);
+            background-size: 100% 100%;
+            width: 170px;
+            height: 35px;
+            margin-right: 30px;
+        }
+        footer .f2{
+            width: 50%;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+/*********************************************************************/
+        .p5{
+            width: 100%;
+            height: 400px;
+        }
+        .p5 table{
+            margin-left: 30px;
+        }
+        .p5 table td{
+            font-size: 15px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 180px;
+            display: inline-block;
+        }
+        .p5 div{
+            display: inline-block;
+        }
+        .p5 .category{
+            width: 80%;
+            height: 80%;
+            padding-top: 20px;
+/*            display: flex;*/
+/*            align-items: center;*/
+        }
+        .p5 .category ul li label{
+            font-size: 20px;
+            list-style: none;
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
+            padding-top: 8px;
+        }
+        .p5 .category input[type="radio"]{
+            display: none;
+        }
+        .p5 .category ul{
+            position: relative;
+            width: 15%;
+            height: 150px;
+        }
+        .p5 .category ul li{
+            height: 50px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .p5 .category ul li input[type="radio"]:checked~div{
+            display: flex;
+        }
+        .p5 .best,.p5 .new,.p5 .recommend{
+            width: 60%;
+            height: 100px;
+            display: flex;
+            position: absolute;
+            top: 0px;
+            left: 150px;
+            display: none;
+        }
+        .p5 .best,.p5 .recommend{
+        }
+        .p5 img{
+            width: 180px;
+            height: 220px;
+            border: 1px solid gray;
+        }
+        .p5 .wrap5{
+            width: 80%;
+            height: 100%;
+            display: flex;
+            margin: 0 auto;
+            align-content: center;
+            justify-content: center;
+            flex-flow: row wrap;
+        }
+/*********************************************************************/
+        .link-list ul li{
+            font-size: 15px;
+            list-style-type: none;
+        }
+        .link-list ul a{
+            width: 88%;
+            text-align: center;
+            color:  #023B47;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 3px;
+            padding-top: 4px;
+            background-color: white;
+        }
+        .link-list ul{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            flex-flow: row wrap;
+        }
+        .link-list2{
+            width: 70px;
+            height: 360px;
+/*
+            border-radius: 20px;
+            border: 5px solid #295E52;
+*/
+        }
+        .link-list{
+             position: fixed;
+            right:10px;
+           top: 230px;
+             z-index:300;
+            width: 70px;
+            height: 405px;
+             background-color: #295E52;
+        }
+        .link-list h1{
+            font-size: 15px;
+            width: 100%;
+            text-align: center;
+            color: white;
+           
         }
     </style>
  
 </head>
 <body>
+ 
   <div id="wrap">
-     
+    
+     <div class="link-list">
+     <h1>도서관<br>바로가기</h1>
+     <div class="link-list2">
+        
+         <ul>
+             <a href="#"><li>의창</li></a>
+             <a href="#"><li>고향의봄</li></a>
+             <a href="#"><li>명곡</li></a>
+             <a href="#"><li>성산</li></a>
+             <a href="#"><li>상남</li></a>
+            <a href="#"> <li>마산합포</li></a>
+            <a href="#"> <li>마산회원</li></a>
+            <a href="#"> <li>내서</li></a>
+            <a href="#"> <li>중리초등</li></a>
+            <a href="#"> <li>진해</li></a>
+            <a href="#"> <li>동부</li></a>
+         </ul>
+         </div>
+     </div>
      <div class="navgroup">
      <div class="logo-box">
-     <img class="logo-img" src="img/logo.png">
+         <a href="index.html"> <img class="logo-img" src="img/logo.png"></a>
      </div>
       <nav class="nav2">
-         <div class="div1">
           <ul>
-              <li>메뉴1</li>
-              <li>메뉴1</li>
-              <li>메뉴1</li>
-              <li>메뉴1</li>
-              <li>메뉴1</li>
-          </ul>
+         <div class="div1">
+              <a href="libraryuse.html"><li>도서관이용</li></a>
+              <li>도서관소개</li>
+              <li>도서관서비스</li>
+              <li>자료찾기</li>
+              <li>문화행사</li>
+              <li>참여마당</li>
           </div>
+           <div class="popup">
+             <div class="div2">
+              <ul>
+                  <a href="libraryuse.html#p2"><li><span>이용시간/휴관일</span></li></a>
+                  <a href="libraryuse.html#p3"><li><span>도서관회원가입안내</span></li></a>
+                  <a href="libraryuse.html#p4"><li><span>도서대출/반납/예약</span></li></a>
+                  <a href="libraryuse.html#p5"><li><span>도서관이용안내</span></li></a>
+                  <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
+              </ul>
+               <ul>
+                  <li>조직/업무안내</li>
+                    <li>시설/자료현황</li>
+                    <li>찾아오시는길</li>
+                   <li>제1,2자료실</li>
+                   <li>어린이자료실</li>
+                   <li>연속간행물실</li>
+                   <li>디지털자료실</li>
+                   <li>자율학습실</li>
+               </ul>
+              <ul>
+                 <li>전자도서/오디오북</li>
+                    <li>영어전자도서</li>
+                  <li>책이음서비스</li>
+                  <li>타관대출반납</li>
+                  <li>책바다(상호대차)</li>
+                  <li>책나래(장애인무료택배)</li>
+                  <li>사서에게물어보세요</li>
+                  <li>북스타트</li>
+                  <li>기타서비스</li>
+                  <li>맘편한도서관서비스</li>
+                  <li>다자녀더책서비스</li>
+              </ul>
+                <ul>
+                    <li>자료검색/예약</li>
+                    <li>도서대출베스트</li>
+                    <li>신착도서</li>
+                    <li>권장도서</li>
+                    <li>연속간행물검색</li>
+                </ul>
+                
+                <ul>
+                    <li>도서관주간</li>
+                    <li>독서의달</li>
+                    <li>독서교실</li>
+                    <li>문화강좌</li>
+                    <li>온라인수강신청</li>
+                    <li>포토갤러리</li>
+                    <li>독서회</li>
+                    <li>영화상영</li>
+                </ul>
+                <ul>
+                    <li>공지사항</li>
+                    <li>도서관일정</li>
+                    <li>도서관에바란다</li>
+                    <li>자원봉사신청</li>
+                    <li>분실물센터</li>
+                    <li>도서관견학</li>
+                    <li>도서기증</li>
+                    <li>도서관행사참여</li>
+                </ul>
+               
+                </div>
+           </div>
+          </ul>
       </nav>
       <nav class="nav1">
            <ul>
@@ -546,7 +913,33 @@
        </form>
        
     </div>
-    <div class="p-quickmenu"></div>
+    <div class="p-quickmenu">
+       <div class="menu-wrap">
+       <img src="img/time2.png">
+       <img src="img/document.png">
+       <img src="img/pen2.png">
+       <img src="img/checkbox3.png">
+       <img src="img/handshake.png">
+       <img src="img/box.png">
+       <img src="img/delivery.png">
+       <img src="img/desk2.png">
+       <img src="img/book2.png">
+       <img src="img/mom1.png">
+       <div class="menu-wrapin1"></div>
+       <div class="menu-wrapin2">
+        <div class="qm1">대출조회<br>반납연기</div>
+        <div class="qm1">도서예약<br>조회</div>
+        <div class="qm1">희망도서<br>신청</div>
+        <div class="qm1">온라인<br>수강신청</div>
+        <div class="qm1">자원봉사<br>신청</div>
+        <div class="qm1">책나래<br>장애인택배</div>
+        <div class="qm1">타관대출<br>반납</div>
+        <div class="qm1">자율학습실<br>좌석현황</div>
+        <div class="qm1">권장도서</div>
+        <div class="qm1">맘(MOM) 편한<br>도서관서비스</div>
+        </div>
+        </div>
+    </div>
     <div class="p2">
 
        <div class="notice-title"><h1>공지사항</h1><span><i class="fas fa-plus"></i></span></div>
@@ -702,8 +1095,219 @@
              </section>
              </div>
         </div>
+        <div class="p5">
+           <div class="wrap5">
+            <div class="category">
+                   <ul>
+                    <li><label for="ra1">신착도서</label>
+                      <input type="radio" id="ra1" name="radio" checked>
+                    <div class="new">
+                    <table>
+                   <tr>
+                       <td><img src="img/new1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>물 밖은 여전히 그늘의 무채색이 깨진다</td>
+                   </tr>
+                   <tr>
+                       <td>이현애</td>
+                   </tr>
+               </table>
+                  <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                
+            </div>
+                    </li>
+                    <li><label for="ra2">인기도서</label>
+                    <input type="radio" id="ra2" name="radio">
+                    <div class="best">
+               <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                  <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+            </div>
+                    </li>
+                    <li><label for="ra3">권장도서</label>
+                     <input type="radio" id="ra3" name="radio">
+                    <div class="recommend">
+                    <table>
+                   <tr>
+                       <td><img src="img/rec1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>우리 뇌를 컴퓨터에 업로드할 수 있을까?</td>
+                   </tr>
+                   <tr>
+                       <td>임창환</td>
+                   </tr>
+               </table>
+                  <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                                 <table>
+                   <tr>
+                       <td><img src="img/best1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>있어빌리티 교양수업</td>
+                   </tr>
+                   <tr>
+                       <td>소피 콜린스</td>
+                   </tr>
+               </table>
+                
+            </div>
+                    </li>
+                </ul>
+            </div>
+            
+            
+            
+            </div>
+        </div>
 
-
+        <footer>
+           <div class="f1">
+           <ul>
+               <li>개인정보처리방침</li>
+               <li>영상정보처리방침</li>
+               <li>저작권보호정책</li>
+               <li>행정서비스헌장</li>
+               <li>홈페이지오류신고</li>
+               <li>뷰어프로그램</li>
+           </ul>    
+           </div>
+           <div class="f2">
+           <div class="f-img"></div>
+            <div class="f3">
+주소: (51324) 경상남도 창원시 마산회원구 3ㆍ15대로 558(회원동) 전화번호: 055-225-7461<br>
+Copyrightⓒ Changwon City Library. All rights reserved.
+       </div>
+       </div>
+        </footer>
     
     </div>
 </body>
