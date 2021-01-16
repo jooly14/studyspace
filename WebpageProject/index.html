@@ -66,8 +66,8 @@
         
         .nav1 ul{
             margin: 0 auto;
-            min-width: 400px;
-            width: 80%;
+            width: 60%;
+            min-width: 1000px;
             height: 30px;
             display: flex;
             justify-content: flex-end;
@@ -87,7 +87,8 @@
             height: 50px;
         }
         .nav2>ul{
-            width: 80%;
+           width: 60%;
+            min-width: 1000px;
             height: 100%;
             margin: 0 auto;
               display: flex;
@@ -118,8 +119,9 @@
         .navgroup .logo-img{
             z-index: 30;
             width: 180px;
-            height: 50%;
-            margin-top: 25px;
+            height: 100%;
+            padding-top: 25px;
+            padding-bottom: 15px;
         }
           .navgroup .logo-box a{
              width: 180px;
@@ -128,7 +130,8 @@
                position: relative;
         }
         .navgroup .logo-box{
-            width: 80%;
+            width: 60%;
+            min-width: 1000px;
             height: 100%;
             margin: 0 auto;
            
@@ -143,7 +146,7 @@
         }
 
         .navgroup{
-             z-index: 100;
+           z-index: 60000;
             width: 100%;
             position: fixed;
             top: 0px;
@@ -161,7 +164,7 @@
            
         }
         .p-search .se1{
-            width: 10%;
+            width: 15%;
             height: 50px;
             font-size: 25px;
             background-color:  #023B47;
@@ -174,12 +177,13 @@
              color: white;
         }
         .p-search form{
-            width: 100%;
+           width: 60%;
+            min-width: 1000px;
             display: flex;
             justify-content: center;
         }
         .p-search input[type="search"]{
-            width: 30%;
+            width: 55%;
             font-size: 24px;
             margin: 0 5px;
         }
@@ -205,12 +209,15 @@
         }
         .p2 .notice-title{
             width: 60%;
+            min-width: 1000px;
+            margin-left: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .p2 table{
             width: 60%;
+            min-width: 1000px;
         }
         .p2 td{
             font-size: 20px;
@@ -218,7 +225,7 @@
         }
         .p2 td:nth-child(1){
             overflow: hidden;
-            text-overflow: clip;
+            text-overflow: ellipsis;
             white-space: nowrap;
         }
         .p2 td:nth-child(2){
@@ -237,7 +244,7 @@
             font-size: 20px;
         }
         .p2 span{
-            border: 3px solid black;
+            margin-right: 10px;
         }
         .p2 span i{
             font-size: 20px;
@@ -262,9 +269,17 @@
             margin-bottom: 10px;
             color : white;
         }
+        .p3 .tb-wrap{
+            margin-top: 20px;
+            width: 60%;
+            min-width: 1000px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
         .p3 table{
             table-layout: fixed;
-            width: 70%;
+            width: 30%;
             text-align: center;
         }
         .p3 table td{
@@ -293,7 +308,8 @@
         .p3 p{
             text-align: center;
             font-size: 15px;
-            width: 70%;
+            width: 60%;
+            min-width: 1000px;
             color: #F0788C;
             margin-bottom: 5px;
             font-weight: bold;
@@ -366,7 +382,7 @@
         }
         .p4 section{
             height: 260px;
-            width: 30%;
+            width:  340px;
             display: flex;
             align-content:  space-around ;
             justify-content: center;
@@ -503,8 +519,10 @@
             height: 180px;
         }
         .p4 .sec-wrap1{
-            width: 70%;
+            min-width: 1000px;
+            width: 60%;
             display: flex;
+            
             justify-content: space-around;
         }
 /*********************************************************************/
@@ -521,17 +539,18 @@
             align-items: center;
         }
         .p-quickmenu .qm1{
-            width: 120px;
+            width: 8%;
             height: 50px;
             font-size: 16px;
             font-weight: bold;
             text-align: center;
         }
         .p-quickmenu .qm1:nth-child(10){
+            font-size: 14px;
         }
         .p-quickmenu img{
-             width: 100px;
-            height: 100px;
+             width: 8%;
+            height: 90px;
             display: inline-block;
             text-align: center;
         }
@@ -545,7 +564,8 @@
         }
         .p-quickmenu .menu-wrap{
             height: 80%;
-            width: 80%;
+            width: 60%;
+            min-width: 1000px;
              display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
@@ -586,7 +606,8 @@
             position: relative;
         }
         .nav2 .popup .div2{
-            width: 80%;
+            width: 60%;
+            min-width: 1000px;
             display: flex;
             justify-content: flex-end;
         }
@@ -614,7 +635,8 @@
             background-color: gray;
         }
         footer .f1 ul{
-            width: 80%;
+              width: 60%;
+            min-width: 1000px;
             height: 100%;
             margin: 0 auto;
             display: flex;
@@ -647,6 +669,7 @@
         }
         footer .f2{
             width: 50%;
+            min-width: 1000px;
             margin: 40px auto;
             display: flex;
             justify-content: center;
@@ -658,21 +681,21 @@
             height: 400px;
         }
         .p5 table{
-            margin-left: 30px;
         }
         .p5 table td{
             font-size: 15px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
-            width: 180px;
+            width: 150px;
             display: inline-block;
         }
         .p5 div{
             display: inline-block;
+            
         }
         .p5 .category{
-            width: 80%;
+            width: 100%;
             height: 80%;
             padding-top: 20px;
 /*            display: flex;*/
@@ -686,12 +709,16 @@
             height: 100%;
             padding-top: 8px;
         }
+        .p5 .category ul li label:hover{
+            color: #295E52;
+            cursor: pointer;
+        }
         .p5 .category input[type="radio"]{
             display: none;
         }
         .p5 .category ul{
             position: relative;
-            width: 15%;
+            width: 13%;
             height: 150px;
         }
         .p5 .category ul li{
@@ -706,23 +733,26 @@
             display: flex;
         }
         .p5 .best,.p5 .new,.p5 .recommend{
-            width: 60%;
+            width: 650%;
+            min-width: 800px;
             height: 100px;
-            display: flex;
             position: absolute;
             top: 0px;
             left: 150px;
             display: none;
+            flex-flow: row wrap;
+            justify-content: space-around;
         }
         .p5 .best,.p5 .recommend{
         }
         .p5 img{
-            width: 180px;
-            height: 220px;
+            width: 150px;
+            height: 180px;
             border: 1px solid gray;
         }
         .p5 .wrap5{
-            width: 80%;
+            width: 60%;
+            min-width: 1000px;
             height: 100%;
             display: flex;
             margin: 0 auto;
@@ -776,13 +806,121 @@
             color: white;
            
         }
+        .link-list .link-top h1 i{
+             font-size: 15px;
+        }
+        .link-list .link-top a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .link-list .link-top a h1{
+            padding-top: 5px;
+        }
+        .link-list .link-top{
+            width: 100%;
+            height: 30px;
+            background-color: #295E52;
+            margin-top: 15px;
+           
+        }
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:1200px){
+            .p1 h1{
+                font-size: 40px;
+            }
+            .nav1 ul{
+                min-width: 750px;
+            }
+            .nav1 li{
+                font-size: 12px;
+            }
+            .nav2>ul, .nav2 .popup .div2{
+                min-width: 750px;
+                padding-left: 50px;
+            }
+            .nav2>ul>.div1>li, .nav2>ul>.div1>a>li{
+                font-size: 16px;
+            }
+            .navgroup .logo-img{
+                width: 150px;
+            }
+            .navgroup .logo-box{
+                min-width: 700px;
+            }
+            .p-search form{
+                min-width: 700px;
+            }
+            .p-search .se1,.p-search .se1 option,.p-search input[type="search"],.p-search input[type="submit"]{
+                font-size: 20px;
+            }
+            .p2 .notice-title{
+                min-width: 700px;
+            }
+            .p2 table,.p3 .tb-wrap,p4 .sec-wrap1,.p-quickmenu .menu-wrap,footer .f1 ul, footer .f2,.p5 .wrap5{
+                min-width: 700px;
+            }
+            .p2 td{
+                font-size: 18px;
+            }
+            .p2 h1,.p3 h1{
+                font-size: 22px;
+            }
+            .p4 section{
+                width: 100%;
+                max-width: 600px;
+                margin: 30px 0;
+            }
+            .p4 .sec-wrap1{
+                flex-flow: row wrap;
+                align-content: space-between;
+            }
+            .p4{
+                height: 1000px;
+            }
+            .p-quickmenu .qm1{
+                font-size: 13px;
+                font-weight: normal;
+            }
+            .p-quickmenu img{
+                width: 6%;
+                height: 70px;
+            }
+            .nav2 .popup ul li span,.nav2 .popup ul li{
+                font-size: 15px;
+            }
+            .navgroup .nav2>ul:hover .popup{
+            height: 600px;
+            }
+            footer .f1 ul li{
+                font-size: 13px;
+            }
+            footer .f-img{
+                width: 140px;
+                height: 25px;
+            }
+            footer .f3{
+                font-size: 12px;
+            }
+            .p5 table{
+                width: 33%;
+                margin-bottom: 50px;
+            }
+            .p5 .best,.p5 .new,.p5 .recommend{
+                width: 200%;
+                min-width: 560px;
+                justify-content: flex-start;
+            }
+            .p5{
+                height: 700px;
+            }
+        }
     </style>
  
 </head>
 <body>
- 
   <div id="wrap">
-    
      <div class="link-list">
      <h1>도서관<br>바로가기</h1>
      <div class="link-list2">
@@ -801,6 +939,7 @@
             <a href="#"> <li>동부</li></a>
          </ul>
          </div>
+         <div class="link-top"><a href="#wrap"><h1>TOP<i class="fas fa-caret-up"></i></h1></a></div>
      </div>
      <div class="navgroup">
      <div class="logo-box">
@@ -810,7 +949,7 @@
           <ul>
          <div class="div1">
               <a href="libraryuse.html"><li>도서관이용</li></a>
-              <li>도서관소개</li>
+              <a href="introduce.html"><li>도서관소개</li></a>
               <li>도서관서비스</li>
               <li>자료찾기</li>
               <li>문화행사</li>
@@ -826,14 +965,14 @@
                   <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
               </ul>
                <ul>
-                  <li>조직/업무안내</li>
-                    <li>시설/자료현황</li>
-                    <li>찾아오시는길</li>
-                   <li>제1,2자료실</li>
-                   <li>어린이자료실</li>
-                   <li>연속간행물실</li>
-                   <li>디지털자료실</li>
-                   <li>자율학습실</li>
+                 <a href="introduce.html#p1-2"><li><span>시설/자료현황</span></li></a>
+                  <a href="introduce.html#p2"><li><span>제1,2자료실</span></li></a>
+                  <a href="introduce.html#p3"><li><span>어린이자료실</span></li></a>
+                   <a href="introduce.html#p4"><li><span>연속간행물실</span></li></a>
+                   <a href="introduce.html#p5"><li><span>디지털자료실</span></li></a>
+                   <a href="introduce.html#p6"><li><span>자율학습실</span></li></a>
+                    <a href="introduce.html#p7"><li><span>조직/업무안내</span></li></a>
+                    <a href="introduce.html#p8"><li><span>찾아오시는길</span></li></a>
                </ul>
               <ul>
                  <li>전자도서/오디오북</li>
@@ -936,7 +1075,7 @@
         <div class="qm1">타관대출<br>반납</div>
         <div class="qm1">자율학습실<br>좌석현황</div>
         <div class="qm1">권장도서</div>
-        <div class="qm1">맘(MOM) 편한<br>도서관서비스</div>
+        <div class="qm1">맘(MOM)편한<br>도서관서비스</div>
         </div>
         </div>
     </div>
@@ -973,42 +1112,62 @@
         <h1>이용시간 안내</h1>
         <p>휴무일: 매주 월요일,
 설/추석 연휴, 관공서의 공휴일(일요일 제외)</p>
-        <table>
+      <div class="tb-wrap">
+       <table>
            <tr>
-               <td><span><i class="fas fa-child"></i></span></td>
-               <td><span><i class="fas fa-book"></i></span></td>
-               <td><span><i class="fas fa-chair"></i></span></td>
+              <td><span><i class="fas fa-child"></i></span></td>
            </tr>
-            <tr>
-                <td>어린이자료실<br>
+           <tr>
+              <td>어린이자료실<br>
                     디지털자료실
 
                 </td>
+           </tr>
+           <tr>
+                <td>화~일<br>
+                09:00 ~ 18:00
+                </td>
+           </tr>
+           <tr>
+                <td>225-7476,7479</td>
+            </tr>
+       </table>
+       <table>
+           <tr>
+                <td><span><i class="fas fa-book"></i></span></td>
+           </tr>
+           <tr>
+               
                 <td>제1·2자료실<br>
                 연속간행물실
                 </td>
-                <td>자율학습실
-                </td>
-            </tr>
-            <tr>
-                <td>화~일<br>
+           </tr>
+           <tr>
+               <td>화~일<br>
                 09:00 ~ 18:00
                 </td>
-                <td>화~일<br>
-                09:00 ~ 18:00
-                </td>
-                <td rowspan="3">
-                미운영
-                </td>
-                
-            </tr>
-            <tr>
-                <td>225-7476,7479</td>
+           </tr>
+           <tr>
                 <td>225-7477</td>
             </tr>
-            
-        </table>
-        
+       </table>
+       <table>
+           <tr>
+                <td><span><i class="fas fa-chair"></i></span></td>
+           </tr>
+           <tr>
+                <td>자율학습실
+                </td>
+           </tr>
+           <tr>
+              <td rowspan="3">
+                미운영
+                </td>
+           </tr>
+           <tr></tr>
+           <tr></tr>
+       </table>
+        </div>
         </div>
         <div class="p4">
            <div class="sec-wrap1">
@@ -1114,47 +1273,47 @@
                    </tr>
                </table>
                   <table>
-                   <tr>
-                       <td><img src="img/best1.jpg"></td>
+                  <tr>
+                       <td><img src="img/new1.jpg"></td>
                    </tr>
                    <tr>
-                       <td>있어빌리티 교양수업</td>
+                       <td>물 밖은 여전히 그늘의 무채색이 깨진다</td>
                    </tr>
                    <tr>
-                       <td>소피 콜린스</td>
+                       <td>이현애</td>
+                   </tr>
+               </table>
+                                 <table>
+                  <tr>
+                       <td><img src="img/new1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>물 밖은 여전히 그늘의 무채색이 깨진다</td>
+                   </tr>
+                   <tr>
+                       <td>이현애</td>
                    </tr>
                </table>
                                  <table>
                    <tr>
-                       <td><img src="img/best1.jpg"></td>
+                       <td><img src="img/new1.jpg"></td>
                    </tr>
                    <tr>
-                       <td>있어빌리티 교양수업</td>
+                       <td>물 밖은 여전히 그늘의 무채색이 깨진다</td>
                    </tr>
                    <tr>
-                       <td>소피 콜린스</td>
-                   </tr>
-               </table>
-                                 <table>
-                   <tr>
-                       <td><img src="img/best1.jpg"></td>
-                   </tr>
-                   <tr>
-                       <td>있어빌리티 교양수업</td>
-                   </tr>
-                   <tr>
-                       <td>소피 콜린스</td>
+                       <td>이현애</td>
                    </tr>
                </table>
                                  <table>
                    <tr>
-                       <td><img src="img/best1.jpg"></td>
+                       <td><img src="img/new1.jpg"></td>
                    </tr>
                    <tr>
-                       <td>있어빌리티 교양수업</td>
+                       <td>물 밖은 여전히 그늘의 무채색이 깨진다</td>
                    </tr>
                    <tr>
-                       <td>소피 콜린스</td>
+                       <td>이현애</td>
                    </tr>
                </table>
                 
@@ -1235,47 +1394,47 @@
                    </tr>
                </table>
                   <table>
-                   <tr>
-                       <td><img src="img/best1.jpg"></td>
+                 <tr>
+                       <td><img src="img/rec1.jpg"></td>
                    </tr>
                    <tr>
-                       <td>있어빌리티 교양수업</td>
+                       <td>우리 뇌를 컴퓨터에 업로드할 수 있을까?</td>
                    </tr>
                    <tr>
-                       <td>소피 콜린스</td>
-                   </tr>
-               </table>
-                                 <table>
-                   <tr>
-                       <td><img src="img/best1.jpg"></td>
-                   </tr>
-                   <tr>
-                       <td>있어빌리티 교양수업</td>
-                   </tr>
-                   <tr>
-                       <td>소피 콜린스</td>
+                       <td>임창환</td>
                    </tr>
                </table>
                                  <table>
                    <tr>
-                       <td><img src="img/best1.jpg"></td>
+                       <td><img src="img/rec1.jpg"></td>
                    </tr>
                    <tr>
-                       <td>있어빌리티 교양수업</td>
+                       <td>우리 뇌를 컴퓨터에 업로드할 수 있을까?</td>
                    </tr>
                    <tr>
-                       <td>소피 콜린스</td>
+                       <td>임창환</td>
                    </tr>
                </table>
                                  <table>
                    <tr>
-                       <td><img src="img/best1.jpg"></td>
+                       <td><img src="img/rec1.jpg"></td>
                    </tr>
                    <tr>
-                       <td>있어빌리티 교양수업</td>
+                       <td>우리 뇌를 컴퓨터에 업로드할 수 있을까?</td>
                    </tr>
                    <tr>
-                       <td>소피 콜린스</td>
+                       <td>임창환</td>
+                   </tr>
+               </table>
+                                 <table>
+                  <tr>
+                       <td><img src="img/rec1.jpg"></td>
+                   </tr>
+                   <tr>
+                       <td>우리 뇌를 컴퓨터에 업로드할 수 있을까?</td>
+                   </tr>
+                   <tr>
+                       <td>임창환</td>
                    </tr>
                </table>
                 

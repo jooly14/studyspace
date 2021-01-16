@@ -30,8 +30,8 @@
         
         .nav1 ul{
             margin: 0 auto;
-            min-width: 400px;
-            width: 80%;
+            min-width: 1000px;
+            width: 60%;
             height: 30px;
             display: flex;
             justify-content: flex-end;
@@ -51,7 +51,9 @@
             height: 50px;
         }
         .nav2>ul{
-            width: 80%;
+            min-width: 1000px;
+            width: 60%;
+
             height: 100%;
             margin: 0 auto;
               display: flex;
@@ -79,20 +81,22 @@
         .nav2>ul>.div1>a>li{
             width: 100%;
         }
-        .navgroup .logo-img{
+       .navgroup .logo-img{
             z-index: 30;
             width: 180px;
-            height: 50%;
-            margin-top: 25px;
+            height: 100%;
+            padding-top: 25px;
+            padding-bottom: 15px;
         }
-        .navgroup .logo-box a{
+          .navgroup .logo-box a{
              width: 180px;
             height: 100%;
-             position: relative;
-            z-index: 3000;
+              z-index: 3000;
+               position: relative;
         }
         .navgroup .logo-box{
-            width: 80%;
+            min-width: 1000px;
+            width: 60%;
             height: 100%;
             margin: 0 auto;
            
@@ -106,7 +110,7 @@
         }
 
         .navgroup{
-             z-index: 100;
+            z-index: 60000;
             width: 100%;
             position: fixed;
             top: 0px;
@@ -147,7 +151,8 @@
             position: relative;
         }
         .nav2 .popup .div2{
-            width: 80%;
+             min-width: 1000px;
+            width: 60%;
             display: flex;
             justify-content: flex-end;
         }
@@ -175,7 +180,8 @@
             background-color: gray;
         }
         footer .f1 ul{
-            width: 80%;
+             min-width: 1000px;
+            width: 60%;
             height: 100%;
             margin: 0 auto;
             display: flex;
@@ -207,7 +213,8 @@
             margin-right: 30px;
         }
         footer .f2{
-            width: 50%;
+             width: 50%;
+            min-width: 1000px;
             margin: 40px auto;
             display: flex;
             justify-content: center;
@@ -259,24 +266,53 @@
             color: white;
            
         }
+         .link-list .link-top h1 i{
+             font-size: 15px;
+        }
+        .link-list .link-top a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .link-list .link-top a h1{
+            padding-top: 5px;
+        }
+        .link-list .link-top{
+            width: 100%;
+            height: 30px;
+            background-color: #295E52;
+            margin-top: 15px;
+           
+        }
 /*********************************************************************/
         .p1{
             width: 100%;
-            height: 230px;
+            height: 280px;
             position: relative;
         }
+        .p1 h1{
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            color: black;
+            text-shadow: 3px 3px 1px white;
+        }
+      
         .p1 .b-img{
             width: 50%;
-            height: 150px;
+            min-width: 840px;
+            height: 200px;
             background-repeat: no-repeat;
             top: 80px;
             position: relative;
             margin: 0 auto;
-            background-image: url(img/back2.png);
+           background-image: url(img/back2.png);
             background-size: 100% 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-flow: row wrap;
         }
         .p1 .se1{
             width: 10%;
@@ -292,8 +328,10 @@
         }
         .p1 form{
             width: 100%;
+            min-width: 840px;
             display: flex;
             justify-content: center;
+            margin-bottom: 18px;
         }
         .p1 .sear-box{
             background-color: white;
@@ -318,17 +356,11 @@
             border: none;
             background-color: #ACCACC;
         }
-        .p1 h1{
-            font-size: 25px;
-            width: 100%;
-            height: 50px;
-            margin-top: 80px;
-            text-align: center;
-        }
 /*********************************************************************/
         .p2{
-            width: 100%;
-           padding-bottom: 100px;
+           width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
         }
         h2{
             font-size: 30px;
@@ -368,6 +400,7 @@
             border: 1px solid rgba(240,240,240,1);
         }
         .p2 .wrap{
+            min-width: 1000px;
             width: 60%;
             margin: 0 auto;
             display: flex;
@@ -392,12 +425,14 @@
         }
 /*********************************************************************/
         .p3{
-             width: 100%;
-           padding-bottom: 100px;
+           width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
             background-color: rgba(253,249,239,.8);
         }
         .wrap{
-             width: 60%;
+              min-width: 1000px;
+            width: 60%;
             margin: 0 auto;
             display: flex;
             flex-flow: row wrap;
@@ -435,8 +470,9 @@
         }
 /*********************************************************************/
         .p4{
-              width: 100%;
-            padding-bottom: 100px;
+            width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
         }
         .p4 ul li ol li{
             list-style-type: decimal;
@@ -446,14 +482,16 @@
         }
 /*********************************************************************/
         .p5{
-              width: 100%;
-            padding-bottom: 100px;
+            width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
             background-color: rgba(253,249,239,.8);
         }
 /*********************************************************************/
         .p6{
-              width: 100%;
-            padding-bottom: 100px;
+             width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
         }
         .p6 h4 ul{
             width: 100%;
@@ -473,6 +511,114 @@
         .p6 .tb2 tr:nth-child(1) td{
             height: 40px;
         }
+/*********************************************************************/
+        .page-index{
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(90deg, white,lightsteelblue,white);
+        }
+        .page-index .page-index2{
+            width: 60%;
+            min-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+        
+        .page-index ul{
+            width: 80%;
+            
+        }
+        .page-index ul li{
+            font-size: 20px;
+            list-style-type: none;
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+            height: 50px;
+            padding-top: 10px;
+            letter-spacing: 1px;
+            color: black;
+        }
+        .page-index ul a:hover li{
+            font-weight: bold;
+        }
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:1200px){
+             .p1 h1{
+                font-size: 35px;
+            }
+            .nav1 ul{
+                min-width: 750px;
+            }
+            .nav1 li{
+                font-size: 12px;
+            }
+            .nav2>ul, .nav2 .popup .div2{
+                min-width: 750px;
+                padding-left: 50px;
+            }
+            .nav2>ul>.div1>li, .nav2>ul>.div1>a>li{
+                font-size: 16px;
+            }
+            .navgroup .logo-img{
+                width: 150px;
+            }
+            .navgroup .logo-box,.p2 .wrap,.wrap{
+                min-width: 700px;
+            }
+            .nav2 .popup ul li span,.nav2 .popup ul li{
+                font-size: 15px;
+            }
+            .navgroup .nav2>ul:hover .popup{
+            height: 600px;
+            }
+            footer .f1 ul li{
+                font-size: 13px;
+            }
+            footer .f-img{
+                width: 140px;
+                height: 25px;
+            }
+            footer .f3{
+                font-size: 12px;
+            }
+            footer .f1 ul, footer .f2{
+                min-width: 700px;
+            }
+            table,h4,h2,h3,p{
+                width:90%;
+            }
+            .p3 ul,.p4 ul,.p5 ul,.p6 ul{
+                width:90%;
+            }
+            .page-index .page-index2{
+                min-width: 700px;
+            }
+            .page-index ul li{
+                font-size: 16px;
+                width: 33%;
+            }
+             h2{
+                font-size: 22px;
+            }
+            table tr td{
+                font-size: 16px;
+            }
+            .p2 .tb2 .red{
+                font-size: 16px;
+            }
+            table tr:nth-child(1) td, .p2 .tb2 tr:nth-child(1) td{
+                font-size: 17px;
+            }
+          
+        }
+        
     </style>
  
 </head>
@@ -498,6 +644,7 @@
             <a href="#"> <li>동부</li></a>
          </ul>
          </div>
+          <div class="link-top"><a href="#wrap"><h1>TOP<i class="fas fa-caret-up"></i></h1></a></div>
      </div>
      <div class="navgroup">
      <div class="logo-box">
@@ -507,7 +654,7 @@
           <ul>
          <div class="div1">
               <a href="libraryuse.html"><li>도서관이용</li></a>
-              <li>도서관소개</li>
+               <a href="introduce.html"><li>도서관소개</li></a>
               <li>도서관서비스</li>
               <li>자료찾기</li>
               <li>문화행사</li>
@@ -523,14 +670,14 @@
                   <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
               </ul>
                <ul>
-                  <li>조직/업무안내</li>
-                    <li>시설/자료현황</li>
-                    <li>찾아오시는길</li>
-                   <li>제1,2자료실</li>
-                   <li>어린이자료실</li>
-                   <li>연속간행물실</li>
-                   <li>디지털자료실</li>
-                   <li>자율학습실</li>
+                 <a href="introduce.html#p1-2"><li><span>시설/자료현황</span></li></a>
+                  <a href="introduce.html#p2"><li><span>제1,2자료실</span></li></a>
+                  <a href="introduce.html#p3"><li><span>어린이자료실</span></li></a>
+                   <a href="introduce.html#p4"><li><span>연속간행물실</span></li></a>
+                   <a href="introduce.html#p5"><li><span>디지털자료실</span></li></a>
+                   <a href="introduce.html#p6"><li><span>자율학습실</span></li></a>
+                    <a href="introduce.html#p7"><li><span>조직/업무안내</span></li></a>
+                    <a href="introduce.html#p8"><li><span>찾아오시는길</span></li></a>
                </ul>
               <ul>
                  <li>전자도서/오디오북</li>
@@ -589,6 +736,7 @@
         
              <div class="p1" id="p1">
                  <div class="b-img">
+                     <h1>도서관 이용</h1>
                       <form action="#">
                       <div class="sear-box">
                        <select name="se1" class="se1">
@@ -605,6 +753,21 @@
                  
                  </div>
              </div>
+                <div class="page-index">
+         <div class="page-index2">
+           
+             <ul>
+                 <a href="#p2"><li>이용시간/휴관일</li></a>
+                 <a href="#p3"><li>도서관회원가입안내</li></a>
+                 <a href="#p4"><li>도서대출/반납/예약</li></a>
+                 <a href="#p5"><li>도서관이용안내</li></a>
+                 <a href="#p6"><li>영상정보처리방침</li></a>
+
+             </ul>
+         </div>
+     </div>
+             
+             
              <div class="p2" id="p2">
                <div class="wrap">
                 <h2>이용시간/휴관일</h2>
@@ -660,7 +823,7 @@
                          <tr>
                              <td>만 14세 미만자</td>
                              <td>법정대리인 날인,<br>주민등록등본</td>
-                             <td rowspan="3">도서관 회원가입 신청서<br>(도서관 소정양식)</td>
+                             <td rowspan="3">도서관 회원가입<br>신청서<br>(도서관 소정양식)</td>
                              <td>어린이자료실(1층)</td>
                          </tr>
                          <tr>

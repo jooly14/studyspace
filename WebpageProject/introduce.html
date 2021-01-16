@@ -30,8 +30,8 @@
         
         .nav1 ul{
             margin: 0 auto;
-            min-width: 400px;
-            width: 80%;
+            min-width: 1000px;
+            width: 60%;
             height: 30px;
             display: flex;
             justify-content: flex-end;
@@ -51,7 +51,8 @@
             height: 50px;
         }
         .nav2>ul{
-            width: 80%;
+           min-width: 1000px;
+            width: 60%;
             height: 100%;
             margin: 0 auto;
               display: flex;
@@ -79,20 +80,22 @@
         .nav2>ul>.div1>a>li{
             width: 100%;
         }
-        .navgroup .logo-img{
+       .navgroup .logo-img{
             z-index: 30;
             width: 180px;
-            height: 50%;
-            margin-top: 25px;
+            height: 100%;
+            padding-top: 25px;
+            padding-bottom: 15px;
         }
-        .navgroup .logo-box a{
+          .navgroup .logo-box a{
              width: 180px;
             height: 100%;
-             position: relative;
-            z-index: 3000;
+              z-index: 3000;
+               position: relative;
         }
         .navgroup .logo-box{
-            width: 80%;
+            min-width: 1000px;
+            width: 60%;
             height: 100%;
             margin: 0 auto;
            
@@ -106,7 +109,7 @@
         }
 
         .navgroup{
-             z-index: 100;
+           z-index: 60000;
             width: 100%;
             position: fixed;
             top: 0px;
@@ -116,11 +119,11 @@
 /*********************************************************************/
                .navgroup .nav2 .popup{
             width: 100%;
-            position: absolute;
-            top: 50px;
+            position: fixed;
+            top: 80px;
             left: 0;
             background-color: white;
-            z-index: 600;
+           
 /*            display: none;*/
             height: 0px;
             overflow: hidden;
@@ -131,6 +134,7 @@
         }
         .navgroup .nav2>ul:hover .popup{
             height: 500px;
+             z-index: 60000;
         }
         .nav2 .popup ul{
             border-right: 1px solid rgba(235,235,235,1);
@@ -147,7 +151,8 @@
             position: relative;
         }
         .nav2 .popup .div2{
-            width: 80%;
+            min-width: 1000px;
+            width: 60%;
             display: flex;
             justify-content: flex-end;
         }
@@ -165,7 +170,7 @@
         }
         
 /*********************************************************************/
-        footer{
+          footer{
             height: 170px;
             width: 100%;
         }
@@ -175,7 +180,8 @@
             background-color: gray;
         }
         footer .f1 ul{
-            width: 80%;
+             min-width: 1000px;
+            width: 60%;
             height: 100%;
             margin: 0 auto;
             display: flex;
@@ -207,7 +213,8 @@
             margin-right: 30px;
         }
         footer .f2{
-            width: 50%;
+             width: 50%;
+            min-width: 1000px;
             margin: 40px auto;
             display: flex;
             justify-content: center;
@@ -259,15 +266,50 @@
             color: white;
            
         }
+         .link-list .link-top h1 i{
+             font-size: 15px;
+        }
+        .link-list .link-top a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .link-list .link-top a h1{
+            padding-top: 5px;
+        }
+        .link-list .link-top{
+            width: 100%;
+            height: 30px;
+            background-color: #295E52;
+            margin-top: 15px;
+        }
 /*********************************************************************/
         .p1{
             width: 100%;
-            height: 230px;
+            height: 280px;
             position: relative;
         }
+        .p1 h1{
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 3px 3px 1px black;
+        }
+/*
+        .p1 h1{
+            font-size: 25px;
+            width: 100%;
+            height: 50px;
+            margin-top: 80px;
+            text-align: center;
+        }
+*/
         .p1 .b-img{
             width: 50%;
-            height: 150px;
+            min-width: 840px;
+            height: 200px;
             background-repeat: no-repeat;
             top: 80px;
             position: relative;
@@ -277,6 +319,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-flow: row wrap;
         }
         .p1 .se1{
             width: 10%;
@@ -292,8 +335,10 @@
         }
         .p1 form{
             width: 100%;
+            min-width: 840px;
             display: flex;
             justify-content: center;
+            margin-bottom: 18px;
         }
         .p1 .sear-box{
             background-color: white;
@@ -318,17 +363,12 @@
             border: none;
             background-color: #ACCACC;
         }
-        .p1 h1{
-            font-size: 25px;
-            width: 100%;
-            height: 50px;
-            margin-top: 80px;
-            text-align: center;
-        }
+        
 /*********************************************************************/
-        .p2,.p3,.p4,.p5,.p6{
+        .p2,.p3,.p4,.p5,.p6,.p1-2,.p7,.p8{
             width: 100%;
-           padding-bottom: 100px;
+           padding-bottom: 50px;
+            padding-top: 80px;
         }
         h2{
             font-size: 30px;
@@ -344,34 +384,35 @@
             width: 100%;
             margin: 40px 0;
         }
-        table{
+        .p2 table{
             width: 90%;
             border-collapse: collapse;
         }
-        table td:nth-child(1){
+       .p2 table td:nth-child(1){
               background-color: lightgray;
             height: 40px;
             font-weight: bold;
             font-size: 14px;
         }
-        table td:nth-child(2),table td:nth-child(3){
+      .p2 table td:nth-child(2),table td:nth-child(3){
 /*              font-size: 17px;*/
 /*            height: 50px;*/
             width: 110px;
         }
-        table td:nth-child(1){
+       .p2 table td:nth-child(1){
             width: 50px;
         }
-        table tr:nth-child(1) td:nth-child(1){
+       .p2 table tr:nth-child(1) td:nth-child(1){
 /*            font-size: 18px;*/
         }
-        table tr td{
+       .p2 table tr td{
             font-size: 15px;
             text-align: center;
             border: 1px solid rgba(240,240,240,1);
         }
         .wrap{
             width: 60%;
+            min-width: 1000px;
             margin: 0 auto;
             display: flex;
             flex-flow: row wrap;
@@ -405,6 +446,7 @@
             justify-content: center;
             padding: 20px;
             margin-top: 50px;
+             box-shadow: 10px 10px 20px gray;
         }
         p{
             width: 80%;
@@ -416,23 +458,26 @@
             width: 80%;
             padding-left: 10px;
         }
-        .p2 img,.p3 img,.p4 img,.p5 img,.p6 img{
+        .p2 img,.p3 img,.p4 img,.p5 img,.p6 img,.p1-2 img{
             height: 150px;
         }
-        .p2 .b2 i,.p3 .b2 i,.p4 .b2 i,.p5 .b2 i,.p6 .b2 i{
+        .p2 .b2 i,.p3 .b2 i,.p4 .b2 i,.p5 .b2 i,.p6 .b2 i,.p1-2 .b2 i{
             color: deeppink;
             font-size: 30px;
             position: absolute;
             top: -3px;
             right: 20px;
         }
-        .p3 .b2 i,.p5 .b2 i{
+        .p3 .b2 i,.p5 .b2 i,.p1-2 .b2 i{
             color: darkturquoise;
         }
          .p3 ul,.p4 ul,.p5 ul,.p6 ul{
             width: 80%;
         }
-        .p3 ul li,.p4 ul li,.p5 ul li,.p6 ul li{
+        .p8 ul{
+            width: 60%;
+        }
+        .p3 ul li,.p4 ul li,.p5 ul li,.p6 ul li,.p8 ul li{
             list-style: disc;
             font-size: 15px;
             line-height: 25px;
@@ -466,6 +511,220 @@
         }
 */
 /*********************************************************************/
+        .p1-2 table,.p7 table{
+            width: 60%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            position: relative;
+        }
+        .p1-2 table tr:nth-child(1) td,.p7 table tr:nth-child(1) td{
+              background-color: lightgray;
+            height: 40px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .p1-2 table td:nth-child(4),.p7 table td:nth-child(4){
+/*              font-size: 17px;*/
+            width: 50%;
+        }
+        .p1-2 table td:nth-child(2){
+            width: 20%;
+            height: 50px;
+        }
+        .p7 table td:nth-child(2){
+            height: 50px;
+        }
+        .p1-2 table.tb2 td,.p1-2 table.tb2 tr:nth-child(1) td{
+            width: auto;
+            font-size: 15px;
+        }
+        .p1-2 table.tb2 tr:nth-child(1) td:nth-child(1){
+/*            font-size: 18px;*/
+            width: 50px;
+        }
+        .p1-2 table tr td,.p7 table tr td{
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid rgba(240,240,240,1);
+        }
+        .p1-2 h4{
+              margin: 30px 0 10px;
+            font-size: 16px;
+            width: 60%;
+        }
+        .p1-2 h4 i{
+            font-size: 16px;
+        }
+        .p1-2 table caption{
+            font-size: 13px;
+            right: 0;
+            top: -20px;
+            position: absolute;
+        }
+        .p1-2 .b2 p{
+            width: 25%;
+            height: 25px;
+            text-align: center;
+            border-right: 1px solid gray;
+        }
+        .p1-2 .b2 img{
+            height: 0px;
+            position: absolute;
+            top: 110px;
+            right: 0px;
+            z-index: 30;
+           background-color: white;
+        }
+        .p1-2 .b2 p:nth-child(5){
+            border-right: none;
+        }
+        .p1-2 .b2 p:hover{
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .p1-2 .b2 p:hover img{
+            height: 380px;
+            width: 200%;
+             padding: 10px;
+            border: 10px solid lightgray;
+        }
+        .p1-2 .b2 h4{
+            width: 90%;
+        }
+        .p1-2 .b2{
+            display: flex;
+            align-content: flex-start;
+        }
+        .p1-2 .b2 p:nth-child(6){
+            width: 90%;
+            border: none;
+            color: cadetblue;
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 60px;
+        }
+        .p1-2 h3{
+            margin-top: 100px;
+        }
+/*********************************************************************/
+        .p7 table{
+            margin-top: 50px;
+        }
+        .p8 img{
+            width: 100%;
+            max-width: 700px;
+            margin-top: 50px;
+        }
+/*********************************************************************/
+        .page-index{
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(90deg, white, lightblue,white);
+        }
+        .page-index2{
+            width: 60%;
+            min-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+        
+        .page-index ul{
+            width: 80%;
+            
+        }
+        .page-index ul li{
+            font-size: 20px;
+            list-style-type: none;
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+            height: 50px;
+            padding-top: 10px;
+            letter-spacing: 3px;
+            color: black;
+        }
+        .page-index ul a:hover li{
+            font-weight: bold;
+        }
+
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:1200px){
+             .p1 h1{
+                font-size: 35px;
+            }
+            .nav1 ul{
+                min-width: 750px;
+            }
+            .nav1 li{
+                font-size: 12px;
+            }
+            .nav2>ul, .nav2 .popup .div2{
+                min-width: 750px;
+                padding-left: 50px;
+            }
+            .nav2>ul>.div1>li, .nav2>ul>.div1>a>li{
+                font-size: 16px;
+            }
+            .navgroup .logo-img{
+                width: 150px;
+            }
+            .navgroup .logo-box,.p2 .wrap,.wrap{
+                min-width: 700px;
+            }
+            .nav2 .popup ul li span,.nav2 .popup ul li{
+                font-size: 15px;
+            }
+            .navgroup .nav2>ul:hover .popup{
+            height: 600px;
+            }
+            footer .f1 ul li{
+                font-size: 13px;
+            }
+            footer .f-img{
+                width: 140px;
+                height: 25px;
+            }
+            footer .f3{
+                font-size: 12px;
+            }
+            footer .f1 ul, footer .f2{
+                min-width: 700px;
+            }
+            table,h4,h2,h3,p{
+                width:90%;
+            }
+            .p3 ul,.p4 ul,.p5 ul,.p6 ul{
+                width:90%;
+            }
+            .page-index .page-index2{
+                min-width: 700px;
+            }
+            .page-index ul li{
+                font-size: 16px;
+                width: 33%;
+            }
+            .p1-2 table,.p7 table{
+                width: 90%;
+            }
+            h2{
+                font-size: 22px;
+            }
+            .p1-2 table tr:nth-child(1) td,.p7 table tr:nth-child(1) td{
+                font-size: 17px;
+            }
+            .p1-2 table tr td,.p7 table tr td{
+                font-size: 16px;
+            }
+            .page-index{
+                height: 150px;
+            }
+        }
         
     </style>
  
@@ -492,7 +751,9 @@
             <a href="#"> <li>동부</li></a>
          </ul>
          </div>
+          <div class="link-top"><a href="#wrap"><h1>TOP<i class="fas fa-caret-up"></i></h1></a></div>
      </div>
+     
      <div class="navgroup">
      <div class="logo-box">
     <a href="index.html"> <img class="logo-img" src="img/logo.png"></a>
@@ -501,7 +762,7 @@
           <ul>
          <div class="div1">
               <a href="libraryuse.html"><li>도서관이용</li></a>
-              <li>도서관소개</li>
+               <a href="introduce.html"><li>도서관소개</li></a>
               <li>도서관서비스</li>
               <li>자료찾기</li>
               <li>문화행사</li>
@@ -517,14 +778,14 @@
                   <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
               </ul>
                <ul>
-                  <li>조직/업무안내</li>
-                    <li>시설/자료현황</li>
-                    <li>찾아오시는길</li>
-                   <li>제1,2자료실</li>
-                   <li>어린이자료실</li>
-                   <li>연속간행물실</li>
-                   <li>디지털자료실</li>
-                   <li>자율학습실</li>
+                  <a href="introduce.html#p1-2"><li><span>시설/자료현황</span></li></a>
+                  <a href="introduce.html#p2"><li><span>제1,2자료실</span></li></a>
+                  <a href="introduce.html#p3"><li><span>어린이자료실</span></li></a>
+                   <a href="introduce.html#p4"><li><span>연속간행물실</span></li></a>
+                   <a href="introduce.html#p5"><li><span>디지털자료실</span></li></a>
+                   <a href="introduce.html#p6"><li><span>자율학습실</span></li></a>
+                    <a href="introduce.html#p7"><li><span>조직/업무안내</span></li></a>
+                    <a href="introduce.html#p8"><li><span>찾아오시는길</span></li></a>
                </ul>
               <ul>
                  <li>전자도서/오디오북</li>
@@ -583,6 +844,7 @@
         
              <div class="p1" id="p1">
                  <div class="b-img">
+                      <h1>도서관 소개</h1>
                       <form action="#">
                       <div class="sear-box">
                        <select name="se1" class="se1">
@@ -599,6 +861,253 @@
                  
                  </div>
              </div>
+             <div class="page-index">
+         <div class="page-index2">
+           
+             <ul>
+                 <a href="#p1-2"><li>시설/자료현황</li></a>
+                 <a href="#p2"><li>제1,2자료실</li></a>
+                 <a href="#p3"><li>어린이자료실</li></a>
+                 <a href="#p4"><li>연속간행물실</li></a>
+                 <a href="#p5"><li>디지털자료실</li></a>
+                 <a href="#p6"><li>자율학습실</li></a>
+                 <a href="#p7"><li>조직/업무안내</li></a>
+                 <a href="#p8"><li>찾아오시는길</li></a>
+             </ul>
+         </div>
+     </div>
+             
+             
+             
+             <div class="p1-2" id="p1-2">
+               <div class="wrap">
+                <h2>시설/자료현황</h2>
+                <div class="b1">
+                   <img src="img/library-img.png">
+                   
+                    <p><br>위치 : 창원시 마산회원구 3ㆍ15대로 558(회원동 167-1)</p>
+                    <p>구조 : 지하 1층, 지상 3층</p>
+                    <p>대지면적 : 5,173㎡</p>
+                    <p>연면적 : 2,007㎡</p>
+                    <p>총 좌석 : 404석</p>
+                </div>
+                <div class="b2">
+                  
+                   <h4>층별 안내도</h4>
+                    <p>지하 1층<img class="fac-img1" src="img/img_fac_b1.png"></p>
+                    
+                    <p>1층<img class="fac-img2" src="img/img_fac_1f.png"></p>
+                    
+                    <p>2층<img class="fac-img3" src="img/img_fac_2f.png"></p>
+                    
+                    <p>3층<img class="fac-img4" src="img/img_fac_3f.png"></p>
+                    <p>각 층마다 안내도를 보시려면 해당 층 위에 마우스를 올려보세요~</p>
+                    <i class="fas fa-bookmark"></i>
+                </div>
+                 <h3><i class="fas fa-feather-alt"></i> 층별 시설현황</h3>
+                 <table>
+                     <tr>
+                        <td>층</td>
+                         <td>시설명</td>
+                         <td>좌석수</td>
+                         <td>시설안내</td>
+                     </tr>
+                     <tr>
+                       <td rowspan="3">지하 1층</td>
+                       <td>시청각실</td>
+                       <td>52</td>
+                       <td>각종 행사 및 영화상영</td>
+                     </tr>
+                     <tr>
+                     <td>소회의실</td>
+                     <td>16</td>
+                     <td>-</td>
+                     </tr>
+                     <tr>
+                      <td>휴게실</td>
+                      <td>20</td>
+                      <td>휴식 및 자유 학습</td>
+                      </tr>
+                     <tr>
+                         <td rowspan="2">1층</td>
+                         <td>어린이자료실</td>
+                         <td>40</td>
+                         <td>유아 및 아동 도서 열람, 대출</td>
+                     </tr>
+                     <tr>
+                     <td>사무실</td>
+                     <td>-</td>
+                     <td>도서관 사무, 도서관 자료 분류 및 정리</td>
+                     </tr>
+                     <tr>
+                         <td rowspan="4">2층</td>
+                         <td>제1자료실</td>
+                         <td>-</td>
+                         <td>일반도서 열람 및 대출, 참고자료 및 향토자료 열람</td>
+                     </tr>
+                     <tr>
+                         <td>연속간행물실</td>
+                         <td>14</td>
+                         <td>신문, 잡지 등 열람</td>
+                     </tr>
+                     <tr>
+                         <td>자율학습실(여자)</td>
+                         <td>98</td>
+                         <td>개인 자율 학습</td>
+                     </tr>
+                     <tr>
+                     <td>휴게실</td>
+                     <td>-</td>
+                     <td>휴식공간</td>
+                     </tr>
+                     <tr>
+                         <td rowspan="4">3층</td>
+                         <td>제2자료실</td>
+                         <td>16</td>
+                         <td>일반도서 열람 및 대출</td>
+                     </tr>
+                     <tr>
+                         <td>디지털자료실</td>
+                         <td>34</td>
+                         <td>인터넷, 문서편집, DVD, 전자도서 이용</td>
+                     </tr>
+                     <tr>
+                         <td>자율학습실(남자)</td>
+                         <td>114</td>
+                         <td>개인 자율 학습</td>
+                     </tr>
+                     <tr>
+                         <td>휴게실</td>
+                         <td>-</td>
+                         <td>휴식 공간</td>
+                     </tr>
+                 </table>
+                 <h3><i class="fas fa-feather-alt"></i> 자료 현황</h3>
+                    <h4><i class="far fa-check-circle"></i> 도서 현황</h4>
+                     <table class="tb2">
+                        <caption>2021년 1월 10일 현재</caption>
+                         <tr>
+                             <td>구분</td>
+                             <td>총류</td>
+                             <td>철학</td>
+                             <td>종교</td>
+                             <td>사회<br>과학</td>
+                             <td>순수<br>과학</td>
+                             <td>기술<br>과학</td>
+                             <td>예술</td>
+                             <td>어학</td>
+                             <td>문학</td>
+                             <td>역사</td>
+                             <td>계</td>
+                         </tr>
+                            <tr>
+                             <td>마산<br>회원<br>도서관</td>
+                             <td>7,365</td>
+                             <td>10,890</td>
+                             <td>5,351</td>
+                             <td>32,638</td>
+                             <td>13,562</td>
+                             <td>15,201</td>
+                             <td>8,594</td>
+                             <td>11,813</td>
+                             <td>70,837</td>
+                             <td>16,138</td>
+                             <td>192,389</td>
+                         </tr>
+                     </table>
+                <h4><i class="far fa-check-circle"></i> 연속간행물 현황</h4>
+                       <table class="tb2">
+                        <caption>2021년 1월 10일 현재</caption>
+                         <tr>
+                             <td>구분</td>
+                             <td colspan="3">총계</td>
+                             <td colspan="3">잡지소계</td>
+                             <td colspan="3">국내잡지</td>
+                             <td colspan="3">국외잡지</td>
+                             <td colspan="3">신문</td>
+                             <td colspan="3">학회지</td>
+                         </tr>
+                            <tr>
+                             <td rowspan="2">계</td>
+                             <td>계</td>
+                             <td>구입</td>
+                             <td>기증</td>
+                             <td>계</td>
+                             <td>구입</td>
+                             <td>기증</td>
+                             <td>계</td>
+                             <td>구입</td>
+                             <td>기증</td>
+                             <td>계</td>
+                             <td>구입</td>
+                             <td>기증</td>
+                             <td>계</td>
+                             <td>구입</td>
+                             <td>기증</td>
+                             <td>계</td>
+                             <td>구입</td>
+                             <td>기증</td>
+                         </tr>
+                             <tr>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                         </tr>
+                     </table>
+                <h4><i class="far fa-check-circle"></i> 비도서 현황</h4>
+                        <table class="tb2">
+                        <caption>2021년 1월 10일 현재</caption>
+                         <tr>
+                             <td>구분</td>
+                             <td>비도서계</td>
+                             <td>DVD</td>
+                             <td>E-BOOK</td>
+                             <td>웹오디오북</td>
+                             <td>오디오북</td>
+                             <td>CD</td>
+                             <td>CD-ROM</td>
+                             <td>LD</td>
+                             <td>LP</td>
+                             <td>TAPE</td>
+                             <td>VT</td>
+                             <td>MAP</td>
+                         </tr>
+                            <tr>
+                             <td>총계</td>
+                             <td>6,584</td>
+                             <td>5,002</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>1,554</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>0</td>
+                             <td>28</td>
+                             <td>0</td>
+                         </tr>
+                     </table>
+                 </div>
+             </div>
+             
+             
+             
              <div class="p2" id="p2">
                <div class="wrap">
                 <h2>제1,2자료실</h2>
@@ -785,7 +1294,96 @@
                  </div>
                  </div>
              </div>
- 
+             
+             <div class="p7" id="p7">
+                 <div class="wrap">
+                     <h2>조직/업무안내</h2>
+                     <table>
+                         <tr>
+                             <td>담당명</td>
+                             <td>직원명</td>
+                             <td>전화번호</td>
+                             <td>담당업무</td>
+                         </tr>
+                         <tr>
+                             <td>관장</td>
+                             <td>이성호</td>
+                             <td>225-7460</td>
+                             <td>도서관업무 총괄</td>
+                         </tr>
+                         <tr>
+                             <td rowspan="5">관리담당</td>
+                             <td>김종식</td>
+                             <td>225-7462</td>
+                             <td>관리담당업무 총괄</td>
+                         </tr>
+                         <tr>
+                             <td>조선영</td>
+                             <td>225-7463</td>
+                             <td>예산, 회계</td>
+                         </tr>
+                         <tr>
+                             <td>최인수</td>
+                             <td>225-7464</td>
+                             <td>청사 및 시설 제반 관리</td>
+                         </tr>
+                         <tr>
+                             <td>박지혜</td>
+                             <td>225-7466</td>
+                             <td>서무</td>
+                         </tr>
+                         <tr>
+                             <td>강재규,전영기,이수정</td>
+                             <td>225-7469</td>
+                             <td>안내,치안유지</td>
+                         </tr>
+                         <tr>
+                             <td rowspan="6">사서담당</td>
+                             <td>김종범</td>
+                             <td>225-7472</td>
+                             <td>사서담당 업무 총괄</td>
+                         </tr>
+                         <tr>
+                             <td>김민화</td>
+                             <td>225-7473</td>
+                             <td>행사, 문화강좌</td>
+                         </tr>
+                         <tr>
+                             <td>김지혜</td>
+                             <td>225-7474</td>
+                             <td>자료구입,정리,통계</td>
+                         </tr>
+                         <tr>
+                             <td>강유민</td>
+                             <td>225-7467</td>
+                             <td>1,2자료실 및 연속간행물실, 기타인력관리</td>
+                         </tr>
+                         <tr>
+                             <td>박성식</td>
+                             <td>225-7476</td>
+                             <td>어린이자료실 및 어린이 문화행사 운영</td>
+                         </tr>
+                         <tr>
+                             <td>김선혜</td>
+                             <td>225-7475</td>
+                             <td>도서 정리</td>
+                         </tr>
+                     </table>
+                 </div>
+             </div>
+                          
+             <div class="p8" id="p8">
+                 <div class="wrap">
+                     <h2>찾아오시는 길</h2>
+                     <img src="img/map2.png">
+                     <h3><i class="fas fa-feather-alt"></i> 오시는 길</h3>
+                     <ul>
+                         <li>주소 : (51324) 경상남도 창원시 마산회원구 3ㆍ15대로 558(회원동)</li>
+                         <li>전화 : 055-225-7471</li>
+                         <li>팩스 : 055-225-4804</li>
+                     </ul>
+                 </div>
+             </div>
               <footer>
            <div class="f1">
            <ul>
