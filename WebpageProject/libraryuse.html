@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
@@ -17,6 +18,7 @@
         }
         #wrap{
             position: relative;
+            overflow: hidden;
         }
 /*********************************************************************/
              .nav1{
@@ -283,6 +285,12 @@
             background-color: #295E52;
             margin-top: 15px;
            
+        }
+        #link-title{
+            display: none;
+        }
+        .link-list label{
+            display: none;
         }
 /*********************************************************************/
         .p1{
@@ -618,18 +626,515 @@
             }
           
         }
-        
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:900px){
+            .link-list2{
+                height: 0px;
+                overflow: hidden;
+            }
+            .link-list{
+                height: auto;
+                border-radius: 5px;
+                bottom:180px;
+                top: auto;
+            }
+            .link-list h1.h11{
+                display: none;
+                height: 50px;
+            }
+            .link-list label{
+                display: block;
+                font-size: 15px;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding-top: 5px;
+            }
+            .link-list label:hover{
+                cursor: pointer;
+            }
+            .link-list #link-title:checked ~ .link-list2{
+                height: 350px;
+            }
+            .link-top{
+                border-radius: 0px 0px 5px 5px;
+            }
+        }
+/*********************************************************************/
+/*********************************************************************/
+        #navg-box,label[for="navg-box"]{
+            display: none;
+        }
+        .navg-box{
+            width: 0px;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            position: absolute;
+            transition: all .5s;
+            opacity: 0;
+             height: 1800%;
+        }
+        @media(max-width:800px){
+              .p-search{
+            width: 100%;
+            height: 75px;
+            background-color: #023B47;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .p-search .se1{
+            width: 15%;
+            height: 50px;
+            font-size: 25px;
+            background-color:  #023B47;
+            border: none;
+             color: white;
+            min-width: 130px;
+        }
+        .p-search .se1 option{
+            font-size: 24px;
+             color: white;
+        }
+        .p-search form{
+           width: 60%;
+            min-width: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+        .p-search input[type="search"]{
+            width: 55%;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .p-search input[type="submit"]{
+            width: 8%;
+            font-size: 24px;
+            color: white;
+            border: 2px solid white;
+            background-color: transparent;
+        }
+            .navgroup .nav1,.navgroup .nav2{
+                display: none;
+            }
+            .navgroup label[for="navg-box"]{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                width: 50px;
+                height: 50px;
+            }
+            .navgroup label[for="navg-box"]:hover{
+                cursor: pointer;
+            }
+            .navgroup label[for="navg-box"] i{
+                font-size: 30px;
+            }
+            .navgroup{
+                height: 50px;
+            }
+            .navgroup .logo-box{
+                height: 100%;
+                min-width: 500px;
+                padding: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            .navgroup .logo-img{
+                   height: 100%;
+                width: 160px;
+                padding: 8px;
+                margin-top: 5px;
+            }
+            .p1 img.back1{
+                padding-top: 95px;display: none;
+            }
+            .p1 h1,.p1 h1 i{
+                font-size: 16px;
+            }
+            .p1 h1{
+                border-top: 1px solid lightgray;
+                width: 100%;
+                height: 40px;
+                line-height: 35px;
+                padding-left: 10px;
+                top: 60px;
+                left: 0px;
+            }
+            .p1{
+                height: 100px;
+            }
+            #wrap>.p-search{
+                display: none;
+            }
+            .navgroup #navg-box:checked ~ .navg-box{
+                width: 100%;
+               
+                z-index: 30000;
+                background-color: #023B47;
+                display: block;
+                opacity: 1;
+            }
+            .navg-box i{
+                color: white;
+            }
+            .navg-box label[for="navg-box"]{
+                top: 0;
+            }
+            .navg-box .nav3 ul li{
+                font-size: 14px;
+                display: inline-block;
+                color: white;
+                font-weight: bold;
+            }
+            .navg-box .nav3 ul{
+                padding-top: 10px;
+                padding-right: 150px;
+                border-bottom: 1px solid white;
+                display: flex;
+                width: 100%;
+                height: 45px;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .navg-box .p-search form{
+                min-width: 400px;
+            }
+            .navg-box .p-search{
+                height: 60px;
+                
+            }
+            .navg-box .p-search form select.se1{
+                height: 30px;
+            }
+            .navg-box .p-search form select.se1,.navg-box .p-search form select.se1 option,.navg-box .p-search form input{
+                font-size: 16px;
+            }
+            .navg-box .p-search form select.se1{
+                width: 10%;
+                min-width: 100px;
+            }
+            .navg-box .p-search form input[type="search"]{
+                width: 70%;
+            }
+            .navg-box .p-search form input[type="submit"]{
+                font-size: 16px;
+                width: 15%;
+            }
+            .navg-box .nav4 ul li{
+                font-size: 16px;
+                display: block;
+                color: white;
+                 width: 100%;
+            }
+            .navg-box .nav4 ul{
+                width: 100%;
+            }
+            .navg-box .nav4{
+                border-top:  1px solid white;
+                width: 100%;
+                min-width: 400px;
+                position: absolute;
+                top: 100px;
+            }
+            .navg-box .nav4 .div2{
+                display: none;
+            }
+            .navg-box .nav4 input[type="radio"]{
+                display: none;
+            }
+            .navg-box .nav4 label{
+                width: 30%;
+                height: 45px;
+                border-bottom: 1px solid white;
+                font-size: 16px;
+                letter-spacing: 5px;
+                font-weight: bold;
+                display: inline-block;
+                padding-top: 10px;
+                text-align: center;
+            }
+            .navg-box .nav4 label:hover{
+                cursor: pointer;
+            }
+            .navg-box .nav4 input[type="radio"]:checked ~ .div2{
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 70%;
+            }
+            .navg-box .nav4 input[type="radio"]:checked ~ label{
+                background-color: #ACCACC;
+            }
+            .navg-box .nav4 ul li ul li,.navg-box .nav4 ul li ul a li span{
+                font-size: 17px;
+                color: black;
+            }
+            .navg-box .nav4 ul li ul{
+                border: none;
+                width: 100%;
+                min-height: 270px;
+                background-color: #ACCACC;
+            }
+            .navg-box .nav4 ul li ul a li,.navg-box .nav4 ul li ul li{
+                width: 100%;
+                height: 33px;
+                border-bottom: 1px solid white;
+                text-align: right;
+                padding-right: 10px;
+            }
+            .navg-box .nav4 ul li ul a{
+                text-decoration: none;
+            }
+            .navg-box .nav4 ul li ul a li:hover span{
+                border-bottom: 2px solid #023B47;
+                color: #023B47;
+                
+            }
+            .navg-box .nav4 ul li:nth-child(3) ul li{
+                height: 30px;
+            }
+              footer .f1 ul, footer .f2{
+                min-width: 500px;
+            }
+            footer .f1 ul li{
+                font-size: 11px;
+/*                width: 14%;*/
+                width: 33%;
+                height: 25px;
+                padding-top: 3px;
+            }
+            footer .f1 ul li:nth-child(1),footer .f1 ul li:nth-child(2),footer .f1 ul li:nth-child(3){
+                border-bottom: 1px solid;
+            }
+            footer .f1 ul li:nth-child(4){
+                border: none;
+            }
+            footer .f1 ul{
+                display: flex;
+                flex-flow: row wrap;
+            }
+            footer .f-img{
+                width: 140px;
+                height: 25px;
+            }
+            footer .f1{
+                height: 50px;
+            }
+            footer .f1{
+                min-width: 500px;
+            }
+            footer .f2{
+                flex-flow: row wrap;
+            }
+            footer .f3{
+                font-size: 12px;
+                width: 100%;
+                padding: 30px;
+            }
+            footer .f-img{
+                padding: 0 auto;
+            }
+             footer{
+                height: 260px;
+            }
+            #wrap>.p1{
+                display: none;
+            }
+            .page-index{
+                position: fixed;
+                top: 50px;
+                left: 0px;
+                height: 60px;
+            }
+           .page-index .page-index2{
+                min-width: 500px;
+            }
+            .page-index ul{
+                width: 100%;
+            }
+            .page-index ul li{
+                font-size: 13px;
+                height: 25px;
+                padding: 3px 0px;
+            }
+            .p2 .wrap, .wrap{
+                min-width: 500px;
+            }
+               table,h4,h2,h3,p{
+                width:90%;
+            }
+            .p3 ul,.p4 ul,.p5 ul,.p6 ul{
+                width:90%;
+            }
+             h2{
+                font-size: 20px;
+            }
+            h3,h3 i{
+                font-size: 16px;
+            }
+            h4{
+                font-size: 14px;
+            }
+            h4 i{
+                font-size: 14px;
+            }
+            table tr td{
+                font-size: 14px;
+            }
+            .p2 .tb2 .red{
+                font-size: 14px;
+            }
+            table tr:nth-child(1) td, .p2 .tb2 tr:nth-child(1) td{
+                font-size: 15px;
+            }
+            .p6 table tr:nth-child(1) td,.p3 table tr:nth-child(1) td{
+                font-size: 15px;
+            }
+            .p3 table td,.p6 table td{
+                font-size: 14px;
+            }
+           .p3 ul li, .p4 ul li, .p5 ul li, .p6 ul li {
+                font-size: 14px;
+            }
+            p{
+                font-size: 14px;
+            }
+        } 
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:500px){
+            .navgroup .logo-box{
+                min-width: 300px;
+            }
+            .navg-box .p-search form{
+                min-width: 300px;
+                width: 90%;
+            }
+             .navg-box .p-search form select.se1,.navg-box .p-search form select.se1 option,.navg-box .p-search form input{
+                font-size: 14px;
+            }
+            .navg-box .nav3 ul{
+                padding-right: 20%;
+            }
+            .navg-box .nav3 ul li{
+                font-size: 12px;
+            }
+            .navg-box .nav4{
+                min-width: 300px;
+            }
+            .navg-box .nav4 ul li{
+                font-size: 13px;
+            }
+            .navg-box .nav4 label{
+                font-size: 14px;
+                width: 40%;
+            }
+            .navg-box .nav4 ul li ul li,.navg-box .nav4 ul li ul a li span{
+                font-size: 14px;
+            }
+             .navg-box .nav4 input[type="radio"]:checked ~ .div2{
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 60%;
+            }
+              footer .f1, footer .f1 ul, footer .f2{
+                min-width: 300px;
+            }
+             footer{
+                height: 270px;
+            }
+            footer .f1 ul {
+                width: 100%;
+            }
+            footer .f3{
+                padding: 10px;
+            }
+            .link-list,.link-list2 {
+                width: 50px;
+                bottom: 10px;
+            }
+            .link-list h1,.link-list label{
+                font-size: 12px;
+            }
+            .link-list ul li {
+                font-size: 11px;
+            }
+             .link-list #link-title:checked ~ .link-list2{
+                   height: 260px;
+            }
+             .page-index .page-index2{
+                min-width: 300px;
+                 width: 100%;
+            }
+             .page-index ul li{
+                font-size: 12px;
+            }
+            .p2 .wrap, .wrap{
+                min-width: 300px;
+                width: 100%;
+            }
+            
+              h2{
+                font-size: 18px;
+            }
+            h3,h3 i{
+                font-size: 14px;
+            }
+            h4{
+                font-size: 13px;
+            }
+            h4 i{
+                font-size: 13px;
+            }
+            table tr td{
+                font-size: 12px;
+            }
+            .p2 .tb2 .red{
+                font-size: 12px;
+            }
+            table tr:nth-child(1) td, .p2 .tb2 tr:nth-child(1) td{
+                font-size: 13px;
+            }
+            .p6 table tr:nth-child(1) td,.p3 table tr:nth-child(1) td{
+                font-size: 13px;
+            }
+            .p3 table td,.p6 table td{
+                font-size: 12px;
+            }
+           .p3 ul li, .p4 ul li, .p5 ul li, .p6 ul li {
+                font-size: 13px;
+            }
+            p{
+                font-size: 13px;
+            }
+            
+        }
+        @media(max-width:370px){
+              .page-index ul li{
+                font-size: 10px;
+            }
+        }
     </style>
  
 </head>
 <body>
-    
   <div id="wrap">
-    
      <div class="link-list">
-     <h1>도서관<br>바로가기</h1>
+     <h1 class="h11">도서관<br>바로가기</h1>
+     <input type="checkbox" id="link-title">
+     <label for="link-title">도서관<br>바로가기</label>
      <div class="link-list2">
-        
          <ul>
              <a href="#"><li>의창</li></a>
              <a href="#"><li>고향의봄</li></a>
@@ -644,11 +1149,136 @@
             <a href="#"> <li>동부</li></a>
          </ul>
          </div>
-          <div class="link-top"><a href="#wrap"><h1>TOP<i class="fas fa-caret-up"></i></h1></a></div>
+         <div class="link-top"><a href="#wrap"><h1>TOP<i class="fas fa-caret-up"></i></h1></a></div>
      </div>
      <div class="navgroup">
      <div class="logo-box">
-    <a href="index.html"> <img class="logo-img" src="img/logo.png"></a>
+         <a href="index.html"> <img class="logo-img" src="img/logo.png"></a>
+     </div>
+     <input type="checkbox" id="navg-box">
+     <label for="navg-box"><i class="fas fa-bars"></i></label>
+     <div class="navg-box">
+         <label for="navg-box"><i class="fas fa-times"></i></label>
+          <nav class="nav3">
+           <ul>
+               <li>로그인</li>
+               <li>회원가입</li>
+               <li>책이음회원가입신청</li>
+           </ul>
+        </nav>
+        <div class="p-search">
+      <form action="#">
+       <select name="se1" class="se1">
+           <option value="o1" selected>자료검색</option>
+           <option value="o2">표제</option>
+           <option value="o3">저자</option>
+           <option value="o4">발행자</option>
+           <option value="o5">키워드</option>
+       </select>
+       <input type="search" placeholder="검색어를 입력하세요">
+       <input type="submit" value="검색">
+       </form>
+        <nav class="nav4">
+          <ul>
+         <div class="div1">
+             
+              <li>
+              <input type="radio" name="nav4-ra" id="nav4-r1" checked>
+              <label for="nav4-r1">도서관이용<i class="fas fa-chevron-down"></i></label>
+              <div class="div2">
+              <ul>
+                  <a href="libraryuse.html#p2"><li><span>이용시간/휴관일</span></li></a>
+                  <a href="libraryuse.html#p3"><li><span>도서관회원가입안내</span></li></a>
+                  <a href="libraryuse.html#p4"><li><span>도서대출/반납/예약</span></li></a>
+                  <a href="libraryuse.html#p5"><li><span>도서관이용안내</span></li></a>
+                  <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
+                  </ul></div>
+              </li>
+              <li>
+               <input type="radio" name="nav4-ra" id="nav4-r2">
+              <label for="nav4-r2">도서관소개<i class="fas fa-chevron-down"></i></label>
+               <div class="div2">
+              <ul>
+                 <a href="introduce.html#p1-2"><li><span>시설/자료현황</span></li></a>
+                  <a href="introduce.html#p2"><li><span>제1,2자료실</span></li></a>
+                  <a href="introduce.html#p3"><li><span>어린이자료실</span></li></a>
+                   <a href="introduce.html#p4"><li><span>연속간행물실</span></li></a>
+                   <a href="introduce.html#p5"><li><span>디지털자료실</span></li></a>
+                   <a href="introduce.html#p6"><li><span>자율학습실</span></li></a>
+                    <a href="introduce.html#p7"><li><span>조직/업무안내</span></li></a>
+                    <a href="introduce.html#p8"><li><span>찾아오시는길</span></li></a>
+               </ul>
+              </div>
+              </li>
+              <li>
+               <input type="radio" name="nav4-ra" id="nav4-r3">
+              <label for="nav4-r3">도서관서비스<i class="fas fa-chevron-down"></i></label>
+               <div class="div2">
+              <ul>
+                 <li>전자도서/오디오북</li>
+                    <li>영어전자도서</li>
+                  <li>책이음서비스</li>
+                  <li>타관대출반납</li>
+                  <li>책바다(상호대차)</li>
+                  <li>책나래(장애인무료택배)</li>
+                  <li>사서에게물어보세요</li>
+                  <li>북스타트</li>
+                  <li>기타서비스</li>
+                  <li>맘편한도서관서비스</li>
+                  <li>다자녀더책서비스</li>
+              </ul>
+               </div>
+              </li>
+              <li>
+               <input type="radio" name="nav4-ra" id="nav4-r4">
+              <label for="nav4-r4">자료찾기<i class="fas fa-chevron-down"></i></label>
+               <div class="div2">
+               <ul>
+                    <li>자료검색/예약</li>
+                    <li>도서대출베스트</li>
+                    <li>신착도서</li>
+                    <li>권장도서</li>
+                    <li>연속간행물검색</li>
+                </ul>
+                </div>
+              </li>
+              <li>
+                <input type="radio" name="nav4-ra" id="nav4-r5">
+              <label for="nav4-r5">문화행사<i class="fas fa-chevron-down"></i></label>
+              <div class="div2">
+               <ul>
+                    <li>도서관주간</li>
+                    <li>독서의달</li>
+                    <li>독서교실</li>
+                    <li>문화강좌</li>
+                    <li>온라인수강신청</li>
+                    <li>포토갤러리</li>
+                    <li>독서회</li>
+                    <li>영화상영</li>
+                </ul>
+                </div>
+              </li>
+              <li>
+                 <input type="radio" name="nav4-ra" id="nav4-r6">
+              <label for="nav4-r6">참여마당<i class="fas fa-chevron-down"></i></label>
+                
+                 <div class="div2">
+               <ul>
+                    <li>공지사항</li>
+                    <li>도서관일정</li>
+                    <li>도서관에바란다</li>
+                    <li>자원봉사신청</li>
+                    <li>분실물센터</li>
+                    <li>도서관견학</li>
+                    <li>도서기증</li>
+                    <li>도서관행사참여</li>
+                </ul>
+              </div>
+              </li>
+          </div>
+          </ul>
+      </nav>
+    </div>
      </div>
       <nav class="nav2">
           <ul>
