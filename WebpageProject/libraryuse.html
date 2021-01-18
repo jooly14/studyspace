@@ -71,6 +71,9 @@
             white-space: nowrap;
             font-weight: bold;
         }
+         .nav2 a{
+            color: black;
+        }
         .nav2>ul>.div1>a{
             width: 15%;
         }
@@ -645,7 +648,9 @@
             }
             .link-list label{
                 display: block;
-                font-size: 15px;
+                font-size: 14px;
+                overflow: hidden;
+                text-overflow: clip;
                 text-align: center;
                 color: white;
                 font-weight: bold;
@@ -655,7 +660,7 @@
                 cursor: pointer;
             }
             .link-list #link-title:checked ~ .link-list2{
-                height: 350px;
+                height: auto;
             }
             .link-top{
                 border-radius: 0px 0px 5px 5px;
@@ -725,10 +730,10 @@
                 justify-content: center;
                 align-items: center;
                 position: absolute;
-                top: 5px;
+                top: 10px;
                 right: 5px;
                 width: 50px;
-                height: 50px;
+                height: 80px;
             }
             .navgroup label[for="navg-box"]:hover{
                 cursor: pointer;
@@ -737,7 +742,7 @@
                 font-size: 30px;
             }
             .navgroup{
-                height: 50px;
+                height: 80px;
             }
             .navgroup .logo-box{
                 height: 100%;
@@ -748,10 +753,10 @@
                 align-items: flex-start;
             }
             .navgroup .logo-img{
-                   height: 100%;
+                   height: 60%;
                 width: 160px;
                 padding: 8px;
-                margin-top: 5px;
+                margin-top: 25px;
             }
             .p1 img.back1{
                 padding-top: 95px;display: none;
@@ -765,11 +770,11 @@
                 height: 40px;
                 line-height: 35px;
                 padding-left: 10px;
-                top: 60px;
+                top: 80px;
                 left: 0px;
             }
             .p1{
-                height: 100px;
+                height: 120px;
             }
             #wrap>.p-search{
                 display: none;
@@ -795,12 +800,12 @@
                 font-weight: bold;
             }
             .navg-box .nav3 ul{
-                padding-top: 10px;
+               padding-top: 40px;
                 padding-right: 150px;
                 border-bottom: 1px solid white;
                 display: flex;
                 width: 100%;
-                height: 45px;
+                 height: 80px;
                 justify-content: space-around;
                 align-items: center;
             }
@@ -808,7 +813,7 @@
                 min-width: 400px;
             }
             .navg-box .p-search{
-                height: 60px;
+               height: 70px;
                 
             }
             .navg-box .p-search form select.se1{
@@ -842,7 +847,7 @@
                 width: 100%;
                 min-width: 400px;
                 position: absolute;
-                top: 100px;
+                top: 150px;
             }
             .navg-box .nav4 .div2{
                 display: none;
@@ -951,7 +956,7 @@
             }
             .page-index{
                 position: fixed;
-                top: 50px;
+                top: 80px;
                 left: 0px;
                 height: 60px;
             }
@@ -976,6 +981,7 @@
                 width:90%;
             }
              h2{
+                 margin-top: 80px;
                 font-size: 20px;
             }
             h3,h3 i{
@@ -1068,7 +1074,8 @@
                 font-size: 12px;
             }
             .link-list ul li {
-                font-size: 11px;
+                 font-size: 10px;
+                overflow: hidden;
             }
              .link-list #link-title:checked ~ .link-list2{
                    height: 260px;
