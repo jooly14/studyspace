@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="idh1" class="clh">h1</h1>
+    <h2 id="idh2" class="clh">h2</h2>
+    <h3 id="idh3" class="clh">h3</h3>
+    <h4 id="idh4" class="clh">h4</h4>
+    <h5 id="idh5" class="clh">h5</h5>
+    <h6 id="idh6" class="clh">h6</h6>
+    <script>
+        var sel1 = prompt("객체선택 id/class/tag");
+        var sel2 = prompt("아이디, 클래스 또는 태그명");
+        if(sel1!="id"){
+            var sel3 = prompt("몇번째?(클래스 또는 태그일 경우)");
+        }
+        var sel4 = prompt("색상변경/배경색변경/삭제");
+        if(sel4!="삭제"){
+            var sel5 = prompt("색상선택");
+        }
+        if(sel1=="id"){
+            if(sel4=="색상변경"){
+                document.querySelector("#"+sel2).style.color = sel5;
+                
+            }else if(sel4=="배경색변경"){
+                document.querySelector("#"+sel2).style.backgroundColor = sel5;
+            }else if(sel4=="삭제"){
+                document.body.removeChild(document.querySelector("#"+sel2));
+            }
+        }else if(sel1=="class"){
+             if(sel4=="색상변경"){
+                document.querySelectorAll("."+sel2)[sel3-1].style.color = sel5;
+            }else if(sel4=="배경색변경"){
+                document.querySelectorAll("."+sel2)[sel3-1].style.backgroundColor = sel5;
+            }else if(sel4=="삭제"){
+                document.body.removeChild(document.querySelectorAll("."+sel2)[sel3-1]);
+            }
+        }else if(sel1=="tag"){
+             if(sel4=="색상변경"){
+                document.querySelectorAll(sel2)[sel3-1].style.color = sel5;
+                
+            }else if(sel4=="배경색변경"){
+                document.querySelectorAll(sel2)[sel3-1].style.backgroundColor = sel5;
+            }else if(sel4=="삭제"){
+                document.body.removeChild(document.querySelectorAll(sel2)[sel3-1]);
+            }
+        }
+           
+    </script>
+</body>
+</html>
