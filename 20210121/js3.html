@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+<input type="text" onkeydown="myFunction(event)">
+
+<script>
+function myFunction(e) {
+    console.log(e.key+" "+e.keyCode+" "+e.charCode);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>나만의 스마트 에디터</title>
+    <style>
+        #txt{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            display: inline-block;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+   <div id="menu">
+       <input type="button" onclick="document.execCommand('bold')" value="굵게">
+       <input type="button" onclick="document.execCommand('italic')" value="이탤릭">
+       <input type="button" onclick="document.execCommand('underline')" value="밑줄">
+       <input type="button" onclick="document.execCommand('backcolor',true,backcolor())" value="배경색">
+       <input type="button" onclick="document.execCommand('forecolor',true,forecolor())" value="글자색">
+       <input type="button" onclick="document.execCommand('fontSize',true,fontsize())" value="글자 크기">
+       <input type="button" onclick="document.execCommand('fontName',true,fontName())" value="글꼴">
+   </div>
+    <div id="txt" contentEditable="true" onmouseup="selfunc()">
+    </div>
+    <script>
+        function fontName(){
+            return prompt("글꼴 이름","궁서체");
+        }
+        function forecolor(){
+            return prompt("글자색","blue");
+        }
+        function backcolor(){
+            return prompt("배경색","red");
+        }
+        function fontsize(){
+            return prompt("글자크기","15px");
+        }
+        function selfunc(){
+            selTxt = document.getSelection();
+        }
+        function boldtxt(){
+            selTxt = document.getSelection();
+            if(!selTxt.isCollapsed){
+                var ran = selTxt.getRangeAt(0);
+                ran.insertNode();
+                console.log(ran.endOffset);
+                console.log(ran.startContainer);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
