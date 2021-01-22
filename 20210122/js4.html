@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 500px;
+            height: 500px;
+            border: 3px solid;
+        }
+        #title{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            padding-bottom: 20px;
+        }
+        #cal{
+            width: 100%;
+            height: 450px;
+            border-top: 3px solid;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        table td{
+            text-align: center;
+            width: 50px;
+            height: 30px;
+        }
+        table td:nth-child(1){
+            color: red;
+        }
+        table td:nth-child(7){
+            color: blue;
+        }
+        #curmonth ,#curyear{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+   <div id="title">
+       <input type="button" value="이전달" onclick="previousmonth()">
+        <p id="curyear"></p>
+        <p id="curmonth"></p>
+       <input type="button" value="이번달" onclick="thismonth()">
+       <input type="button" value="다음달" onclick="nextmonth()">
+  </div>
+  
+    <div id="cal">
+        
+    </div>
+    </div>
+    <script>
+        var d = new Date();
+        var calyear = d.getFullYear();
+        var calmonth = d.getMonth()+1;
+        function thismonth(){
+            d = new Date();
+            calyear = d.getFullYear();
+            calmonth = d.getMonth() +1;
+            mkcal(calyear,calmonth);
+        
+        }
+        function previousmonth(){
+            calmonth = calmonth -1;
+            if(calmonth==0){
+                calmonth=12;
+                calyear = calyear-1;
+            }
+            mkcal(calyear,calmonth);
+        }
+        function nextmonth(){
+            calmonth = calmonth +1;
+            if(calmonth==13){
+                calmonth=1;
+                calyear = calyear+1;
+            }
+            mkcal(calyear,calmonth);
+        }
+        function mkcal(calyear, calmonth){
+            var table = document.createElement("table");
+            table.style.borderCollapse = "collapse";
+            table.style.border = "1px solid black";
+            var tr1 = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+            var td5 = document.createElement("td");
+            var td6 = document.createElement("td");
+            var td7 = document.createElement("td");
+            td1.innerHTML = "일";
+            td2.innerHTML = "월";
+            td3.innerHTML = "화";
+            td4.innerHTML = "수";
+            td5.innerHTML = "목";
+            td6.innerHTML = "금";
+            td7.innerHTML = "토";
+            tr1.appendChild(td1);
+            tr1.appendChild(td2);
+            tr1.appendChild(td3);
+            tr1.appendChild(td4);
+            tr1.appendChild(td5);
+            tr1.appendChild(td6);
+            tr1.appendChild(td7);
+            table.appendChild(tr1);
+            if(calmonth==1||calmonth==3||calmonth==5||calmonth==7||calmonth==8||calmonth==10||calmonth==12){
+                var end = 32;
+            }else if(calmonth==2){
+                var end = 29;
+            }else{
+                var end = 31;
+            }
+                var d2 = new Date(calyear,calmonth-1,1);
+                var date = 1; //달력에 넣을 날짜
+                var yo = d2.getDay();
+                tr1 = document.createElement("tr");
+                for(var i=0;i<yo;i++){
+                    td1 = document.createElement("td");
+                    td1.innerHTML = "";
+                    tr1.appendChild(td1);
+                }
+                for(var i=yo;i<7;i++){
+                    td1 = document.createElement("td");
+                    td1.innerHTML = date++;
+                    tr1.appendChild(td1);
+                }
+                table.appendChild(tr1);
+                for(;date<end;){
+                     tr1 = document.createElement("tr");
+                    for(var i=0;i<7;i++){
+                        if(date>=end){
+                              td1 = document.createElement("td");
+                            td1.innerHTML = "";
+                        }else{
+                            td1 = document.createElement("td");
+                            td1.innerHTML = date++;
+                        }
+                        tr1.appendChild(td1);   
+                    }
+                     table.appendChild(tr1);
+                }
+
+            if(document.getElementById("cal").childElementCount==1){
+                document.getElementById("cal").innerHTML =""; 
+            }
+            document.getElementById("cal").appendChild(table); 
+                document.getElementById("curmonth").innerHTML = calmonth +" 월";
+                document.getElementById("curyear").innerHTML = calyear +" 년";
+            d = new Date();
+            var tdday = document.getElementsByTagName("td");
+            var pyear = parseInt(document.getElementById("curyear").innerHTML);
+            var pmonth = parseInt(document.getElementById("curmonth").innerHTML)-1;
+            for(var i=0;i<tdday.length;i++){
+                if(tdday[i].innerHTML==d.getDate()&&pyear==d.getFullYear()&&pmonth==d.getMonth()){
+                    tdday[i].style.backgroundColor = "green";
+                }
+            }
+        }
+        
+        
+        
+        thismonth();
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        form{
+            width: 600px;
+            height: 500px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        table{
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+        table td{
+            border-bottom: 1px solid gray;
+        }
+        table p{
+            padding: 0;
+            margin: 0;
+        }
+        table tr:last-child td{
+            text-align: right;
+            padding-right: 20px;
+        }
+        input[name="selfintroduce"]{
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <form name="frm">
+       <table>
+           <tr>
+               <td><label for="id">ID</label></td>
+               <td><input type="text" name="id">
+                   <input type="button" onclick="checkID()" value="check ID">
+                   <p>(아이디는 8자 이하로 작성하세요)</p>
+               </td>
+           </tr>
+           <tr>
+               <td><label for="pw">Password</label></td>
+               <td>
+                   <input type="password" name="pw">
+                    <label for="확인">확인:</label>
+                    <input type="password" id="checkPW">
+               </td>
+           </tr>
+           <tr>
+               <td> <label for="name">Name</label></td>
+               <td><input type="text" name="name"></td>
+           </tr>
+           <tr>
+               <td><label for="email">E-mail</label></td>
+               <td>
+                    <input type="text" name="email">
+                    <input type="checkbox" name="emailopen" checked>
+                    <label for="emailopen">공개</label>
+                   
+               </td>
+           </tr>
+           <tr>
+               <td><label for="homepage">Homepage</label></td>
+               <td>
+                   <input type="text" name="homepage">
+                    <input type="checkbox" name="homepageopen" checked>
+                    <label for="homepageopen">공개</label>
+                   
+               </td>
+           </tr>
+           <tr>
+               <td><label for="icq">ICQ</label></td>
+               <td>
+                   <input type="text" name="icq">
+                    <input type="checkbox" name="icqopen" checked>
+                    <label for="icqopen">공개</label>
+               </td>
+           </tr>
+           <tr>
+               <td> <label for="mailinglist">Mailing List</label></td>
+               <td> <input type="checkbox" name="mailingjoin" checked>
+        <label for="mailingjoin">메일링 가입</label></td>
+           </tr>
+           <tr>
+               <td> <label for="selfintroduce">자기 소개서</label></td>
+               <td>
+                   <textarea name="selfintroduce" cols="40" rows="5"></textarea>
+                    <input type="checkbox" name="selfintroduceopen" checked>
+                    <label for="selfintroduceopen">공개</label>
+               </td>
+           </tr>
+           <tr>
+               <td><label for="information">개인정보 공개</label></td>
+               <td>
+                    <input type="checkbox" name="informationopen" checked>
+                    <label for="informationopen">정보 공개</label>
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2">
+                   <input type="button" value="회원가입" onclick="signup()">
+                   <input type="button" value="취소" onclick="location.href='main.html'">
+               </td>
+           </tr>
+       </table>
+     
+        
+    </form>
+    <script>
+//        console.log(document.frm.id.value);
+        function signup(){
+            var idv = document.frm.id.value; 
+            var pwv = document.frm.pw.value; 
+            var pwcv = document.getElementById("checkPW").value; 
+             var regExp = /\W/;
+            var emailv = document.frm.email.value;
+            var chk_num = pwv.search(/[0-9]/g);
+            var chk_eng = pwv.search(/[a-z]/ig);
+            var cnt= 0;
+           for(var i=0; i<emailv.length;i++){
+               if(emailv[i]=="."){
+                   cnt++;
+               }
+           } if(document.frm.id.value==""||document.frm.pw.value==""||document.getElementById("checkPW").value==""||document.frm.name.value==""||document.frm.email.value==""||document.frm.homepage.value==""||document.frm.icq.value==""||document.frm.selfintroduce.value==""){
+                alert("모든 항목을 입력해주세요");
+            }else if(idv.length>8){ //아이디 체크
+               alert("아이디는 8자이하로 작성해주세요");
+            }else if(pwv.length>12){ //비밀번호 체크
+               alert("비밀번호는 12자이하로 작성해주세요");
+            }else if(regExp.test(pwv)||chk_num<0 || chk_eng<0){ //비밀번호 체크
+                alert("비밀번호는 반드시 숫자와 영문 조합이여야합니다.")
+            }else if(pwv!=pwcv){ //비밀번호 체크
+                 alert("비밀번호와 비밀번호확인의 값이 일치하지않습니다.");
+            }else if(emailv.indexOf("@")==-1||cnt==0||cnt>2){//이메일 확인 체크
+                    alert("이메일 형식이 적절하지 않습니다.") ;
+            }else{      
+                
+                var str = "ID:"+document.frm.id.value+", ";
+                str += "PW:"+document.frm.pw.value+", ";
+                str += "Name:"+document.frm.name.value+", ";
+                str += "E-mail:"+document.frm.email.value+", ";
+                str += "E-mail공개여부:"+document.frm.emailopen.checked+", ";
+                str += "Homepage:"+document.frm.homepage.value+", ";
+                str += "Homepage공개여부:"+document.frm.homepageopen.checked+", ";
+                str += "ICQ:"+document.frm.icq.value+", ";
+                str += "ICQ공개여부:"+document.frm.icqopen.checked+", ";
+                str += "메일링가입여부:"+document.frm.mailingjoin.checked+", ";
+                str += "자기소개서:"+document.frm.selfintroduce.value+", ";
+                str += "자기소개서공개여부:"+document.frm.informationopen.checked+", ";
+                str += "개인정보공개여부:"+document.frm.informationopen.checked+", ";
+                alert(str);
+                location.href="success.html";
+            }
+            
+        }
+    </script>
+</body>
+</html>
