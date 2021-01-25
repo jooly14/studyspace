@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>안녕</h1>
+    <input type="button" value="click">
+     
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input").click(function(){
+                console.log(1);
+                $("h1").animate({
+                   fontSize :'20px',
+                    backgroundColor:'red'
+                },1000);
+                
+            });
+            
+        });
+    </script>
+</body>
+</html>
