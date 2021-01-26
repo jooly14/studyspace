@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http:/daum.net" id="daum">daum</a><br>
+    <a href="http:/naver.com" id="naver">naver</a><br>
+    <input type="button" value="append()" id="bt1">
+    <input type="button" value="prepend()" id="bt2">
+    <input type="button" value="before()" id="bt3">
+    <input type="button" value="after()" id="bt4">
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script>
+        $(document).ready(function(){
+            $("#bt1").click(function(){
+                $("#daum").append("<b>a다음</b>");
+            }) ;
+            $("#bt2").click(function(){
+                $("#daum").prepend("<b>p다음</b>");
+            }) ;
+            $("#bt3").click(function(){
+                $("#naver").before("<b>b네이버</b>");
+            }) ;
+            $("#bt4").click(function(){
+                $("#naver").after("<b>af네이버</b>");
+            }) ;
+        });
+    </script>
+</body>
+</html>
