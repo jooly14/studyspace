@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 0;
+        }
+        #wrap{
+            width: 650px;
+        }
+        header{
+            background-color: green;
+            width: 610px;
+            height: 100px;
+            margin: 5px;
+        }
+        nav{ 
+            margin: 5px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: inline-block;
+        }
+        section{
+             margin: 5px;
+            display: inline-block;
+            width: 400px;
+            height: 200px;
+            background-color: lightskyblue;
+        }
+        article{
+            background-color: yellow;
+            width: 380px;
+            height: 85px;
+            margin: 10px;
+            padding: 5px;
+        }
+        article>div{
+            background-color: orange;
+            width: 75px;
+            height: 75px;
+        }
+    </style>
+</head>
+<body>
+  <div id="wrap">
+   <header></header>
+   <nav></nav>
+   <section>
+       <article><div></div></article>
+       <article><div></div></article>
+   </section>
+   </div>
+   
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            var obj = null;
+           $(window).resize(function(){
+//               console.log($(window).width());
+               
+                if($(window).width()<600){
+                    $("header").innerWidth($(window).width()-10).innerHeight(70);
+                    var ele = $("nav").detach();
+                    ele.innerWidth($(window).width()-10).innerHeight(50);
+                    $("#wrap").append(ele);
+                    
+                    if(obj==null){
+                        obj = $("section article:nth-child(2)").detach();
+                    }
+                    $("section").innerWidth($(window).width()-10).innerHeight(600);
+                    $("section article").innerWidth($(window).width()-30).innerHeight(550);
+                    $("section article div").innerWidth($(window).width()-40).innerHeight(400);
+                    $("#wrap").css("width","auto");
+                    
+                }else{
+                     $("header").innerWidth(610).innerHeight(100);
+                    var ele = $("nav").detach();
+                    ele.innerWidth(200).innerHeight(200);
+                    $("header").after(ele);
+                    if(obj!=null){
+                        $("section").append(obj);
+                        obj=null;
+                    }
+                     $("section").innerWidth(400).innerHeight(200);
+                    $("section article").innerWidth(380).innerHeight(85);
+                    $("section article div").innerWidth(75).innerHeight(75);
+                    $("#wrap").css("width","650px");
+                    
+                } 
+           });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            display: none;
+            border: 3px solid;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        input{
+            position: fixed;
+            bottom: 0;
+            width: 100px;
+            height: 50px;
+            right: 0;
+            
+        }
+    </style>
+</head>
+<body>
+       <div id="box"></div>
+       <input type="button" value="나타나기">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $("input").click(function(){
+                if($("input").val()=="나타나기"){
+                    var w = $(window).width()/2;
+                    var h = $(window).height()/2;
+                    var x = w/2;
+                    var y = h/2;
+                    $("#box").css({"display":"block"});
+                    $("#box").outerWidth(w);
+                    $("#box").outerHeight(h);
+                    $("#box").css({"top":y,"left":x});
+                    $("#box").html("width:"+w+"<br>height:"+h+"<br>top:" +y+"<br>left:"+x);
+                    $("input").val("숨기기");
+                }else{
+                     $("#box").css({"display":"none"});
+                   $("input").val("나타나기"); 
+                }
+            }); 
+             $(window).resize(function(){
+                var w = $(window).width()/2;
+                var h = $(window).height()/2;
+                var x = w/2;
+                var y = h/2;
+                $("#box").css({"display":"block"});
+                $("#box").outerWidth(w);
+                $("#box").outerHeight(h);
+                $("#box").css({"top":y,"left":x});
+                $("#box").html("width:"+w+"<br>height:"+h+"<br>top:" +y+"<br>left:"+x);
+                   $("input").val("숨기기"); 
+            }); 
+        });
+    </script>
+</body>
+</html>
