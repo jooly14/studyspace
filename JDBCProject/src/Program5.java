@@ -20,7 +20,10 @@ public class Program5 {
 				break;
 			case 4:	//글쓰기
 				break;
-			case 5:	//종료
+			case 5:	//검색
+				console.inputSearchWord();
+				break;
+			case 6:	//종료
 				se = false;
 				System.out.println("bye~~!!");
 				break;

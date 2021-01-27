@@ -17,7 +17,7 @@ public class NoticeService {
 	private String upw = "tiger";
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	@SuppressWarnings("finally")
-	public List<Notice> getList(int page){
+	public List<Notice> getList(int page,String field, String query){
 		List<Notice> list = new ArrayList<>();
 		
 		int start = 1 + 10*(page-1);
@@ -28,11 +28,12 @@ public class NoticeService {
 		ResultSet rs = null;
 		try {
 			Class.forName(driver);
-			String sql = "SELECT * FROM NEWLEC.NOTICE_VIEW WHERE NUM BETWEEN ? AND ?";
+			String sql = "SELECT * FROM NEWLEC.NOTICE_VIEW WHERE "+field+" LIKE ? AND NUM BETWEEN ? AND ?";
 			con = DriverManager.getConnection(url,uid,upw);
 			st = con.prepareStatement(sql);
-			st.setInt(1, start);
-			st.setInt(2, end);
+			st.setString(1, "%"+query+"%");
+			st.setInt(2, start);
+			st.setInt(3, end);
 			rs = st.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("ID");
