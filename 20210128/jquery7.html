@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #wrap{
+            position: relative;
+            height: 100vh;
+            border: 1px solid black;
+            white-space:nowrap;
+            font-size: 0;
+            
+        }
+        .page{
+            display: inline-block;
+            width: 1000px;
+            height: 100%;
+            border: 1px solid red;
+            color: white;
+            font-size: 24px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: green;
+        }
+        .box3{
+            background-color: blue;
+        }
+        .box4{
+            background-color: yellow;
+        }
+        .box5{
+            background-color: pink;
+        }
+        
+    </style>
+</head>
+<body>
+     <div id="wrap">
+        <div class="page box1">1</div>
+        <div class="page box2">2</div>
+        <div class="page box3">3</div>
+        <div class="page box4">4</div>
+        <div class="page box5">5</div>
+    </div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+             $(".page").css("width",$(window).width()+"px"); 
+             $("#wrap").css("height",$(window).height()+"px"); 
+            $(window).resize(function(){
+               $(".page").css("width",$(window).width()+"px"); 
+                $("#wrap").css("height",$(window).height()+"px");
+            });
+            
+            
+            var elm = ".page";
+            $(elm).on("mousewheel DOMMouseScroll",function(e){
+                e.preventDefault();
+                var E = e.originalEvent;
+                var delta = 0;
+                if(E.detail){
+                    delta = E.detail;
+                }else{
+                    delta = E.wheelDelta;
+                    if(window.opera){
+                        delta = -delta;
+                    }
+                }
+                var moveLeft = $(this).offset().left;
+                var elmSelect = $(this).index();
+                elmSelect = $(elm).eq(elmSelect);
+                
+                if(delta>0){
+                        if(elmSelect.index()>0){
+                            moveLeft = elmSelect.prev().offset().left;
+                            
+                        }
+                        
+                }else{
+                    //밑으로
+                    if(elmSelect.index()<$(elm).length-1){
+                        moveLeft = elmSelect.next().offset().left;
+                        
+                    }
+                }
+                $("html, body").stop().animate({
+                    scrollLeft:moveLeft
+                },200);
+            });
+        });
+    </script>
+</body>
+</html>
