@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #showbox{
+            width: 200px;
+            height: 30px;
+            border: 1px solid red;
+            position: relative;
+        }
+        .news{
+            position: absolute;
+            border: 1px solid blue;
+            width: 100%;
+            top: 0;
+        }
+        .news div{
+            width: 100%;
+            height: 30px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    뉴스<input type="text">
+    <input type="button" value="등록"><br><br><br>
+    <div id="showbox">
+        <div class="news">
+            <div>오늘의 뉴스</div>
+            <div>패싸움</div>
+            <div>로빈후드</div>
+            <div>GME</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $("input[type=button]").click(function(){
+                var txt = $("input[type=text]").val();
+                var elm = $("<div></div>").text(txt);
+                $(".news").append(elm);
+            });
+            
+            setInterval(myfnc,1000);
+            function myfnc(){
+                var he = $(".news").children().eq(1).outerHeight()*-1;
+                $(".news").animate({
+                    top : he
+                },500,function(){
+                    $(this).css("top","0");
+                    var ele = $(this).children().eq(0).detach();
+                    $(this).append(ele);
+                }); 
+            }
+           
+        });
+    </script>
+</body>
+</html>
