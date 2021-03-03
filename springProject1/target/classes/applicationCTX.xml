@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean id="myCalc" class="com.joo.ex.MyCalc"/>
+	
+	<bean id="calculator" class="com.joo.ex.Calculation">
+		<!-- setter를 사용  -->
+		<property name="myCalc">
+			<!-- 위에서 생성한 빈을 필드에 주입시킴  -->
+			<ref bean="myCalc" />
+		</property>
+		<property name="firstNum" value="10"></property>
+		<property name="secondNum" value="5"></property>
+	</bean>
+
+</beans>
