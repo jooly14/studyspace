@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #wrap{
+            position: relative;
+            width: 100%;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .page{
+            width: 100%;
+            height: 100vh;
+            border: 1px solid red;
+            color: white;
+            font-size: 24px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: green;
+            position: relative;
+        }
+        .box3{
+            background-color: blue;
+        }
+        .anibox{
+            width: 100px;
+            height: 100px;
+            background-color: lightseagreen;
+            position: absolute;
+            top: 40%;
+            right: -110px;
+        }
+        .anibox:nth-child(1){
+            left: -110px;
+            background-color: lightblue
+        }
+        
+    </style>
+</head>
+<body>
+     <div id="wrap">
+        <div class="page box1">1</div>
+        <div class="page box2">2
+            <div class="anibox"></div>
+            <div class="anibox"></div>
+        </div>
+        <div class="page box3">3</div>
+    </div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            var elm = ".page";
+            var anichk = true;
+            $(elm).on("mousewheel DOMMouseScroll",function(e){
+                e.preventDefault();
+                var E = e.originalEvent;
+                var delta = 0;
+                if(E.detail){
+                    delta = E.detail;
+                }else{
+                    delta = E.wheelDelta;
+                    if(window.opera){
+                        delta = -delta;
+                    }
+                }
+                var moveTop = $(this).offset().top;
+                var elmSelect = $(this).index();
+                elmSelect = $(elm).eq(elmSelect);
+                
+               
+                
+                if(delta>0){
+                        if(elmSelect.index()>0){
+                            moveTop = elmSelect.prev().offset().top;
+                            
+                        }
+                        
+                }else{
+                    //밑으로
+                    if(elmSelect.index()<$(elm).length-1){
+                        moveTop = elmSelect.next().offset().top;
+                        
+                    }
+                }
+                $("html, body").stop().animate({
+                    scrollTop:moveTop
+                },500,function(){
+                    if(moveTop==$(elm).eq(1).offset().top){
+                     if(anichk){
+                         $(".anibox").eq(0).animate({
+                             left:$(window).width()/2-$(".anibox").eq(1).innerWidth()/2-55
+                         },500)
+                         $(".anibox").eq(1).animate({
+                             left:$(window).width()/2-$(".anibox").eq(1).innerWidth()/2+55
+                         },500)
+                     }
+                }else{
+                    $(".anibox").eq(0).css("left","-110px");
+                    $(".anibox").eq(1).css("left","auto");
+                    anichk = true;
+                }
+                });
+                
+                 
+            });
+        });
+    </script>
+</body>
+</html>

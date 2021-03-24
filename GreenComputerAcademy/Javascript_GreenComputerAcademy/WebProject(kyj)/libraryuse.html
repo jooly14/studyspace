@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+  
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 0px;
+        }
+        #wrap{
+            position: relative;
+            overflow: hidden;
+        }
+/*********************************************************************/
+             .nav1{
+            z-index: 30;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            top: 0;
+        }
+        
+        
+        .nav1 ul{
+            margin: 0 auto;
+            min-width: 1000px;
+            width: 60%;
+            height: 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .nav1 li{
+            display: inline-block;
+            font-size: 13px;
+            margin-right: 20px;
+        }
+/*********************************************************************/
+        .nav2{
+            z-index: 300;
+            width: 100%;
+            position: absolute;
+            top: 30px;
+            height: 50px;
+        }
+        .nav2>ul{
+            min-width: 1000px;
+            width: 60%;
+
+            height: 100%;
+            margin: 0 auto;
+              display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .nav2>ul>.div1>li, .nav2>ul>.div1>a>li{
+            width: 15%;
+            list-style: none;
+            display: inline-block;
+            font-size: 19px;
+            text-align: center;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+         .nav2 a{
+            color: black;
+        }
+        .nav2>ul>.div1>a{
+            width: 15%;
+        }
+        .nav2>ul>.div1>a:visited{
+            color: black;
+        }
+        .nav2>ul>.div1>a:hover{
+            color: #023B47;
+        }
+        .nav2>ul>.div1>a>li{
+            width: 100%;
+        }
+       .navgroup .logo-img{
+            z-index: 30;
+            width: 180px;
+            height: 100%;
+            padding-top: 25px;
+            padding-bottom: 15px;
+        }
+          .navgroup .logo-box a{
+             width: 180px;
+            height: 100%;
+              z-index: 3000;
+               position: relative;
+        }
+        .navgroup .logo-box{
+            min-width: 1000px;
+            width: 60%;
+            height: 100%;
+            margin: 0 auto;
+           
+        }
+        .nav2 .div1{
+            height: 100%;
+            width: 90%;
+             display: flex;
+            justify-content:flex-end;
+            align-items: center;
+        }
+
+        .navgroup{
+            z-index: 60000;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            height: 80px;
+            background-color: white;
+        }
+/*********************************************************************/
+               .navgroup .nav2 .popup{
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: white;
+            z-index: 600;
+/*            display: none;*/
+            height: 0px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid rgba(235,235,235,1);
+             transition: all .3s;
+        }
+        .navgroup .nav2>ul:hover .popup{
+            height: 500px;
+        }
+        .nav2 .popup ul{
+            border-right: 1px solid rgba(235,235,235,1);
+            width: 13.5%;
+        }
+        .nav2 .popup ul:nth-child(1){
+            border-left: 1px solid rgba(235,235,235,1);
+        }
+        .nav2 .popup ul li{
+            display: block;
+            font-size: 17px;
+            margin: 15px 0;
+            padding:0 13px;
+            position: relative;
+        }
+        .nav2 .popup .div2{
+             min-width: 1000px;
+            width: 60%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .nav2 .popup ul a{
+            color: black;
+            text-decoration: none;
+        }
+        .nav2 .popup ul li span{
+            font-size: 17px;
+            padding-bottom: 3px;
+        }
+        .nav2 .popup ul a:hover li span{
+            color:#295E52;
+            border-bottom: 2px solid;
+        }
+        
+/*********************************************************************/
+        footer{
+            height: 170px;
+            width: 100%;
+        }
+        footer .f1{
+            width: 100%;
+            height: 30px;
+            background-color: gray;
+        }
+        footer .f1 ul{
+             min-width: 1000px;
+            width: 60%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        footer .f1 ul li{
+            font-size: 15px;
+            display: inline-block;
+            color: white;
+            width: 17%;
+            text-align: center;
+            border-left: 1px solid white;
+        }
+        footer .f1 ul li:nth-child(1){
+            border-left: none;
+        }
+        footer .f3{
+            line-height: 25px;
+            text-align: left;
+            font-size: 14px;
+            color: dimgray;
+        }
+        footer .f-img{
+            background-image: url(img/logo_copy.png);
+            background-size: 100% 100%;
+            width: 170px;
+            height: 35px;
+            margin-right: 30px;
+        }
+        footer .f2{
+             width: 50%;
+            min-width: 1000px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+/*********************************************************************/
+             .link-list ul li{
+            font-size: 15px;
+            list-style-type: none;
+        }
+        .link-list ul a{
+            width: 88%;
+            text-align: center;
+            color:  #023B47;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 3px;
+            padding-top: 4px;
+            background-color: white;
+        }
+        .link-list ul{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            flex-flow: row wrap;
+        }
+        .link-list2{
+            width: 70px;
+            height: 360px;
+/*
+            border-radius: 20px;
+            border: 5px solid #295E52;
+*/
+        }
+        .link-list{
+             position: fixed;
+            right:10px;
+           top: 230px;
+             z-index:300;
+            width: 70px;
+            height: 405px;
+             background-color: #295E52;
+        }
+        .link-list h1{
+            font-size: 15px;
+            width: 100%;
+            text-align: center;
+            color: white;
+           
+        }
+         .link-list .link-top h1 i{
+             font-size: 15px;
+        }
+        .link-list .link-top a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .link-list .link-top a h1{
+            padding-top: 5px;
+        }
+        .link-list .link-top{
+            width: 100%;
+            height: 30px;
+            background-color: #295E52;
+            margin-top: 15px;
+           
+        }
+        #link-title{
+            display: none;
+        }
+        .link-list label{
+            display: none;
+        }
+/*********************************************************************/
+        .p1{
+            width: 100%;
+            height: 280px;
+            position: relative;
+        }
+        .p1 h1{
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            color: black;
+            text-shadow: 3px 3px 1px white;
+        }
+      
+        .p1 .b-img{
+            width: 50%;
+            min-width: 840px;
+            height: 200px;
+            background-repeat: no-repeat;
+            top: 80px;
+            position: relative;
+            margin: 0 auto;
+           background-image: url(img/back2.png);
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+        .p1 .se1{
+            width: 10%;
+            height: 25px;
+            font-size: 18px;
+            border: none;
+             color: black;
+            min-width: 130px;
+        }
+        .p1 .se1 option{
+            font-size: 18px;
+             color: black;
+        }
+        .p1 form{
+            width: 100%;
+            min-width: 840px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .p1 .sear-box{
+            background-color: white;
+            width: 70%;
+             display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .p1 input[type="search"]{
+            width: 70%;
+            font-size: 18px;
+            margin: 0 5px;
+            border: none;
+        }
+        .p1 input[type="submit"]{
+            width: 15%;
+            height: 100%;
+            font-size: 18px;
+            padding-bottom: 3px;
+            color: black;
+/*            border: 2px solid black;*/
+            border: none;
+            background-color: #ACCACC;
+        }
+/*********************************************************************/
+        .p2{
+           width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
+        }
+        h2{
+            font-size: 30px;
+            text-align: center;
+            width: 100%;
+            margin-top: 80px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid lightgray;
+        }
+        h3{
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            margin: 40px 0;
+        }
+        table{
+            width: 60%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        table tr:nth-child(1) td{
+              background-color: lightgray;
+            height: 40px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        table td:nth-child(1){
+/*              font-size: 17px;*/
+            height: 50px;
+        }
+        table tr:nth-child(1) td:nth-child(1){
+/*            font-size: 18px;*/
+        }
+        table tr td{
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid rgba(240,240,240,1);
+        }
+        .p2 .wrap{
+            min-width: 1000px;
+            width: 60%;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        h3 i{
+            font-size: 18px;
+            color: gray;
+        }
+        .p2 .tb2 tr:nth-child(1) td{
+            font-size: 18px;
+        }
+        .p2 .tb2 tr:nth-child(2) td{
+            height: 70px;
+        }
+        .p2 .tb2 .red{
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+/*********************************************************************/
+        .p3{
+           width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
+            background-color: rgba(253,249,239,.8);
+        }
+        .wrap{
+              min-width: 1000px;
+            width: 60%;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .p3 table td{
+            font-size: 16px;
+        }
+        .p3 ul,.p4 ul,.p5 ul,.p6 ul{
+            width: 60%;
+            padding-left: 30px;
+        }
+        .p3 ul li,.p4 ul li,.p5 ul li,.p6 ul li{
+            list-style: disc;
+            font-size: 16px;
+            margin: 5px 0;
+            line-height: 25px;
+        }
+        p{
+            width: 60%;
+            padding-left: 10px;
+            font-size: 16px;
+        }
+        h4{
+            margin: 30px 0 10px;
+            font-size: 16px;
+            width: 60%;
+        }
+        h4 i{
+            font-size: 16px;
+        }
+        h3 + h4{
+            margin-top: 0px;
+        }
+/*********************************************************************/
+        .p4{
+            width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
+        }
+        .p4 ul li ol li{
+            list-style-type: decimal;
+        }
+        .p4 ul li ol{
+            padding-left: 40px;
+        }
+/*********************************************************************/
+        .p5{
+            width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
+            background-color: rgba(253,249,239,.8);
+        }
+/*********************************************************************/
+        .p6{
+             width: 100%;
+           padding-bottom: 50px;
+            padding-top: 80px;
+        }
+        .p6 h4 ul{
+            width: 100%;
+            font-size: 16px;
+            font-weight: normal;
+            padding-left: 30px;
+        }
+        .p6 table td{
+            font-size: 15px;
+        }
+        .p6 table tr:nth-child(1) td{
+            font-size: 17px;
+        }
+        .p6 .tb2 td{
+            height: 60px;
+        }
+        .p6 .tb2 tr:nth-child(1) td{
+            height: 40px;
+        }
+/*********************************************************************/
+        .page-index{
+            position: relative;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(90deg, white,#ACCACC,white);
+        }
+        .page-index .page-index2{
+            width: 60%;
+            min-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+        
+        .page-index ul{
+            width: 80%;
+            padding-bottom: 10px;
+        }
+        .page-index ul li{
+            font-size: 15px;
+            list-style-type: none;
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+            height: 30px;
+            padding-top: 10px;
+            letter-spacing: 1px;
+            color: black;
+        }
+        .page-index ul a:hover li{
+            font-weight: bold;
+        }
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:1200px){
+             .p1 h1{
+                font-size: 35px;
+            }
+            .nav1 ul{
+                min-width: 750px;
+            }
+            .nav1 li{
+                font-size: 12px;
+            }
+            .nav2>ul, .nav2 .popup .div2{
+                min-width: 750px;
+                padding-left: 50px;
+            }
+            .nav2>ul>.div1>li, .nav2>ul>.div1>a>li{
+                font-size: 16px;
+            }
+            .navgroup .logo-img{
+                width: 150px;
+            }
+            .navgroup .logo-box,.p2 .wrap,.wrap{
+                min-width: 700px;
+            }
+            .nav2 .popup ul li span,.nav2 .popup ul li{
+                font-size: 15px;
+            }
+            .navgroup .nav2>ul:hover .popup{
+            height: 600px;
+            }
+            footer .f1 ul li{
+                font-size: 13px;
+            }
+            footer .f-img{
+                width: 140px;
+                height: 25px;
+            }
+            footer .f3{
+                font-size: 12px;
+            }
+            footer .f1 ul, footer .f2{
+                min-width: 700px;
+            }
+            table,h4,h2,h3,p{
+                width:90%;
+            }
+            .p3 ul,.p4 ul,.p5 ul,.p6 ul{
+                width:90%;
+            }
+            .page-index .page-index2{
+                min-width: 700px;
+            }
+            .page-index ul li{
+                font-size: 16px;
+                width: 33%;
+            }
+             h2{
+                font-size: 22px;
+            }
+            table tr td{
+                font-size: 16px;
+            }
+            .p2 .tb2 .red{
+                font-size: 16px;
+            }
+            table tr:nth-child(1) td, .p2 .tb2 tr:nth-child(1) td{
+                font-size: 17px;
+            }
+          
+        }
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:900px){
+            .link-list2{
+                height: 0px;
+                overflow: hidden;
+            }
+            .link-list{
+                height: auto;
+                border-radius: 5px;
+                bottom:180px;
+                top: auto;
+            }
+            .link-list h1.h11{
+                display: none;
+                height: 50px;
+            }
+            .link-list label{
+                display: block;
+                font-size: 14px;
+                overflow: hidden;
+                text-overflow: clip;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding-top: 5px;
+            }
+            .link-list label:hover{
+                cursor: pointer;
+            }
+            .link-list #link-title:checked ~ .link-list2{
+                height: auto;
+            }
+            .link-top{
+                border-radius: 0px 0px 5px 5px;
+            }
+        }
+/*********************************************************************/
+/*********************************************************************/
+        #navg-box,label[for="navg-box"]{
+            display: none;
+        }
+        .navg-box{
+            width: 0px;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            position: absolute;
+            transition: all .5s;
+            opacity: 0;
+             height: 1800%;
+        }
+        @media(max-width:800px){
+              .p-search{
+            width: 100%;
+            height: 75px;
+            background-color: #023B47;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .p-search .se1{
+            width: 15%;
+            height: 50px;
+            font-size: 25px;
+            background-color:  #023B47;
+            border: none;
+             color: white;
+            min-width: 130px;
+        }
+        .p-search .se1 option{
+            font-size: 24px;
+             color: white;
+        }
+        .p-search form{
+           width: 60%;
+            min-width: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+        .p-search input[type="search"]{
+            width: 55%;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .p-search input[type="submit"]{
+            width: 8%;
+            font-size: 24px;
+            color: white;
+            border: 2px solid white;
+            background-color: transparent;
+        }
+            .navgroup .nav1,.navgroup .nav2{
+                display: none;
+            }
+            .navgroup label[for="navg-box"]{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                width: 50px;
+                height: 80px;
+            }
+            .navgroup label[for="navg-box"]:hover{
+                cursor: pointer;
+            }
+            .navgroup label[for="navg-box"] i{
+                font-size: 30px;
+            }
+            .navgroup{
+                height: 80px;
+            }
+            .navgroup .logo-box{
+                height: 100%;
+                min-width: 500px;
+                padding: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            .navgroup .logo-img{
+                   height: 60%;
+                width: 160px;
+                padding: 8px;
+                margin-top: 25px;
+            }
+            .p1 img.back1{
+                padding-top: 95px;display: none;
+            }
+            .p1 h1,.p1 h1 i{
+                font-size: 16px;
+            }
+            .p1 h1{
+                border-top: 1px solid lightgray;
+                width: 100%;
+                height: 40px;
+                line-height: 35px;
+                padding-left: 10px;
+                top: 80px;
+                left: 0px;
+            }
+            .p1{
+                height: 120px;
+            }
+            #wrap>.p-search{
+                display: none;
+            }
+            .navgroup #navg-box:checked ~ .navg-box{
+                width: 100%;
+               
+                z-index: 30000;
+                background-color: #023B47;
+                display: block;
+                opacity: 1;
+            }
+            .navg-box i{
+                color: white;
+            }
+            .navg-box label[for="navg-box"]{
+                top: 0;
+            }
+            .navg-box .nav3 ul li{
+                font-size: 14px;
+                display: inline-block;
+                color: white;
+                font-weight: bold;
+            }
+            .navg-box .nav3 ul{
+               padding-top: 40px;
+                padding-right: 150px;
+                border-bottom: 1px solid white;
+                display: flex;
+                width: 100%;
+                 height: 80px;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .navg-box .p-search form{
+                min-width: 400px;
+            }
+            .navg-box .p-search{
+               height: 70px;
+                
+            }
+            .navg-box .p-search form select.se1{
+                height: 30px;
+            }
+            .navg-box .p-search form select.se1,.navg-box .p-search form select.se1 option,.navg-box .p-search form input{
+                font-size: 16px;
+            }
+            .navg-box .p-search form select.se1{
+                width: 10%;
+                min-width: 100px;
+            }
+            .navg-box .p-search form input[type="search"]{
+                width: 70%;
+            }
+            .navg-box .p-search form input[type="submit"]{
+                font-size: 16px;
+                width: 15%;
+            }
+            .navg-box .nav4 ul li{
+                font-size: 16px;
+                display: block;
+                color: white;
+                 width: 100%;
+            }
+            .navg-box .nav4 ul{
+                width: 100%;
+            }
+            .navg-box .nav4{
+                border-top:  1px solid white;
+                width: 100%;
+                min-width: 400px;
+                position: absolute;
+                top: 150px;
+            }
+            .navg-box .nav4 .div2{
+                display: none;
+            }
+            .navg-box .nav4 input[type="radio"]{
+                display: none;
+            }
+            .navg-box .nav4 label{
+                width: 30%;
+                height: 45px;
+                border-bottom: 1px solid white;
+                font-size: 16px;
+                letter-spacing: 5px;
+                font-weight: bold;
+                display: inline-block;
+                padding-top: 10px;
+                text-align: center;
+            }
+            .navg-box .nav4 label:hover{
+                cursor: pointer;
+            }
+            .navg-box .nav4 input[type="radio"]:checked ~ .div2{
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 70%;
+            }
+            .navg-box .nav4 input[type="radio"]:checked ~ label{
+                background-color: #ACCACC;
+            }
+            .navg-box .nav4 ul li ul li,.navg-box .nav4 ul li ul a li span{
+                font-size: 17px;
+                color: black;
+            }
+            .navg-box .nav4 ul li ul{
+                border: none;
+                width: 100%;
+                min-height: 270px;
+                background-color: #ACCACC;
+            }
+            .navg-box .nav4 ul li ul a li,.navg-box .nav4 ul li ul li{
+                width: 100%;
+                height: 33px;
+                border-bottom: 1px solid white;
+                text-align: right;
+                padding-right: 10px;
+            }
+            .navg-box .nav4 ul li ul a{
+                text-decoration: none;
+            }
+            .navg-box .nav4 ul li ul a li:hover span{
+                border-bottom: 2px solid #023B47;
+                color: #023B47;
+                
+            }
+            .navg-box .nav4 ul li:nth-child(3) ul li{
+                height: 30px;
+            }
+              footer .f1 ul, footer .f2{
+                min-width: 500px;
+            }
+            footer .f1 ul li{
+                font-size: 11px;
+/*                width: 14%;*/
+                width: 33%;
+                height: 25px;
+                padding-top: 3px;
+            }
+            footer .f1 ul li:nth-child(1),footer .f1 ul li:nth-child(2),footer .f1 ul li:nth-child(3){
+                border-bottom: 1px solid;
+            }
+            footer .f1 ul li:nth-child(4){
+                border: none;
+            }
+            footer .f1 ul{
+                display: flex;
+                flex-flow: row wrap;
+            }
+            footer .f-img{
+                width: 140px;
+                height: 25px;
+            }
+            footer .f1{
+                height: 50px;
+            }
+            footer .f1{
+                min-width: 500px;
+            }
+            footer .f2{
+                flex-flow: row wrap;
+            }
+            footer .f3{
+                font-size: 12px;
+                width: 100%;
+                padding: 30px;
+            }
+            footer .f-img{
+                padding: 0 auto;
+            }
+             footer{
+                height: 260px;
+            }
+            #wrap>.p1{
+                display: none;
+            }
+            .page-index{
+                position: fixed;
+                top: 80px;
+                left: 0px;
+                height: 60px;
+            }
+           .page-index .page-index2{
+                min-width: 500px;
+            }
+            .page-index ul{
+                width: 100%;
+            }
+            .page-index ul li{
+                font-size: 13px;
+                height: 25px;
+                padding: 3px 0px;
+            }
+            .p2 .wrap, .wrap{
+                min-width: 500px;
+            }
+               table,h4,h2,h3,p{
+                width:90%;
+            }
+            .p3 ul,.p4 ul,.p5 ul,.p6 ul{
+                width:90%;
+            }
+             h2{
+                 margin-top: 80px;
+                font-size: 20px;
+            }
+            h3,h3 i{
+                font-size: 16px;
+            }
+            h4{
+                font-size: 14px;
+            }
+            h4 i{
+                font-size: 14px;
+            }
+            table tr td{
+                font-size: 14px;
+            }
+            .p2 .tb2 .red{
+                font-size: 14px;
+            }
+            table tr:nth-child(1) td, .p2 .tb2 tr:nth-child(1) td{
+                font-size: 15px;
+            }
+            .p6 table tr:nth-child(1) td,.p3 table tr:nth-child(1) td{
+                font-size: 15px;
+            }
+            .p3 table td,.p6 table td{
+                font-size: 14px;
+            }
+           .p3 ul li, .p4 ul li, .p5 ul li, .p6 ul li {
+                font-size: 14px;
+            }
+            p{
+                font-size: 14px;
+            }
+        } 
+/*********************************************************************/
+/*********************************************************************/
+        @media(max-width:500px){
+            .navgroup .logo-box{
+                min-width: 300px;
+            }
+            .navg-box .p-search form{
+                min-width: 300px;
+                width: 90%;
+            }
+             .navg-box .p-search form select.se1,.navg-box .p-search form select.se1 option,.navg-box .p-search form input{
+                font-size: 14px;
+            }
+            .navg-box .nav3 ul{
+                padding-right: 20%;
+            }
+            .navg-box .nav3 ul li{
+                font-size: 12px;
+            }
+            .navg-box .nav4{
+                min-width: 300px;
+            }
+            .navg-box .nav4 ul li{
+                font-size: 13px;
+            }
+            .navg-box .nav4 label{
+                font-size: 14px;
+                width: 40%;
+            }
+            .navg-box .nav4 ul li ul li,.navg-box .nav4 ul li ul a li span{
+                font-size: 14px;
+            }
+             .navg-box .nav4 input[type="radio"]:checked ~ .div2{
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 60%;
+            }
+              footer .f1, footer .f1 ul, footer .f2{
+                min-width: 300px;
+            }
+             footer{
+                height: 270px;
+            }
+            footer .f1 ul {
+                width: 100%;
+            }
+            footer .f3{
+                padding: 10px;
+            }
+            .link-list,.link-list2 {
+                width: 50px;
+                bottom: 10px;
+            }
+            .link-list h1,.link-list label{
+                font-size: 12px;
+            }
+            .link-list ul li {
+                 font-size: 10px;
+                overflow: hidden;
+            }
+             .link-list #link-title:checked ~ .link-list2{
+                   height: 260px;
+            }
+             .page-index .page-index2{
+                min-width: 300px;
+                 width: 100%;
+            }
+             .page-index ul li{
+                font-size: 12px;
+            }
+            .p2 .wrap, .wrap{
+                min-width: 300px;
+                width: 100%;
+            }
+            
+              h2{
+                font-size: 18px;
+            }
+            h3,h3 i{
+                font-size: 14px;
+            }
+            h4{
+                font-size: 13px;
+            }
+            h4 i{
+                font-size: 13px;
+            }
+            table tr td{
+                font-size: 12px;
+            }
+            .p2 .tb2 .red{
+                font-size: 12px;
+            }
+            table tr:nth-child(1) td, .p2 .tb2 tr:nth-child(1) td{
+                font-size: 13px;
+            }
+            .p6 table tr:nth-child(1) td,.p3 table tr:nth-child(1) td{
+                font-size: 13px;
+            }
+            .p3 table td,.p6 table td{
+                font-size: 12px;
+            }
+           .p3 ul li, .p4 ul li, .p5 ul li, .p6 ul li {
+                font-size: 13px;
+            }
+            p{
+                font-size: 13px;
+            }
+            
+        }
+        @media(max-width:370px){
+              .page-index ul li{
+                font-size: 10px;
+            }
+        }
+    </style>
+ 
+</head>
+<body>
+  <div id="wrap">
+     <div class="link-list">
+     <h1 class="h11">도서관<br>바로가기</h1>
+     <input type="checkbox" id="link-title">
+     <label for="link-title">도서관<br>바로가기</label>
+     <div class="link-list2">
+         <ul>
+             <a href="#"><li>의창</li></a>
+             <a href="#"><li>고향의봄</li></a>
+             <a href="#"><li>명곡</li></a>
+             <a href="#"><li>성산</li></a>
+             <a href="#"><li>상남</li></a>
+            <a href="#"> <li>마산합포</li></a>
+            <a href="#"> <li>마산회원</li></a>
+            <a href="#"> <li>내서</li></a>
+            <a href="#"> <li>중리초등</li></a>
+            <a href="#"> <li>진해</li></a>
+            <a href="#"> <li>동부</li></a>
+         </ul>
+         </div>
+         <div class="link-top"><a href="#wrap"><h1>TOP<i class="fas fa-caret-up"></i></h1></a></div>
+     </div>
+     <div class="navgroup">
+     <div class="logo-box">
+         <a href="index.html"> <img class="logo-img" src="img/logo.png"></a>
+     </div>
+     <input type="checkbox" id="navg-box">
+     <label for="navg-box"><i class="fas fa-bars"></i></label>
+     <div class="navg-box">
+         <label for="navg-box"><i class="fas fa-times"></i></label>
+          <nav class="nav3">
+           <ul>
+               <li>로그인</li>
+               <li>회원가입</li>
+               <li>책이음회원가입신청</li>
+           </ul>
+        </nav>
+        <div class="p-search">
+      <form action="#">
+       <select name="se1" class="se1">
+           <option value="o1" selected>자료검색</option>
+           <option value="o2">표제</option>
+           <option value="o3">저자</option>
+           <option value="o4">발행자</option>
+           <option value="o5">키워드</option>
+       </select>
+       <input type="search" placeholder="검색어를 입력하세요">
+       <input type="submit" value="검색">
+       </form>
+        <nav class="nav4">
+          <ul>
+         <div class="div1">
+             
+              <li>
+              <input type="radio" name="nav4-ra" id="nav4-r1" checked>
+              <label for="nav4-r1">도서관이용<i class="fas fa-chevron-down"></i></label>
+              <div class="div2">
+              <ul>
+                  <a href="libraryuse.html#p2"><li><span>이용시간/휴관일</span></li></a>
+                  <a href="libraryuse.html#p3"><li><span>도서관회원가입안내</span></li></a>
+                  <a href="libraryuse.html#p4"><li><span>도서대출/반납/예약</span></li></a>
+                  <a href="libraryuse.html#p5"><li><span>도서관이용안내</span></li></a>
+                  <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
+                  </ul></div>
+              </li>
+              <li>
+               <input type="radio" name="nav4-ra" id="nav4-r2">
+              <label for="nav4-r2">도서관소개<i class="fas fa-chevron-down"></i></label>
+               <div class="div2">
+              <ul>
+                 <a href="introduce.html#p1-2"><li><span>시설/자료현황</span></li></a>
+                  <a href="introduce.html#p2"><li><span>제1,2자료실</span></li></a>
+                  <a href="introduce.html#p3"><li><span>어린이자료실</span></li></a>
+                   <a href="introduce.html#p4"><li><span>연속간행물실</span></li></a>
+                   <a href="introduce.html#p5"><li><span>디지털자료실</span></li></a>
+                   <a href="introduce.html#p6"><li><span>자율학습실</span></li></a>
+                    <a href="introduce.html#p7"><li><span>조직/업무안내</span></li></a>
+                    <a href="introduce.html#p8"><li><span>찾아오시는길</span></li></a>
+               </ul>
+              </div>
+              </li>
+              <li>
+               <input type="radio" name="nav4-ra" id="nav4-r3">
+              <label for="nav4-r3">도서관서비스<i class="fas fa-chevron-down"></i></label>
+               <div class="div2">
+              <ul>
+                 <li>전자도서/오디오북</li>
+                    <li>영어전자도서</li>
+                  <li>책이음서비스</li>
+                  <li>타관대출반납</li>
+                  <li>책바다(상호대차)</li>
+                  <li>책나래(장애인무료택배)</li>
+                  <li>사서에게물어보세요</li>
+                  <li>북스타트</li>
+                  <li>기타서비스</li>
+                  <li>맘편한도서관서비스</li>
+                  <li>다자녀더책서비스</li>
+              </ul>
+               </div>
+              </li>
+              <li>
+               <input type="radio" name="nav4-ra" id="nav4-r4">
+              <label for="nav4-r4">자료찾기<i class="fas fa-chevron-down"></i></label>
+               <div class="div2">
+               <ul>
+                    <li>자료검색/예약</li>
+                    <li>도서대출베스트</li>
+                    <li>신착도서</li>
+                    <li>권장도서</li>
+                    <li>연속간행물검색</li>
+                </ul>
+                </div>
+              </li>
+              <li>
+                <input type="radio" name="nav4-ra" id="nav4-r5">
+              <label for="nav4-r5">문화행사<i class="fas fa-chevron-down"></i></label>
+              <div class="div2">
+               <ul>
+                    <li>도서관주간</li>
+                    <li>독서의달</li>
+                    <li>독서교실</li>
+                    <li>문화강좌</li>
+                    <li>온라인수강신청</li>
+                    <li>포토갤러리</li>
+                    <li>독서회</li>
+                    <li>영화상영</li>
+                </ul>
+                </div>
+              </li>
+              <li>
+                 <input type="radio" name="nav4-ra" id="nav4-r6">
+              <label for="nav4-r6">참여마당<i class="fas fa-chevron-down"></i></label>
+                
+                 <div class="div2">
+               <ul>
+                    <li>공지사항</li>
+                    <li>도서관일정</li>
+                    <li>도서관에바란다</li>
+                    <li>자원봉사신청</li>
+                    <li>분실물센터</li>
+                    <li>도서관견학</li>
+                    <li>도서기증</li>
+                    <li>도서관행사참여</li>
+                </ul>
+              </div>
+              </li>
+          </div>
+          </ul>
+      </nav>
+    </div>
+     </div>
+      <nav class="nav2">
+          <ul>
+         <div class="div1">
+              <a href="libraryuse.html"><li>도서관이용</li></a>
+               <a href="introduce.html"><li>도서관소개</li></a>
+              <li>도서관서비스</li>
+              <li>자료찾기</li>
+              <li>문화행사</li>
+              <li>참여마당</li>
+          </div>
+           <div class="popup">
+             <div class="div2">
+              <ul>
+                  <a href="libraryuse.html#p2"><li><span>이용시간/휴관일</span></li></a>
+                  <a href="libraryuse.html#p3"><li><span>도서관회원가입안내</span></li></a>
+                  <a href="libraryuse.html#p4"><li><span>도서대출/반납/예약</span></li></a>
+                  <a href="libraryuse.html#p5"><li><span>도서관이용안내</span></li></a>
+                  <a href="libraryuse.html#p6"><li><span>영상정보처리방침</span></li></a>
+              </ul>
+               <ul>
+                 <a href="introduce.html#p1-2"><li><span>시설/자료현황</span></li></a>
+                  <a href="introduce.html#p2"><li><span>제1,2자료실</span></li></a>
+                  <a href="introduce.html#p3"><li><span>어린이자료실</span></li></a>
+                   <a href="introduce.html#p4"><li><span>연속간행물실</span></li></a>
+                   <a href="introduce.html#p5"><li><span>디지털자료실</span></li></a>
+                   <a href="introduce.html#p6"><li><span>자율학습실</span></li></a>
+                    <a href="introduce.html#p7"><li><span>조직/업무안내</span></li></a>
+                    <a href="introduce.html#p8"><li><span>찾아오시는길</span></li></a>
+               </ul>
+              <ul>
+                 <li>전자도서/오디오북</li>
+                    <li>영어전자도서</li>
+                  <li>책이음서비스</li>
+                  <li>타관대출반납</li>
+                  <li>책바다(상호대차)</li>
+                  <li>책나래(장애인무료택배)</li>
+                  <li>사서에게물어보세요</li>
+                  <li>북스타트</li>
+                  <li>기타서비스</li>
+                  <li>맘편한도서관서비스</li>
+                  <li>다자녀더책서비스</li>
+              </ul>
+                <ul>
+                    <li>자료검색/예약</li>
+                    <li>도서대출베스트</li>
+                    <li>신착도서</li>
+                    <li>권장도서</li>
+                    <li>연속간행물검색</li>
+                </ul>
+                
+                <ul>
+                    <li>도서관주간</li>
+                    <li>독서의달</li>
+                    <li>독서교실</li>
+                    <li>문화강좌</li>
+                    <li>온라인수강신청</li>
+                    <li>포토갤러리</li>
+                    <li>독서회</li>
+                    <li>영화상영</li>
+                </ul>
+                <ul>
+                    <li>공지사항</li>
+                    <li>도서관일정</li>
+                    <li>도서관에바란다</li>
+                    <li>자원봉사신청</li>
+                    <li>분실물센터</li>
+                    <li>도서관견학</li>
+                    <li>도서기증</li>
+                    <li>도서관행사참여</li>
+                </ul>
+               
+                </div>
+           </div>
+          </ul>
+      </nav>
+      <nav class="nav1">
+           <ul>
+               <li>로그인</li>
+               <li>회원가입</li>
+               <li>책이음회원가입신청</li>
+           </ul>
+        </nav>
+        </div>
+        
+             <div class="p1" id="p1">
+                 <div class="b-img">
+                     <h1>도서관 이용</h1>
+                      <form action="#">
+                      <div class="sear-box">
+                       <select name="se1" class="se1">
+                           <option value="o1" selected>자료검색</option>
+                           <option value="o2">표제</option>
+                           <option value="o3">저자</option>
+                           <option value="o4">발행자</option>
+                           <option value="o5">키워드</option>
+                       </select>
+                       <input type="search" placeholder="검색어를 입력하세요">
+                       <input type="submit" value="검색">
+                      </div>
+       </form>
+                 
+                 </div>
+             </div>
+                <div class="page-index">
+         <div class="page-index2">
+           
+             <ul>
+                 <a href="#p2"><li>이용시간/휴관일</li></a>
+                 <a href="#p3"><li>도서관회원가입안내</li></a>
+                 <a href="#p4"><li>도서대출/반납/예약</li></a>
+                 <a href="#p5"><li>도서관이용안내</li></a>
+                 <a href="#p6"><li>영상정보처리방침</li></a>
+
+             </ul>
+         </div>
+     </div>
+             
+             
+             <div class="p2" id="p2">
+               <div class="wrap">
+                <h2>이용시간/휴관일</h2>
+                 <h3><i class="fas fa-feather-alt"></i> 도서관 실별 이용시간</h3>
+                 <table>
+                     <tr>
+                        <td>실별</td>
+                         <td>평일</td>
+                         <td>토,일요일</td>
+                     </tr>
+                     <tr>
+                       <td>어린이자료실</td>
+                         <td colspan="2" rowspan="4">09:00~18:00</td>
+                     </tr>
+                     <tr>
+                     <td>디지털실</td>
+                     
+                     </tr>
+                     <tr> <td>제1,2자료실</td></tr>
+                     <tr><td>연속간행물실</td></tr>
+                     <tr><td>자율학습실</td>
+                     <td colspan="2">09:00~18:00</td></tr>
+                 </table>
+                 <h3><i class="fas fa-feather-alt"></i> 휴관일</h3>
+                     <table class="tb2">
+                         <tr>
+                             <td>정기 휴관일(자료실)</td>
+                             <td>법정 공휴일(도서관 전체)</td>
+                             <td>임시 휴관일</td>
+                         </tr>
+                         <tr>
+                             <td><span class="red">매주 월요일</span><br>법정공휴일</td>
+                             <td>신정,설,추석 연휴</td>
+                             <td>도서관 사정에 의해<br>관장이 지정한 날</td>
+                         </tr>
+                     </table>
+                 </div>
+             </div>
+             
+             <div class="p3" id="p3">
+                 <div class="wrap">
+                     <h2>도서관 회원가입 안내</h2>
+                     <h3><i class="fas fa-feather-alt"></i> 도서관 회원가입</h3>
+                     <h4><i class="far fa-check-circle"></i> 가입대상</h4>
+                     <p>누구나</p>
+                     <h4><i class="far fa-check-circle"></i> 구비서류(재발급 포함)</h4>
+                     <table>
+                         <tr>
+                             <td>대상</td>
+                             <td colspan="2">구비서류</td>
+                             <td>발급처</td>
+                         </tr>
+                         <tr>
+                             <td>만 14세 미만자</td>
+                             <td>법정대리인 날인,<br>주민등록등본</td>
+                             <td rowspan="3">도서관 회원가입<br>신청서<br>(도서관 소정양식)</td>
+                             <td>어린이자료실(1층)</td>
+                         </tr>
+                         <tr>
+                             <td>중,고등학생</td>
+                             <td>학생증</td>
+                             <td rowspan="2">제1자료실(2층)</td>
+                         </tr>
+                         <tr>
+                             <td>일반인</td>
+                             <td>신분증(주민등록번호,<br>사진 포함)</td>
+                         </tr>
+                     </table>
+                     <h4><i class="far fa-check-circle"></i> 도서관 회원증 재발급</h4>
+                     <ul>
+                         <li>필요서류 구비하여 신청 즉시 발급</li>
+                         <li>4회(최초 1회 포함) 발급 시부터 1주일 후 회원증 발급 및 대출 가능</li>
+                     </ul>
+                     <h3><i class="fas fa-feather-alt"></i> 가족대출회원제도 운영</h3>
+                     <h4><i class="far fa-check-circle"></i> 가입방법</h4>
+                     <ul>
+                         <li>대상 : 주소지가 동일한 직계존비속 중 2인 이상 개별 회원가입이 되어 있는 가족</li>
+                         <li>구비서류 : 주민등록등본</li>
+                         <li>장소 : 제1자료실, 어린이자료</li>
+                     </ul>
+                     <h4><i class="far fa-check-circle"></i> 대출 책수 및 기한</h4>
+                     <p>회원가입된 가족수x5권, 14일간 대출</p>
+                     
+                     <h4><i class="far fa-check-circle"></i> 이용방법</h4>
+                     <p>가족회원 중 누구나 본인의 도서관 회원증을 제시</p>
+                 </div>
+             </div>
+             <div class="p4" id="p4">
+                 <div class="wrap">
+                     <h2>도서대출/반납예약</h2>
+                     <h3><i class="fas fa-feather-alt"></i> 도서대출</h3>
+                     <h4><i class="far fa-check-circle"></i> 대출방법</h4>
+                     <ul>
+                         <li>창원시 문화도서관사업소 도서관 회원 가입자</li>
+                         <li>대출 권수 : 1인당 총10권(단,공공도서관마다 5권 제한 )<br>예) 의창도서관5권,성산도서관5권<br>
+      의창도서관5권, 용지평생학습센터3권, 안민마을도서관2권</li>
+                         <li>대출 기간 : 14일(2주)</li>
+                     </ul>
+                     <h3><i class="fas fa-feather-alt"></i> 도서반납</h3>
+                     <ul>
+                         <li>대출 업무시간 종료 후에는 1층 로비 도서 자동반납기에서 반납 가능</li>
+                         <li>반납 예정일이 도서관 휴관일인 경우 다음날로 반납일 자동 변경</li>
+                         <li>반납 예정일이 지나서 도서를 반납하였을 경우<br>
+- 30일 미만 : 연체 일수만큼 대출 정지<br>
+- 30일 이상 : 연체 일수의 2배 기간 대출 정지(최대 2년)<br>
+※ 가족회원의 경우 한 명이 15일 이상 연체할 경우 가족 전체 대출정지 동일 적용<br></li>
+                    <li>반납 연기는 1회에 한하여 가능, 반납 예정일로부터 7일 연장 가능<br>
+- 반납 연기 방법<br>
+<ol>
+<li>
+홈페이지 : 홈페이지 로그인 → 마이페이지(우측 상단) → 도서대출 내역조회 조회 → 반납연기도서 체크 → 반납연기 버튼 클릭</li>
+<li>도서관 방문 : 도서관 회원증 제시</li>
+ </ol>
+- 반납 연기 불가 : 대출정지 회원, 연체 도서, 예약 도서<br>
+- 가족회원 반납 연기 : 가족회원 중 한 명의 아이디로 로그인하면 가족 전체 일괄 반납 연기 가능<br></li>
+                    <li>대출도서의 분실, 훼손 시 현물 변상(단, 도서가 절판일 경우 변상일 기준 정가 변상)</li>
+                     </ul>
+                     <h3><i class="fas fa-feather-alt"></i> 도서예약</h3>
+                     <ul>
+                     <li>예약 권수 : 1인 2권(1권당 2명까지 예약 가능)</li>
+                     <li>예약 대상 : 대출 중인 도서</li>
+                     <li>예약 방법 : 홈페이지 로그인 → 도서 검색 → 도서 선택 → 대출예약하기 버튼 클릭</li>
+                     <li>예약도서 안내 : 예약도서 반납 시 예약자 휴대폰으로 대출 가능 안내 문자 발송</li>
+                     <li>예약도서 대출 : 예약도서 반납일을 포함하여 3일 이내 대출 가능</li>
+                </ul>
+                 </div>
+             </div>
+             <div class="p5" id="p5">
+                 <div class="wrap">
+                     <h2>도서관 이용안내</h2>
+                     <h3><i class="fas fa-feather-alt"></i> 도서관 이용방법과 예절</h3>
+                     <ul>
+                         <li>도서관 규칙이나 약속을 잘 지켜야 합니다. 대출 시 반납기한을 잘 지켜주세요. (대출기간 14일)</li>
+                         <li>도서관에서는 공중도덕을 지켜야 합니다.</li>
+                         <li>도서관 자료 및 시설을 소중히 다루어야 합니다. (책의 훼손 및 파손행위, 책을 훔치는 행위 금지)</li>
+                         <li>자료실에서는 음식물을 섭취할 수 없으므로 휴게실을 이용하세요.</li>
+                         <li>다른 사람들에게 방해가 되는 행위를 하지 않도록 합시다. (큰 소리로 떠드는 행위 등)</li>
+                         <li>도서관 내에서는 휴대폰 사용을 자제해 주세요.</li>
+                         <li>이용한 자료는 반납 책꽂이에 놓아주세요.</li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="p6" id="p6">
+                 <div class="wrap">
+                     <h2>영상정보처리방침</h2>
+                     <h3><i class="fas fa-feather-alt"></i> 영상정보처리기기의 설치 근거 및 설치 목적</h3>
+                     <h4><i class="far fa-check-circle"></i> 본 도서관은 개인정보보호법 제25조 제1항에 따라 다음과 같은 목적으로 영상정보처리기기를 설치ㆍ운영 합니다.</h4>
+                     <ul>
+                         <li>시설물 안전관리 및 범죄(분실, 도난) 예방</li>
+                         <li>주차 계도</li>
+                     </ul>
+                     <h3><i class="fas fa-feather-alt"></i> 설치대수, 설치 위치 및 촬영범위</h3>
+                     <table>
+                         <tr>
+                             <td>설치 대수</td>
+                             <td>설치 위치 및 촬영 범위</td>
+                         </tr>
+                         <tr>
+                             <td>22대</td>
+                             <td>건물내부,외부,주차장(고정식20m이내)</td>
+                         </tr>
+                     </table>
+                     <h3><i class="fas fa-feather-alt"></i> 관리책임자 및 접근권한자</h3>
+                     <h4><i class="far fa-check-circle"></i> 귀하의 영상정보를 보호하고 개인영상정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인영상정보 보호책임자를 두고 있습니다.</h4>
+                     <table class="tb2">
+                         <tr>
+                             <td></td>
+                             <td>이름</td>
+                             <td>직위</td>
+                             <td>소속</td>
+                             <td>연락처</td>
+                         </tr>
+                         <tr>
+                             <td>관리책임자</td>
+                             <td>회원도서관장</td>
+                             <td>관장</td>
+                             <td>회원도서관</td>
+                             <td>055)225-7460</td>
+                         </tr>
+                         <tr>
+                             <td>접근권한자</td>
+                             <td>시설물 담당자<br>청원경찰</td>
+                             <td>주무관<br>청원경찰</td>
+                             <td>회원도서관</td>
+                             <td>055)225-7460</td>
+                         </tr>
+                     </table>
+                     <h3><i class="fas fa-feather-alt"></i> 영상정보의 촬영시간,보관기간,보관장소 및 처리방법</h3>
+                     <table class="tb3">
+                         <tr>
+                             <td>촬영시간</td>
+                             <td>보관기간</td>
+                             <td>보관장소</td>
+                         </tr>
+                         <tr>
+                             <td>24시간</td>
+                             <td>촬영일로부터 5일</td>
+                             <td>안내실</td>
+                         </tr>
+                     </table>
+                     <ul>
+                         <li>처리방법 : 개인영상정보의 목적외 이용, 제3자 제공, 파기, 열람 등 요구에 관한 사항을 기록ㆍ관리하고, 보관기간 만료시 복원이 불가능한 방법으로 영구 삭제(출력물의 경우 파쇄 또는 소각)합니다.</li>
+                     </ul>
+                     <h3><i class="fas fa-feather-alt"></i> 개인영상정보의 확인 방법 및 장소에 관한 사항</h3>
+                     <ul>
+                         <li>확인 방법 : 영상정보 관리책임자에게 미리 연락하고 본 도서관을 방문하시면 확인 가능합니다.</li>
+                         <li>확인 장소 : 의창도서관 관리담당 055)225-7331</li>
+                     </ul>
+                     <h3><i class="fas fa-feather-alt"></i> 정보주체의 영상정보 열람 등 요구에 대한 조치</h3>
+                     <h4><i class="far fa-check-circle"></i> 귀하는 개인영상정보에 관하여 열람 또는 존재확인ㆍ삭제를 원하는 경우 언제든지 영상정보처리기기 운영자에게 요구하실 수 있습니다. 단, 귀하가 촬영된 개인영상정보 및 명백히 정보주체의 급박한 생명, 신체, 재산의 이익을 위하여 필요한 개인영상정보에 한정됩니다. 본 도서관은 개인영상정보에 관하여 열람 또는 존재확인ㆍ삭제를 요구한 경우 지체없이 필요한 조치를 하겠습니다.<br>
+※처리절차 : 개인정보(열람, 정정 · 삭제, 처리 정지)요수 → 관리책임자 검토 → 개인정보(열람, 일부열람, 열람 연기, 열람 거절)통지</h4>
+                     <h3><i class="fas fa-feather-alt"></i> 영상정보의 안전성 확보조치</h3>
+                     <h4><i class="far fa-check-circle"></i> 본 도서관에서 처리하는 영상정보는 관계자 외 출입제한 등을 통하여 안전하게 관리되고 있습니다. 또한 본 도서관은 개인영상정보보호를 위한 관리적 대책으로서 개인정보에 대한 접근 권한을 차등부여하고 있고, 개인영상정보의 위ㆍ변조 방지를 위하여 개인영상정보의 생성 일시, 열람시 열람 목적ㆍ열람자ㆍ열람 일시 등을 기록하여 관리하고 있습니다. 이 외에도 개인영상정보의 안전한 물리적 보관을 위하여 잠금장치를 설치하고 있습니다.</h4>
+                     <h3><i class="fas fa-feather-alt"></i> 개인정보 처리방침 변경에 관한 사항</h3>
+                     <h4><i class="far fa-check-circle"></i> 법령 · 정책 또는 보안기술의 변경에 따라 내용의 추가 · 삭제 및 수정이 있을 시에는 시행하기 최소 7일전에 본 도서관 홈페이지를 통해 변경사유 및 내용 등을 공지하도록 하겠습니다.
+                     <ul>
+                         <li>공고일자 : 2012년 5월 29일 / 시행일자 : 2014년 9월 5일</li>
+                     </ul>
+                     </h4>
+                 </div>
+             </div>
+              <footer>
+           <div class="f1">
+           <ul>
+               <li>개인정보처리방침</li>
+               <li>영상정보처리방침</li>
+               <li>저작권보호정책</li>
+               <li>행정서비스헌장</li>
+               <li>홈페이지오류신고</li>
+               <li>뷰어프로그램</li>
+           </ul>    
+           </div>
+           <div class="f2">
+           <div class="f-img"></div>
+            <div class="f3">
+주소: (51324) 경상남도 창원시 마산회원구 3ㆍ15대로 558(회원동) 전화번호: 055-225-7461<br>
+Copyrightⓒ Changwon City Library. All rights reserved.
+       </div>
+       </div>
+        </footer>
+        
+    </div>
+    
+         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+     <script>
+        $(function(){
+            $(".link-top a").attr("href","#");
+            $(".link-top a").click(function(e){
+                e.preventDefault();
+                $("html, body").stop().animate({
+                    scrollTop:"0"
+                },500);
+            });
+            
+            $(window).on("scroll resize",function(){
+                 console.log($("html, body").scrollTop());
+                if($(window).width()>800){
+                    if($("html, body").scrollTop()>=200){
+                        $(".page-index").css("position","fixed");
+                        $(".page-index").css("top","80px");
+                    }else{
+                         $(".page-index").css("position","inherit");
+                        $(".page-index").css("top","0px");
+                    }
+                      $(".page-index").css("height","80px");
+                    $(".page-index li").css({
+                                            "font-size":"15px",
+                                            "height":"30px",
+                                            "padding-top":"10px"
+                                            })
+                }else{
+                   
+                      $(".page-index").css("position","fixed");
+                    $(".page-index").css("top","80px");
+                    $(".page-index").css("height","60px");
+                    $(".page-index li").css({
+                                            "font-size":"13px",
+                                            "height":"25px",
+                                            "padding-top":"10px"
+                                            })
+                }
+                     $(".page-index li").css("font-weight","normal");
+                if($("html, body").scrollTop()>=$(".p6").offset().top-20){
+                    $(".page-index li").eq(4).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p5").offset().top-20){
+                    $(".page-index li").eq(3).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p4").offset().top-20){
+                    $(".page-index li").eq(2).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p3").offset().top-20){
+                    $(".page-index li").eq(1).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p2").offset().top-20){
+                    $(".page-index li").eq(0).css("font-weight","bold");
+                }
+            });
+           if($(window).width()>800){
+                     if($("html, body").scrollTop()>=200){
+                        $(".page-index").css("position","fixed");
+                        $(".page-index").css("top","80px");
+                         
+                    }else{
+                         $(".page-index").css("position","inherit");
+                        $(".page-index").css("top","0px");
+                    }
+                     $(".page-index").css("height","80px");
+                    $(".page-index li").css({
+                                            "font-size":"15px",
+                                            "height":"30px",
+                                            "padding-top":"10px"    
+                                            })
+                }else{
+                      $(".page-index").css("position","fixed");
+                    $(".page-index").css("top","80px");
+                    $(".page-index").css("height","60px");
+                    $(".page-index li").css({
+                                            "font-size":"13px",
+                                            "height":"25px",
+                                            "padding-top":"10px"
+                                            })
+            }
+//             var pageidx = -1;
+            $(".page-index a").click(function(e){
+                e.preventDefault();
+//                $(".page-index li").css("font-weight","normal");
+//                $(this).children("li").css("font-weight","bold");
+                var idx = $(this).index();
+                idx = ".p"+(idx+2);
+                $("html, body").stop().animate({
+                    scrollTop :$(idx).offset().top-20
+                },500);
+//                pageidx = $(this).index();
+            });
+//           
+            $(".page-index a").hover(function(){
+                $(this).children("li").css("font-weight","bold");
+            },function(){
+                    $(".page-index li").css("font-weight","normal");
+                if($("html, body").scrollTop()>=$(".p6").offset().top-20){
+                    $(".page-index li").eq(4).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p5").offset().top-20){
+                    $(".page-index li").eq(3).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p4").offset().top-20){
+                    $(".page-index li").eq(2).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p3").offset().top-20){
+                    $(".page-index li").eq(1).css("font-weight","bold");
+                }else  if($("html, body").scrollTop()>=$(".p2").offset().top-20){
+                    $(".page-index li").eq(0).css("font-weight","bold");
+                }
+            });
+            
+            
+            
+        });
+    </script>
+</body>
+</html>

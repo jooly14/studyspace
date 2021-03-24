@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            border: 2px solid;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+   <div id="box" onmousedown="myfnc1(event)" onmouseup="myfnc2(event)">
+       
+       
+   </div>
+   
+    <script>
+        function myfnc1(e){
+            document.getElementById('box').innerHTML = e.buttons;
+        }
+        function myfnc2(e){
+            var str = e.clientX +":"+ e.clientY+"/";   
+            str += e.screenX+ ":"+ e.screenY+"/";   
+            str += e.offsetX +":"+ e.offsetY;   
+            console.log(str);
+        }
+    </script>
+</body>
+</html>

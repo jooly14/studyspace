@@ -1,0 +1,20 @@
+<!DOCTYPE html> <!-- 콜백사용 -->
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide("slow", function(){     //콜백함수:hide실행후 작동
+            alert("The paragraph is now hidden");
+        });
+    });
+});
+</script>
+</head>
+<body>
+    
+<button>Hide</button>
+<p>This is a paragraph with little content.</p>
+</body>
+</html>

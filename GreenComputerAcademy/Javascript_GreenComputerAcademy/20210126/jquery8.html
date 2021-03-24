@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	var tags;
+    $("#btn1").click(function(){
+        tags = $("p").detach();
+    });
+    $("#btn2").click(function(){
+       tags = $("p").detach(".test");	
+        console.log(tags);
+    });	
+    $("#btn3").click(function(){
+        $("body").append(tags);		
+    });
+});
+</script>
+<style>
+.test {
+    color: red;
+    font-size: 20px;
+}
+.test1 {
+    color: blue;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+This is a just Word
+<p class="test">This is "P tag with class=test"</p>
+<p class="test1">This is "P tag with class=test1"</p>
+
+<button id="btn1">detach all p elements</button>
+<button id="btn2">detach all p elements with class="test"</button>
+<button id="btn3">append tags to Body</button>
+
+
+</body>
+</html>

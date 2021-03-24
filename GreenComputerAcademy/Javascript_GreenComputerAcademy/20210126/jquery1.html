@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <input type="button" value="start" onclick="fnc()">
+   <input type="button" value="stop" onclick="fnc2()">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var interval1;
+        function fnc(){
+           interval1 =  setInterval(
+            function(){
+            console.log("hi");
+            }
+            ,1000);
+        }
+       function fnc2(){
+           clearInterval(interval1);
+       }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid;
+        }
+        #wrap{
+            margin: 50px 600px;
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+        #btns{
+            width: 100%;
+            height: 50px;
+        }
+        #menu{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 900px;
+            height: 350px;
+            display: flex;
+        }
+        #menu div{
+            width: 300px;
+            height: 100%;
+        }
+        #m1{
+            background-color: red;
+        }
+        #m2{
+            background-color: orange;
+        }
+        #m3{
+            background-color: yellow;
+        }
+        #btns{
+            display: flex;
+            justify-content: center;
+        }
+        #btns input{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+   <div id="btns">
+    <input type="button" value="<" onclick="back()">
+    <input type="button" value=">" onclick="front()">
+    </div>
+    <div id="menu">
+        <div id="m1"><h1>1</h1></div>
+        <div id="m2"><h1>2</h1></div>
+        <div id="m3"><h1>3</h1></div>
+    </div>
+    </div>
+    <script>
+        var cur = 0;
+        function back(){
+            if(cur==0){
+                cur=-600;
+            }else{
+                cur+=300;
+            }
+            document.getElementById("menu").style.left = cur+"px";
+        }
+         function front(){
+            if(cur==-600){
+                cur=0;
+            }else{
+                cur-=300;
+            }
+            document.getElementById("menu").style.left = cur+"px";
+        }
+        
+    </script>
+</body>
+</html>

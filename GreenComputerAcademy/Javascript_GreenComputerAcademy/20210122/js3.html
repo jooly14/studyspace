@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <div id="demo"></div>
+    <script>
+        var d= new Date();
+        var yo;
+        switch(d.getDay()){
+            case 0: yo ="일"; break;       
+            case 1: yo ="월"; break;       
+            case 2: yo ="화"; break;       
+            case 3: yo ="수"; break;       
+            case 4: yo ="목"; break;       
+            case 5: yo ="금"; break;       
+            case 6: yo ="토"; break;       
+        }
+        document.getElementById("demo").innerHTML = d+"<br>";
+        document.getElementById("demo").innerHTML += d.getFullYear()+"<br>";
+        document.getElementById("demo").innerHTML += (d.getMonth()+1)+"<br>";
+        document.getElementById("demo").innerHTML += d.getDate()+"<br>";
+        document.getElementById("demo").innerHTML += yo+"<br>";
+        document.getElementById("demo").innerHTML += d.getHours()+"<br>";
+        document.getElementById("demo").innerHTML += d.getMinutes()+"<br>";
+        document.getElementById("demo").innerHTML += d.getSeconds()+"<br>";
+        document.getElementById("demo").innerHTML += d.getTime()+"<br>";
+        document.getElementById("demo").innerHTML += d.toLocaleDateString()+"<br>";
+        document.getElementById("demo").innerHTML += d.toLocaleTimeString()+"<br>";
+        document.getElementById("demo").innerHTML += d.toLocaleString()+"<br>";
+        document.getElementById("demo").innerHTML += d.toISOString()+"<br>";
+        document.getElementById("demo").innerHTML += d.toUTCString()+"<br>";
+        document.getElementById("demo").innerHTML += d.toDateString()+"<br>";
+    </script>
+</body>
+</html>

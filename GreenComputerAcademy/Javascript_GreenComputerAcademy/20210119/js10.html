@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap{
+            display: flex;
+            justify-content: space-around;
+        }
+        #canvas{
+            margin-left: 20px;
+            width: 1000px;
+            height: 1000px;
+            border: 3px solid black;
+            position: relative;
+        }
+        
+    </style>
+</head>
+<body>
+  <div id="wrap">
+   <div>
+    width <input type="text" id="width"><br>
+    height <input type="text" id="height"><br>
+    start x <input type="text" id="sx"><br>
+    start y <input type="text" id="sy"><br>
+    color <select id="color">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+    </select><br>
+    count <select id="count">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+    vertical <input type="radio" name="vh" value="vertical"> horizontal <input type="radio" name="vh" value="horizontal"><br>
+    <input type="button" value="확인" onclick="mkbox()">
+    </div>
+    <div id="canvas"></div>
+    </div>
+    <script>
+        function mkbox(){
+            var radiovh = document.getElementsByName('vh');
+            for(var i=0;i<radiovh.length;i++){
+                if(radiovh[i].checked){
+                    radiovh = radiovh[i];
+                }
+            }
+            var top = Number(document.getElementById('sy').value);
+            var left =Number(document.getElementById('sx').value);
+            if(radiovh.value=="vertical"){
+                for(var i=0;i<document.getElementById('count').value;i++){
+                    var box = document.createElement('div');
+                    box.style.display = 'inline-block';
+                    box.style.width = document.getElementById('width').value+"px";
+                    box.style.height = document.getElementById('height').value+"px";
+                   
+                    box.style.top = top+"px";
+                    box.style.left = left+"px";
+                    box.style.backgroundColor = document.getElementById('color').value;
+                    box.style.position = 'absolute';
+                    document.querySelector('#canvas').appendChild(box);
+                     top += 5+Number(document.getElementById('height').value);
+                }
+            }else{
+                  for(var i=0;i<document.getElementById('count').value;i++){
+                    var box = document.createElement('div');
+                    box.style.display = 'inline-block';
+                    box.style.width = document.getElementById('width').value+"px";
+                    box.style.height = document.getElementById('height').value+"px";
+                    box.style.top = top+"px";
+                    box.style.left = left+"px";
+                    box.style.backgroundColor = document.getElementById('color').value;
+                    box.style.position = 'absolute';
+                    document.querySelector('#canvas').appendChild(box);
+                     left += 5+Number(document.getElementById('width').value);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

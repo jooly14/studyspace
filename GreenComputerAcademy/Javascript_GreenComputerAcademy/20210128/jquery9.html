@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #wrap{
+            position: relative;
+            height: 100vh;
+            border: 1px solid black;
+            white-space:nowrap;
+            font-size: 0;
+        }
+        .page{
+            display: inline-block;
+            width: 1000px;
+            height: 100%;
+            height: calc(100% - 30px);
+            margin-top: 30px;
+            border: 1px solid red;
+            color: white;
+            font-size: 24px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: green;
+        }
+        .box3{
+            background-color: blue;
+        }
+        .box4{
+            background-color: yellow;
+        }
+        .box5{
+            background-color: pink;
+        }
+        ul{
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        li:hover{
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+     <div id="wrap">
+       <ul>
+            <li>page1</li>           
+            <li>page2</li>           
+            <li>page3</li>           
+            <li>page4</li>           
+            <li>page5</li>           
+       </ul>
+        <div class="page box1">1</div>
+        <div class="page box2">2</div>
+        <div class="page box3">3</div>
+        <div class="page box4">4</div>
+        <div class="page box5">5</div>
+    </div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+             $(".page").css("width",$(window).width()+17+"px"); 
+             $("ul").css("width",$(window).width()+17+"px"); 
+             $("#wrap").css("height",$(window).height()+"px"); 
+            $(window).resize(function(){
+               $(".page").css("width",$(window).width()+"px"); 
+                $("ul").css("width",$(window).width()+"px"); 
+                $("#wrap").css("height",$(window).height()+"px");
+            });
+            $("li").click(function(){
+               var idx = $(this).index(); 
+                var moveLeft = $(".page").eq(idx).offset().left;
+                $("html, body").animate({
+                    scrollLeft: moveLeft
+                },300);
+            });
+            
+            var elm = ".page";
+            $(elm).on("mousewheel DOMMouseScroll",function(e){
+                e.preventDefault();
+                var E = e.originalEvent;
+                var delta = 0;
+                if(E.detail){
+                    delta = E.detail;
+                }else{
+                    delta = E.wheelDelta;
+                    if(window.opera){
+                        delta = -delta;
+                    }
+                }
+                var moveLeft = $(this).offset().left;
+                var elmSelect = $(this).index()-1;
+                elmSelect = $(elm).eq(elmSelect);
+                
+                if(delta>0){
+                        if(elmSelect.index()>0){
+                            moveLeft = elmSelect.prev().offset().left;
+                            
+                        }
+                        
+                }else{
+                    //밑으로
+                    if(elmSelect.index()<$(elm).length){
+                        moveLeft = elmSelect.next().offset().left;
+                        
+                    }
+                }
+                $("html, body").stop().animate({
+                    scrollLeft:moveLeft
+                },200);
+            });
+        });
+    </script>
+</body>
+</html>

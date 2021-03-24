@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+        var width = prompt("상자의 가로 입력");
+        var height = prompt("상자의 세로 입력");
+        var color = prompt("상자의 배경색 입력");
+        var borderYN = confirm("상자의 외곽선 여부 입력");
+        var count = prompt("상자의 개수 입력");
+        
+       
+        for(var i =0;i<count;i++){
+             var box = document.createElement("div");
+            box.setAttribute("style","width:"+width+"px;height:"+height+"px;background-color:"+color+";");
+            if(borderYN){
+                box.setAttribute("style",box.getAttribute("style")+"border:1px solid black;");   
+            }
+            document.body.appendChild(box);
+        }
+    </script>
+</body>
+</html>

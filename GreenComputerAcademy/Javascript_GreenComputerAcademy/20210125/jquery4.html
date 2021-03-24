@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 500px;
+            height: 500px;
+            border: 3px solid;
+            position: relative;
+        }
+        input[type="button"]{
+            z-index: 300;
+            width: 150px;
+            height: 30px;
+        }
+        #btnbox{
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        img{
+            width: 100%;
+            height: 500px;
+            position: absolute;
+/*            opacity: 0;*/
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+       <img src="../snoopy3.jpg"  id="img3">
+       <img src="../snoopy2.jpg" id="img2">
+       <img src="../snoopy1.jpg" id="img1">
+       <div id="btnbox">
+       <input type="button" value="<<" id="btn1">
+       <input type="button" value=">>" id="btn2">
+       </div>
+   </div>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var cur = 1;
+        $(document).ready(function(){
+           
+                   
+            $("#btn1").click(function(){
+//                  $("#img2").hide(0);
+//                 $("#img3").hide(0);
+//                 $("#img1").hide(0);
+                if(cur==2){
+                    $("#img2").fadeOut(500);
+                    $("#img1").fadeIn(500);
+                }else if(cur==3){
+                    $("#img3").fadeOut(500);
+                     $("#img2").fadeIn(500);
+                }else if(cur==1){
+                    $("#img2").hide(0);
+                    $("#img1").fadeOut(500);
+                     $("#img3").fadeIn(500);
+                }
+                if(cur==1){
+                    cur=3;
+                }else{
+                    cur--;
+                    
+                }
+            });
+            $("#btn2").click(function(){
+                
+                if(cur==1){
+                    $("#img2").fadeIn(500);
+                    $("#img1").fadeOut(500);
+                }else if(cur==2){
+                     $("#img3").fadeIn(500);
+                    $("#img2").fadeOut(500);
+                }else if(cur==3){
+                    $("#img1").fadeIn(500);
+                    $("#img3").fadeOut(500);
+                }
+                if(cur==3){
+                    cur=1;
+                }else{
+                   cur++;
+                }
+                
+            });
+        });
+    </script>
+</body>
+</html>

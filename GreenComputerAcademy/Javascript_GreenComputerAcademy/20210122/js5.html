@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div, input{
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            display: inline-block;
+            vertical-align: top;
+        }
+        div{
+            box-sizing: border-box;
+            padding: 35px 30px;
+        }
+        div:hover,input:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <div onclick="location.href='http:/www.naver.com'">naver</div>
+    <input type="button" value="daum" onclick="location.href = 'http:/www.daum.net'">
+</body>
+</html>

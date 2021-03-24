@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    var obj;
+    $("#btn1").click(function(){
+        obj = $("#div1").detach();
+//        $("#div1").empty();
+//        $("#div1").remove();
+    });
+    $("#btn2").click(function(){
+         $("br").before(obj);
+//        $("#div1").empty();
+    });
+});
+</script>
+</head>
+<body>
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+
+<button id="btn1">Remove div element</button>
+<button id="btn2">cancel remove</button>
+
+</body>
+</html>

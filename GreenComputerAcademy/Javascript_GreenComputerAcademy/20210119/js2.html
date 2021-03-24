@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>안녕</p>
+    <p>헬로</p>
+    <p>올라</p>
+    <div class="aaa">123</div>
+    <div class="aaa">456</div>
+    <div class="aaa">789</div>
+    <script>
+        var temp = document.getElementsByTagName('p')[0].innerHTML;
+        document.getElementsByTagName('p')[0].innerHTML = document.getElementsByTagName('p')[2].innerHTML;
+        document.getElementsByTagName('p')[2].innerHTML = temp;
+        document.getElementsByClassName('aaa')[0].innerHTML = '000';
+    </script>
+</body>
+</html>

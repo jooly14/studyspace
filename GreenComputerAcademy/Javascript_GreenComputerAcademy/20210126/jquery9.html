@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 0;
+        }
+        #wrap{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        #box{
+            width: 300%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        img:first-child{
+            
+        }
+        #menu{
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid;
+        }
+        input{
+            width: 80px;
+            height: 30px;
+            margin-top: 10px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+       <div id="box">
+        <img src="../snoopy1.jpg">
+        <img src="../snoopy2.jpg">
+        <img src="../snoopy3.jpg">
+        </div>
+    </div>
+    <div id="menu">
+        <input type="button" value="<<" id="left">
+        <input type="button" value="stop" id="stop">
+        <input type="button" value=">>" id="right">
+    </div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script>
+        $(function(){
+            var myinterval;
+            var obj;
+            $("#right").click(function(){
+                $("#box").animate({
+                    left:'-=300'
+                },500,function(){
+                   obj = $("#box img:first-child").detach(); 
+                    $("#box").css("left","0px");
+                    $("#box").append(obj);
+                });
+            }); 
+             $("#left").click(function(){
+                  obj = $("#box img:last-child").detach(); 
+                    $("#box").prepend(obj);
+                  $("#box").css("left","-300px");
+                $("#box").animate({
+                    left:'0'
+                },500);
+            }); 
+            $("#stop").click(function(){
+                if($(this).val()=="stop"){
+                    clearInterval(myinterval);
+                    $(this).val("start");
+                }else{
+                    startInterval();
+                    $(this).val("stop");
+                }
+            });
+            
+            function startInterval(){
+                myinterval = setInterval(function(){
+                 $("#box").animate({
+                    left:'-=300'
+                },500,function(){
+                   obj = $("#box img:first-child").detach(); 
+                    $("#box").css("left","0px");
+                    $("#box").append(obj);
+                });
+                },1500);
+            }
+            startInterval();
+        });
+    </script>
+</body>
+</html>

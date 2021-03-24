@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hel1">안녕</p>
+    <p id="hel2">안녕</p>
+    <p id="hel3">안녕</p>
+    <input type="button" value="click">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input").click(function(){
+                $("#hel1").hide(1000,function(){
+                    $("#hel2").hide(1000,function(){
+                        $("#hel3").hide(1000);
+                    });
+                });              
+            });
+        });
+    </script>
+</body>
+</html>

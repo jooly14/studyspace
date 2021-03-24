@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script>
+         $(function(){
+             var num =1;
+             for(var i=0;i<10;i++){
+                var widthb = Math.floor(Math.random()*80)+20;
+                var heightb = Math.floor(Math.random()*80)+20;
+                var topb = Math.floor(Math.random()*(500-heightb));
+                var leftb = Math.floor(Math.random()*(500-widthb));
+                var box = $("<div></div>");
+                 box.text((i+1));
+                 box.attr("class","box");
+                box.css("width",widthb+"px");
+                box.css("height",heightb+"px");
+                box.css("top",topb+"px");
+                box.css("left",leftb+"px");
+                box.css("position","absolute");
+                box.css("background-color","rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")");
+                 $("#container").append(box);
+             }
+             $(".box").click(function(){
+                 if(num==parseInt($(this).text())){
+                     $(this).remove();
+                     num++;
+                 }
+             });    
+         });
+         
+    </script>
+</body>
+</html>

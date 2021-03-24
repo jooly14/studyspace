@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.body.innerHTML += fruits+"<br>";
+        document.body.innerHTML += fruits.toString()+"<br>";
+        document.body.innerHTML += fruits.join("/")+"<br>";
+        document.body.innerHTML += fruits.pop()+"<br>";
+        document.body.innerHTML += fruits+"<br>";
+        document.body.innerHTML += fruits.push("Strawberry")+"<br>";
+        document.body.innerHTML += fruits+"<br>";
+        document.body.innerHTML += fruits.shift()+"<br>";
+        document.body.innerHTML += fruits+"<br>";
+        document.body.innerHTML += fruits.unshift("Lemon")+"<br>";
+        document.body.innerHTML += fruits+"<br>";
+        fruits[fruits.length] = "Kiwi";
+        document.body.innerHTML += fruits+"<br>";
+        delete fruits[1];
+        document.body.innerHTML += fruits+"<br>";
+        fruits.splice(1,1);
+        fruits.splice(2,0,"WaterMelon","Melon");
+        document.body.innerHTML += fruits+"<br>";
+        var myGirls = ["Cecilie", "Lone"];
+        var myBoys = ["Emil", "Tobias","Linus"];
+        var myChildren = myGirls.concat(myBoys); 
+        document.body.innerHTML += myChildren+"<br>";
+        document.body.innerHTML += fruits.slice(2)+"<br>";
+        document.body.innerHTML += fruits.sort()+"<br>";
+        document.body.innerHTML += fruits.reverse()+"<br>";
+        document.body.innerHTML += fruits+"<br>";
+        
+    </script>
+</body>
+</html>

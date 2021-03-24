@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    단입력<input type="text" id="dan">
+    <input type="button" value="확인" onclick="gugu()">
+    <br>
+    화면에 입력에 맞는 구구단을 작성 합니다.<br>
+    홀수 단일 경우에는 빨간색으로 짝수단일경우에는 파란색으로 출력해 주세요<br>
+    <div id="result"></div>
+    <script>
+        function gugu(){
+            var str ="";
+            for(var i=1;i<10;i++){
+                str += "<p>"+document.getElementById('dan').value + " * " +i +" = "+(Number(document.getElementById('dan').value)*i)+"</p>";
+            }
+            
+            document.getElementById('result').innerHTML = str;
+            for(var j=0;j<document.getElementsByTagName('p').length;j++){
+                if(document.getElementById('dan').value%2==0){
+                     document.getElementsByTagName('p')[j].style.color = "blue"
+                }else{
+                    document.getElementsByTagName('p')[j].style.color = "red"
+                }
+            }
+//            for(var j=0;j<document.getElementsByTagName('p').length;j++){
+//                if(j%2==0){
+//                    document.getElementsByTagName('p')[j].style.color = "blue"
+//                    
+//                }else{
+//                    document.getElementsByTagName('p')[j].style.color = "red"
+//                    
+//                }
+//                
+//            }
+        }
+    </script>
+</body>
+</html>
