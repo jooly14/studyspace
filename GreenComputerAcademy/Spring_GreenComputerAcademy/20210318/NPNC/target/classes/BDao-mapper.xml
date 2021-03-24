@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.npnc.board.dao.BDao">
+  <select id="getList" resultType="com.npnc.board.dto.BDto">
+    select * from board order by idx desc limit #{page},#{pagesize}
+  </select>
+  <select id="getCnt" resultType="int">
+  	select count(*) from board
+  </select>
+  <select id="getGradeList" resultType="com.npnc.board.dto.GDto">
+  	select * from grade
+  </select>
+  <select id="getCategoryList" resultType="com.npnc.board.dto.CDto">
+  	select * from category;
+  </select>
+  
+</mapper>
