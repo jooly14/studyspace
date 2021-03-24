@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrap{
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        header{
+            display:block;
+            text-align:center;
+        }
+        #circlegroup{
+              display: inline-block;
+            position: relative;
+            border: 1px solid;
+            width: 200px;
+            height: 70px;
+        }
+        #circle1{
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            border: 2px solid black;
+            z-index: 1;
+        }
+        #circle2{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 40px;
+            border: 2px solid black;
+            
+        }
+        #circle3{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 70px;
+            border: 2px solid black;
+            z-index: -1;
+        }
+        #search{
+            width: 300px;
+            height: 70px;
+            border: 1px solid black;
+            display: inline-block;
+           
+        }
+        #list ul{
+            list-style: none;
+            padding-left: 100px;
+            height: 32px;
+            padding-top: 0px;
+            
+        } 
+        #list ul li{
+            display: inline-block;
+            width: 70px;
+            color: white;    
+        }
+        #realtime{
+            display: inline-block;
+            border: 1px solid black;
+            height: 70px;
+            width: 200px;
+            
+        }
+        #list2{
+            
+            float: left;
+           width: 80px;
+            height: 100px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        #list2 ul{
+             position: fixed;
+            list-style: none;
+            width: 70px;
+            border: 2px solid gray;
+        }
+        #list2 ul li{
+            padding: 10px;
+            border-bottom: 1px lightgray solid;
+            text-align: center;
+        }
+        #list2 ul #lastlist{
+             border-bottom: none;
+        }
+        section{
+            width: 810px;
+            height: 400px;
+            float: left;
+        }
+        section #article1{
+            border: 1px solid black;
+            height: 80px;
+            margin-top: 5px;
+        }
+        section #article2{
+            border: 1px solid black;
+            height: 80px;
+            margin-top: 5px;
+        }
+        section #article3{
+            margin-top: 5px;
+            border: 1px solid black;
+            height: 210px;
+        }
+        aside{
+            width: 100px;
+            height: 300px;
+            float: right;
+            position: relative;
+        }
+        aside #sidemenu{
+            position: fixed;
+             top: 123px;
+           border: 2px solid gray;
+            z-index: 1;
+            background-color: white;
+        }
+        aside #sidemenu table{
+            width: 90px;
+             border: none;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 3px 2px;
+            text-align:center;
+            border-bottom: 1px solid gray;
+        }
+        .hidden{
+            visibility: hidden;
+        }
+          .hsize3{
+            height: 70px;
+        }
+       
+        aside #pcconsulting{
+            position: absolute;
+            top: 230px;
+            height: 150px;
+            width: 90px;
+            background-color: red;
+        }
+        #top_menu>li{
+            position: relative;
+            padding: 5px;
+        }
+        #top_menu{
+             background-color: dimgray;
+        }
+        #top_menu>li>ul{
+            position: absolute;
+            top: 31px;
+            left: -15px;
+            width: 70px;
+            height: 85px;
+            padding: 5px;
+            text-align: center;
+            background-color: indianred;
+            display: none;
+            z-index: 3;
+        }
+        #top_menu>li>ul>li{
+            padding-bottom: 10px;
+        }
+        #top_menu>li:hover ul{
+            display: block;
+            
+        }
+        #list{
+        }
+    </style>
+</head>
+<body>
+  <div id="wrap">
+      <header>
+           <div id="circlegroup">
+            <div id="circle1"></div>
+            <div id="circle2"></div>
+            <div id="circle3"></div>
+            </div>
+            <div id="search"></div>
+            <div id="realtime"></div>
+        </header>
+        <div id="list">
+            <ul id="top_menu">
+                <li>메뉴1
+                    <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                </li>
+                <li>메뉴2
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                </li>
+                <li>메뉴3
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                </li>
+                <li>메뉴4
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                </li>
+                <li>메뉴5
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                </li>
+                <li>메뉴6
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                    </li>
+                <li>메뉴7
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                    </li>
+                <li>메뉴8
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                    </li>
+                <li>메뉴9
+                 <ul>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                        <li>서브메뉴</li>
+                    </ul>
+                    </li>
+            </ul>
+        </div>
+        <div id="list2">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+                <li>메뉴6</li>
+                <li>메뉴7</li>
+                <li>메뉴8</li>
+                <li id="lastlist">메뉴9</li>
+            </ul>
+        </div>
+        <section>
+        <article id="article1">
+            
+        </article>
+        <article id="article2">
+            
+        </article>
+         <article id="article3">
+            
+        </article>
+        </section>
+        <aside>
+            <div id="sidemenu">
+                <table>
+                    <tr>
+                        <td>관심상품</td>
+                    </tr>
+                    <tr>
+                        <td>관심상품</td>
+                    </tr>
+                    <tr class="hidden hsize3">
+                        <td>관심상품</td>
+                    </tr>
+                    <tr>
+                        <td>관심상품</td>
+                    </tr>
+                    <tr>
+                        <td>관심상품</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: none">관심상품</td>
+                    </tr>
+                    
+                </table>
+            </div>
+            <div id="pcconsulting">pc 견적상담</div>
+        </aside>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .c1{
+            border-top: 500px solid transparent;
+            border-right: 500px solid white;
+            width: 0;
+            
+/*
+            width:500px;
+            height: 700px;
+*/
+/*            background-image: url("../snoopy1.jpg");*/
+            background-size: auto;
+            background-origin: border-box;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .c1 img{
+            position: absolute;
+            top: -500px;
+            z-index: -20;
+            width: 500px;
+            height: 500px;
+        }
+        .c2{
+            
+               display: inline-block;
+            border-bottom: 500px solid transparent;
+            border-left: 500px solid white;
+         
+            width: 0;
+/*
+            width:500px;
+            height: 700px;
+*/
+/*            background-image: url("../snoopy1.jpg");*/
+            background-size: auto;
+            background-origin: border-box;
+            position: relative;
+            right: 0;
+        }
+        .c2 img{
+            position: absolute;
+            left: -500px;
+            z-index: -20;
+            width: 500px;
+            height: 500px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="c1"><img src="../snoopy3.jpg"></div>
+     <div class="c2"><img src="../snoopy1.jpg"></div>
+</body>
+</html>

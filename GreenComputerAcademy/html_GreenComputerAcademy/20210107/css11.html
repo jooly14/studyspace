@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            margin: 0 auto;
+            width: 980px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav>ul{
+            display: flex;
+            list-style: none;
+            width: 80%;
+            align-items: center;
+            justify-content: space-around;
+        }
+        nav>ul>li{
+            width: 40%;
+            font-size:14px;
+            text-align: center;
+            padding-top: 14px;
+            height: 50px;
+            
+        }
+        nav>ul>li:nth-child(4),nav>ul>li:nth-child(5){
+            width: 80%;
+        }
+        .list-popup{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            top: 50px;
+            left: 0px;
+            width: 100%;
+            background-color: rgb(50,50,50);
+            visibility: hidden;
+             height: 0;
+            z-index: -10;
+            transition:all 1s;
+            overflow: hidden;
+        }
+        .list-popup-in{
+            width: 980px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            display: flex;
+            height: 500px;
+        }
+        nav ul li ul{
+            width: 25%;
+            display: inline-block;
+            text-align: left;
+            list-style-type: none;
+            color: white;
+            padding: 50px;
+            
+        }
+        nav ul li ul li{
+            padding-top: 5px;
+            color: lightgray;
+            
+        }
+        nav>ul>li:hover .list-popup{
+            visibility: visible;
+            height: 500px;
+            z-index: 10;
+        }
+        nav>ul>li:hover{
+            background-color: rgb(50,50,50);
+            color:green;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <nav>
+    <ul>
+        <li>COFFEE
+           <div class="list-popup">
+                <div class="list-popup-in">
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                </div>
+            </div>
+        </li>
+        <li>MENU
+        <div class="list-popup">
+            <div class="list-popup-in">
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                </div>
+            </div>
+        </li>
+        <li>STORE
+        <div class="list-popup">
+            <div class="list-popup-in">
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                </div>
+            </div>
+        </li>
+        <li>RESPONSIBILITY
+        <div class="list-popup">
+            <div class="list-popup-in">
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                </div>
+            </div>
+        </li>
+        <li>STARBUCKS REWARDS
+        <div class="list-popup">
+            <div class="list-popup-in">
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                </div>
+            </div>
+        </li>
+        <li>WHAT'S NEW
+        <div class="list-popup">
+            <div class="list-popup-in">
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                <ul>
+                   <h3>커피</h3>
+                    <li>스타벅스 원두</li>
+                    <li>스타벅스 비아</li>
+                    <li>스타벅스 오리가미</li>
+                </ul>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    </nav>
+</body>
+</html>

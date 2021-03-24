@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        div{
+             width: 1000px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+            margin: 50px 0px;
+        }
+        div img{
+             width: 500px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .movex:hover{
+            transform: translateX(50px);
+        }
+        .movey:hover{
+            transform: translateY(20px);
+        }
+        .movexy:hover{
+            transform: translate(10px,20px);
+        }
+        .scalex:hover{
+            transform: scaleX(1.2);
+        }
+        .scaley:hover{
+            transform: scaleY(1.5);
+        }
+        .scalexy:hover{
+            transform: scale(0.7);
+        }
+        .rotate1:hover{
+            transform: rotate(20deg);
+        }
+        .rotate2:hover{
+            transform: rotate(-40deg);
+        }
+    </style>
+</head>
+<body>
+        <div class="movex"><img src="../20210106/bg.jpg"></div>
+    
+        <div class="movey"><img src="../20210106/bg.jpg"></div>
+    
+        <div class="movexy"><img src="../20210106/bg.jpg"></div>
+   
+        <div class="scalex"><img src="../20210106/bg.jpg"></div>
+    
+        <div class="scaley"><img src="../20210106/bg.jpg"></div>
+  
+        <div class="scalexy"><img src="../20210106/bg.jpg"></div>
+        <div class="rotate1"><img src="../20210106/bg.jpg"></div>
+        <div class="rotate2"><img src="../20210106/bg.jpg"></div>
+</body>
+</html>

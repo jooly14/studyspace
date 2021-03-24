@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(back.jpg);
+            background-size: 30%;
+            background-repeat: no-repeat;
+            background-position:left top;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 10px black dotted;
+            padding: 10px;
+
+        }
+        #dv1{
+            background-clip: border-box;
+            background-color: #0f0;
+        }
+        #dv2{
+            background-clip: content-box;
+            background-color: rgba(255,100,0,.8);
+        }
+        #dv3{
+            background-clip: padding-box;
+            background-color: hsla(360,100%,50%,.4);
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1"></div>
+    <div id="dv2"></div>
+    <div id="dv3"></div>
+</body>
+</html>

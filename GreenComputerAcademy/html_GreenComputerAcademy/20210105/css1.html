@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #canvas{
+            margin: 30px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+        }
+        img{
+            width:100%;
+            position: absolute;
+            display: none;
+        }
+        #canvas>div{
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            position: absolute;
+            top: 460px;
+            z-index: 5;
+            
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: blue;
+            left: 40px;
+        }
+        .box3{
+            background-color: green;
+            left: 80px;
+        }
+        .box1:hover ~ .img1{
+            display: block;
+        }
+        .box2:hover ~ .img2{
+            display: block;
+        }
+        .box3:hover ~ .img3{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <img class="img1" src="smile.png">
+        <img class="img2" src="soso.png">
+        <img class="img3" src="bad.png">
+    </div>
+</body>
+</html>

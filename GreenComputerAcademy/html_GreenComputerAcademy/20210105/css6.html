@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            width: 1280px;
+            margin: 0 auto;
+        }
+        #redline{
+            background-color: #eb2629;
+            width: 100%;
+            height: 30px;
+            float: left;
+        }
+        header{
+            position: relative;
+        }
+        header #top-menu{
+            list-style: none;
+            float: right;
+            position: absolute;
+            top: 2px;
+            right: 10px;
+        }
+        header #top-menu li{
+            color: white;
+            display: inline-block;
+            text-align: right;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        #search{
+            float: right;
+            margin: 25px;
+            width: 200px;
+            height: 28px;
+            border: 2px solid  #eb2629;
+        }
+        #search input[type="button"]{
+            margin-top: 0px;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            border: none;
+            background-image: url(search_btn_go.gif);
+        }
+        #search input[type="text"]{
+            margin: 2px;
+            vertical-align: top;
+            width: 160px;
+            height: 25px;
+            border: none;
+        }
+        header img{
+            margin: 20px;
+        }
+        nav{
+            position: relative;
+        }
+        nav #bottom-menu{
+            list-style: none;
+            padding:10px 50px;
+            text-align: center;
+        }
+        nav #bottom-menu li{
+            display: inline-block;
+            color: rgb(100,100,100);
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px 25px;
+            position: relative;
+        }
+        nav #bottom-menu li #submenu{
+            position: absolute;
+            border: 1px solid #eb2629;
+            list-style: none;
+           
+            top: 40px;
+            left: 10px;
+            width: 110px;
+             z-index: 30;
+            background-color: white;
+            display: none;
+        }
+        nav #bottom-menu li #submenu li{
+            margin: 0;
+             padding: 10px 5px;
+            text-align: left;
+            display: block;
+            color: rgb(100,100,100);
+            font-size: 13px;
+            font-weight: normal;
+        }
+        nav #bottom-menu li:first-child:hover #submenu{
+            display: block;
+        }
+        #canvas{
+            width: 100%;
+            height: 570px;
+            position: relative;
+        }
+        #canvas label{
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            position:absolute;
+            bottom: 10px;
+            z-index: 30;
+            background-color: rgba(0,0,0,.5);
+            color: rgba(255,255,255,.9);
+            padding-top: 2px;
+            text-align: center;
+        }
+        #canvas label[for="r1"]{
+            left: 585px;
+        }
+        #canvas label[for="r2"]{
+            left: 620px;
+        }
+        #canvas label[for="r3"]{
+            left: 655px;
+        }
+        #canvas input[type="radio"]{
+            display: none;
+        }
+        #canvas img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #canvas #r1:checked ~ label[for="r1"],#canvas #r2:checked ~ label[for="r2"],#canvas #r3:checked ~ label[for="r3"]{
+            background-color: dodgerblue;
+        }
+        #canvas #r1:checked ~ #img-group img:nth-child(1),#canvas #r2:checked ~ #img-group img:nth-child(2),#canvas #r3:checked ~ #img-group img:nth-child(3){
+           display: block;
+        }
+        
+        #banner{
+            width:100%;
+            text-align: center;
+            padding:50px 0;
+        }
+        #banner div{
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0px 50px;
+        }
+        #banner div img{
+            width: 250px;
+            
+        }
+        #banner h1{
+            margin-top: 10px;
+            margin-bottom: 3px;
+            font-size: 16px;
+        }
+         #banner h2{
+            font-size: 12px;
+             font-weight: normal;
+        }
+        #banner table{
+            display: inline-block;
+        }
+        article{
+            border-top: 3px solid dimgray;
+            
+        }
+        article h1{
+            padding-left: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        article h1 span{
+            font-size: 15px;
+            color: dimgray;
+            display: inline-block;
+            margin: 10px;
+        }
+        article table img{
+            width: 250px;
+        }
+        article table p{
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        article table .price{
+            color: red;
+        }
+        article table tr{
+            height: 400px;
+        }
+         article table td{
+             padding-top: 20px;
+             vertical-align: top;
+        }
+        section{
+            position: relative;
+        }
+
+        section a{
+           
+            text-decoration: none;
+           color: dimgray;
+        }
+        section #section-end{
+             color: dimgray;
+            font-size: 13px;
+             right: 10px;
+            bottom: 10px;
+            position: absolute;
+        }
+        #end-line{
+           background-color: #eb2629;
+            width: 2000px;
+            height: 4px;
+             position: absolute;
+            left: -400px;
+            bottom: 400px;
+        }
+        footer{
+            position: relative;
+            width: 100%;
+            height: 400px;
+           text-align: center;
+        }
+        footer p{
+            font-size: 13px;
+            margin-left: 20px;
+            color: gray;
+            text-align: left;
+        }
+        footer table{
+            padding: 50px 20px;
+            width: 100%;
+            table-layout: fixed;
+        }
+        footer table td{
+            vertical-align: top;
+            padding-top: 20px;
+        }
+        footer table tr td:nth-child(1), footer table tr td:nth-child(2){
+            border-right: 1px solid;
+            
+        }
+        footer table tr td:nth-child(1) h1{
+            color: #eb2629;
+            font-size: 20px;
+        }
+        footer table tr td:nth-child(1) h1 span{
+            font-size: 12px;
+            text-decoration: underline;
+            color: black;
+        }
+        footer table tr td:nth-child(1) h2{
+            font-size: 50px;
+            text-align: left;
+            padding-left: 50px;
+        }
+        footer table tr td:nth-child(1) h3{
+            color: dimgray;
+            font-size: 12px;
+             text-align: left;
+            padding-left: 50px;
+        }
+        footer table tr td:nth-child(1) h4{
+             color: #eb2629;
+            font-size: 13px;
+              text-align: left;
+            padding-left: 50px;
+        }
+        footer table tr td:nth-child(2) h1{
+            color: #eb2629;
+            font-size: 18px;
+              text-align: left;
+            padding-left: 50px;
+        }
+        footer table tr td:nth-child(2) h2{
+            margin-top: 5px;
+            font-size: 13px;
+             text-align: left;
+            padding-left: 30px;
+        }
+        footer table tr td:nth-child(2) img{
+            float: left;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        footer table tr td:nth-child(2) h3{
+            margin-top: 110px;
+            font-size: 12px;
+             text-align: left;
+            padding-left: 30px;
+        }
+        footer table tr td:nth-child(3) h2{
+             margin-bottom: 5px;
+            font-size: 18px;
+             text-align: left;
+            padding-left: 30px;
+        }
+        footer table tr td:nth-child(3) h3{
+            margin-top: 5px;
+            font-size: 13px;
+             text-align: left;
+            padding-left: 40px;
+            font-weight: normal;
+        }
+        footer table tr td:nth-child(3) h4{
+            font-size: 13px;
+             text-align: left;
+            padding-left: 30px;
+            color: #eb2629;
+        }
+        footer table tr td:nth-child(3) h5{
+           text-align: left;
+            padding-left: 30px;
+            
+        }
+        footer table tr td:nth-child(3) img{
+                float: left;
+            margin-left: 30px;
+            margin-right: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+   <div id="redline">
+            </div>
+    <div id="wrap">
+        <header>
+            <ul id="top-menu">
+                    <li>로그인</li>
+                    <li>회원가입</li>
+                    <li>주문조회</li>
+                    <li>장바구니</li>
+                    <li>마이페이지▼</li>
+                    <li>고객센터▼</li>
+                    
+                </ul>
+            <img id="logo" src="logo.gif" alt="logo image">
+            <div id="search">
+            <input type="text">
+            <input type="button">
+            </div>
+        </header>
+        <nav>
+            
+             <ul id="bottom-menu">
+                <li>회사소개
+                    <ul id="submenu">
+                       <li>반8소개</li>
+                       <li>업무 제휴</li>
+                       <li>명예의 전당</li>
+                    </ul>
+                </li>
+                <li>보드게임</li>
+                <li>남치니</li>
+                <li>디자인 문구</li>
+                <li>뷰티&amp;도구</li>
+                <li>선물포장</li>
+                <li>아이디어 소품</li>
+                <li>패션&amp;잡화</li>
+                <li>기획&amp;시즌 상품</li>
+                
+            </ul>
+        </nav>
+        <div id="canvas">
+            <input type="radio" name="rgroup" id="r1" checked>
+            <input type="radio" name="rgroup" id="r2">
+            <input type="radio" name="rgroup" id="r3">
+            <label for="r1">1</label>
+            <label for="r2">2</label>
+            <label for="r3">3</label>
+            <div id="img-group">
+            <img src="main_rolling1_8.jpg">
+            <img src="main_rolling1_9.jpg">
+            <img src="main_rolling1_10.jpg">
+            </div>
+        </div>
+        <div id="banner">
+            <table>
+                <tr>
+                    <td><div><img src="color.jpg"></div><h1>회원 등급별 혜택</h1><h2>가입만 해도 포인트가 쏟아진다</h2></td>
+                    <td><div><img src="color.jpg"></div><h1>회원 등급별 혜택</h1><h2>가입만 해도 포인트가 쏟아진다</h2></td>
+                    <td><div><img src="color.jpg"></div><h1>회원 등급별 혜택</h1><h2>가입만 해도 포인트가 쏟아진다</h2></td>
+                    <td><div><img src="color.jpg"></div><h1>회원 등급별 혜택</h1><h2>가입만 해도 포인트가 쏟아진다</h2></td>
+                </tr>
+            </table>
+        </div>
+        <section>
+            <article>
+                <h1>반8 신상품<span>#기다리던 #신상 #내지갑은 #울상</span></h1>
+                <table>
+                    <tr>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                       <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                        <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                    </tr>
+                    <tr>
+                     <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                        <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                    </tr>
+                </table>
+            </article>
+             <article>
+               <h1>MD 추천상품<span>#K군 #추천 #실패없는 #구매리스트</span></h1>
+                
+                <table>
+                    <tr>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                       <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                        <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                    </tr>
+                    <tr>
+                     <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product1.jpg"><p class="product-name">[투머치]커플게임 연애실정 문제집</p><p class="price">4,800원</p></td>
+                        <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                        <td><img src="product2.jpg"><p class="product-name">투머치 러비더비 종치기 게임</p><p class="price">13,000원</p></td>
+                    </tr>
+                </table>
+            </article>
+             <article>
+                <h1>인기상품<span>#반8제품중 #제일인기 #TV출연 #안사면 손해</span></h1>
+                <table>
+                    <tr>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">4,800원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">[오리지널 남치니 포켓 노트</p><p class="price">4,800원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">4,800원</p></td>
+                       <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">13,000원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">13,000원</p></td>
+                    </tr>
+                    <tr>
+                     <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">4,800원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">4,800원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">4,800원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">13,000원</p></td>
+                        <td><img src="product4.jpg"><p class="product-name">오리지널 남치니 포켓 노트</p><p class="price">13,000원</p></td>
+                    </tr>
+                </table>
+            </article>
+            <p id="section-end"><a href="#">개인정보취급방침</a> | <a href="#">이용약관</a></p>
+        </section>
+        <footer>
+           <div id="end-line"></div>
+           <table>
+               <tr>
+                   <td><h1>고객센터 이용안내 <span>점심시간에 전화하지 마!!!</span></h1>
+                   <h2>02.000.0000</h2>
+                   <h3>월~금요일 AM 10:00 ~ PM 05:00</h3>
+                   <h3>점심시간 PM 12:00 ~ PM 01:00</h3>
+                   <h4>토요일, 일요일, 공휴일은 논다</h4>
+                   <h4>평일 주문&amp;결제는 <span>오후 1시</span>에 마감된다.</h4>
+                   </td>
+                   
+                   <td>
+                       <h1>찾아오시는 길</h1>
+                       <h2>본사 주소 : 서울시 중구 퇴계로 44길 11 문화빌딩 305호</h2>
+                       <img src="map.png">
+                       <h3>충무로역 1번 출구랑 가까움</h3>
+                   </td>
+                   <td>
+                      <h2>구매안전[에스크로] 서비스</h2>
+                       <img src="mark.gif">
+                        <h3>고객님은 안전거래를 위해 현금등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스를 이용하실 수 있습니다.</h3><br>
+                        <h2>모바일 웹사이트</h2>
+                        <img src="qr.gif">    
+                        <h4>모바일 바로 가기 설치하고</h4>
+                        <h4>적립금 받을 사람만 눌러라!</h4>
+                        <h5>m.www.ban8.co.kr</h5>
+                   </td>
+               </tr>
+               
+           </table>
+            <p>상호명 : 강렬한회사     대표 : 유강열     사업자등록번호 : 201-11-98200 [사업자정보확인]     통신판매업신고: 2018-서울중구-1602호     특허출원번호: 402010004851</p>
+<p>주소 : [본사]서울시 중구 퇴계로44길11 문화빌딩 305호 반8 / [물류센터]경기도 김포시 대곶면 소래로41번길 66-84     전화 : 02-423-8809     팩스 : 02-423-8859     개인정보책임관리자: 유강렬 </p>   
+<p>Copylight 2003 - 2015 BAN8 All rights reserved.</p>
+            
+        </footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     .box{
+            width: 300px;
+            height: 300px;
+           margin: 50px;
+         position: relative;
+         border: 1px solid black;
+        }
+        .img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+        }
+        img:nth-child(1){
+            z-index: 100;
+            animation: chgImg1 10s infinite;
+            opacity: 1;
+        }
+        img:nth-child(2){
+            z-index: 50;
+            animation: chgImg2 10s infinite;
+        }
+        img:nth-child(3){
+            animation: chgImg3 10s infinite;
+        }
+        @keyframes chgImg1{
+            0%{
+                opacity: 1;
+            }
+            17%{
+                 opacity: 0;
+            }
+            85%{
+                 opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes chgImg2{
+            0%{
+                opacity: 0;
+            }
+            17%{
+                 opacity: 0;
+            }
+            34%{
+                opacity: 1;
+            }
+            51%{
+                opacity: 0;
+            }
+        }
+        @keyframes chgImg3{
+            0%{
+                opacity: 0;
+            }
+            51%{
+                 opacity: 0;
+            }
+            68%{
+                opacity: 1;
+            }
+            85%{
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="box">
+        <img class="img"  src="../snoopy1.jpg"> 
+        <img class="img" src="../snoopy2.jpg"> 
+        <img class="img" src="../snoopy3.jpg" >
+    </div>
+</body>
+</html>
