@@ -1,0 +1,64 @@
+
+html{
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 20px;
+    background-color: #00539F;
+     text-align: center;
+    
+}
+h1{
+    font-size: 30px;
+    margin: 0 30px;
+    
+    color: aquamarine;
+    background-color: bisque;
+    text-shadow: 10px 10px 5px black;
+}
+p{
+    line-height: 3;
+    letter-spacing: 10px;
+    background-color: dimgrey;
+     margin: 0px 100px 50px 100px;
+     border: 5px solid black;
+}
+strong{
+    color: aquamarine;
+}
+a{
+    color: blueviolet;
+}
+a:visited{
+    color: darkorange;
+}
+a:hover{
+    color: forestgreen
+}
+img{
+    display: block;
+    margin : 0px auto;
+}
+ul{
+    list-style-type: circle;
+  /*  list-style-position: inside;*/
+}
+ol{
+    list-style-type: upper-alpha;
+    list-style-position: inside;
+}
+ul li{
+    display: inline;
+}
+
+/*
+selector{property:propertyValue}
+선택자를 여러개 나열도 가능
+h1,p{ color: red;}
+
+
+선택자의 종류
+1.요소 선택자
+2.id 선택자 #
+3.클래스 선택자 .
+4.속성 선택자 img[src]
+5.수도(pseudo) 선택자 a:hover
+*/
