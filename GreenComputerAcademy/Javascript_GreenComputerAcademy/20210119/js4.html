@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="header">안녕</h1>
+   <h2 class="header2">헬로</h2>
+   <p>반가워</p>
+   <p>어서와</p>
+   <p>꺼져</p>
+    <script>
+        document.querySelector('#header').innerHTML = 'HI';
+        document.querySelector('.header2').innerHTML = 'HELLO';
+        alert(document.querySelectorAll('p')[1].innerHTML);
+        document.querySelectorAll('p')[0].style.color = "red";
+        document.querySelector('#header').style.border = "1px solid black";
+        document.body.removeChild(document.getElementsByTagName('p')[2]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            margin: 50px;
+            width: 500px;
+            height: 570px;
+            border: 3px solid black;
+            position: relative;
+        }
+        #menu{
+            padding: 20px;
+            width: 100%;
+            height: 70px;
+        }
+        #canvas{
+            width: 100%;
+            height: 500px;
+            border-top: 3px solid;
+            position: relative;
+        }
+        p{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+       <div id="menu">
+           <input id="cnt" type="text">
+           <input type="button" onclick="mkbox()" value="생성">
+           <p id="show-cnt">0개</p>
+       </div>
+        <div id="canvas"></div>
+    </div>
+    <script>
+        function mkbox(){
+            var cnt = document.getElementById('cnt').value;
+            for(var i=0;i<cnt;i++){
+                var box = document.createElement('div');
+                box.style.position = "absolute";
+                var width = (Math.ceil(Math.random()*150)+50);
+                var height = (Math.ceil(Math.random()*150)+50);
+                box.style.width = width+"px";
+                box.style.height = height+"px";
+                box.style.top = Math.floor(Math.random()*(495-height))+"px";
+                box.style.left = Math.floor(Math.random()*(495-width))+"px";
+                box.style.border = "1px solid black";
+                box.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
+                box.setAttribute("onclick","removebox(event)");
+                document.getElementById('canvas').appendChild(box);
+            }
+            var showcnt = document.getElementById("show-cnt").innerHTML;
+            showcnt =showcnt.substring(0,showcnt.lastIndexOf("개"));
+            showcnt = Number(showcnt)+Number(cnt);
+            document.getElementById("show-cnt").innerHTML = showcnt+"개";
+        }
+        function removebox(e){
+            document.getElementById('canvas').removeChild(e.target);
+            var showcnt = document.getElementById("show-cnt").innerHTML;
+            showcnt =showcnt.substring(0,showcnt.lastIndexOf("개"));
+            showcnt = Number(showcnt)-1;
+            document.getElementById("show-cnt").innerHTML = showcnt+"개";
+        }
+    </script>
+</body>
+</html>

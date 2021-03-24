@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>안녕</p>
+    <div id="box">반갑</div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").css("background-color","red");
+            $("p").click(function(){
+               $("p").hide(); 
+            });
+            $("#box").mouseenter(function(){
+                $(this).css("color","blue");
+                $(this).css("font-size","25px");
+            });
+        });
+    </script>
+</body>
+</html>

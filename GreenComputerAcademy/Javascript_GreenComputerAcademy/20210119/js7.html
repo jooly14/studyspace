@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="눌러라" onclick="alert('hello')">
+    <input type="button" value="눌러라" onclick="hello()">
+    <input type="button" value="합" onclick="sum(5)">
+    <script>
+        function hello(){
+            document.body.innerHTML += '<br>hello';
+        }
+        function sum(a){
+            document.body.innerHTML += '<br>합은 '+(a+100);
+        }
+        function sum(a,b){
+            document.body.innerHTML += '<br>합은 '+(a+b);//같은 이름의 함수가 생성되는 경우 마지막에 작성된 함수가 오버로드해버림 
+            //자바와 다르게 함수가 매개변수가 다르다고 해서 다른 함수로 인식하지 않음!!
+            //그러므로 sum이라는 이름의 함수는 두개 모두 같은 함수이고 결국 매개변수가 두개 있는 함수만 인식됨
+        }
+    </script>
+</body>
+</html>

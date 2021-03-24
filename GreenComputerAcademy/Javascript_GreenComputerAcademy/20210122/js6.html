@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <input type="button" onclick="go1()" value="assign">
+    <input type="button" onclick="go2()" value="reload">
+    <input type="button" onclick="go3()" value="replace">
+    <script>
+//        var str = location.protocol +"<br>";
+//        str += location.href  +"<br>";
+//        str += location.host +"<br>";
+//        str += location.hostname  +"<br>";
+//        str += location.port  +"<br>";
+//        str += location.pathname  +"<br>";
+//        str += location.hash  +"<br>";
+//        str += location.search  +"<br>";
+//        document.getElementById("demo").innerHTML = str;
+        function go1(){
+            location.assign("http:/www.naver.com");
+        }
+        function go2(){
+            location.reload();
+        }
+        function go3(){
+            location.replace("http:/www.naver.com");
+        }
+    </script>
+</body>
+</html>

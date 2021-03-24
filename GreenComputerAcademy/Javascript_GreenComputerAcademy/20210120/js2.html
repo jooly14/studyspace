@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body>ul{
+            margin-top: 20px;
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+        }
+        body>ul>li{
+            list-style: none;
+            display: inline-block;
+            font-size: 20px;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            border: 1px solid;
+            background-color: red;
+        }
+        li>ul{
+            background-color: gray;
+            position: absolute;
+            top: 27px;
+            left: -1px;
+            padding: 0px;
+            border: 1px solid;
+            width: 100%;
+        }
+        
+        ul>li>ul>li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+   <ul>
+       <li id="li1" onmouseenter="inmouse(event)" onmouseleave="outmouse(event)">메뉴1
+           <ul>
+               <li>sub1</li>
+               <li>sub2</li>
+               <li>sub3</li>
+           </ul>
+       </li>
+      
+       <li id="li2" onmouseenter="inmouse(event)" onmouseleave="outmouse(event)">
+          메뉴2
+           <ul>
+               <li>sub4</li>
+               <li>sub5</li>
+               <li>sub6</li>
+           </ul>
+       </li>
+        <li id="li3" onmouseenter="inmouse(event)" onmouseleave="outmouse(event)">메뉴3
+           <ul>
+               <li>sub7</li>
+               <li>sub8</li>
+               <li>sub9</li>
+           </ul>
+       </li>
+   </ul>
+   
+    <script>
+        document.querySelector("#li1 ul").style.display = "none"
+        document.querySelector("#li2 ul").style.display = "none"
+        document.querySelector("#li3 ul").style.display = "none"
+        function inmouse(e){
+            console.log(1);
+            if(e.target.id){
+            document.querySelector("#"+e.target.id+" ul").style.display = "block";
+               
+               }
+        }
+        function outmouse(e){
+            if(e.target.id){
+            document.querySelector("#"+e.target.id+" ul").style.display = "none";
+               
+               }
+        }
+    </script>
+</body>
+</html>

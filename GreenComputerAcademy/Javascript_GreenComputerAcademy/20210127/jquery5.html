@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .ans{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box">
+            <div>1. 다음 중 외국인이 아닌 사람은?</div>
+            <p>①사나</p>
+            <p class="answer">②모모</p>
+            <p>③쯔위</p>
+            <p>④설현</p>
+        </div>
+        <div class="box">
+            <div>1. 다음 중 외국인이 아닌 사람은?</div>
+            <p>①사나</p>
+            <p class="answer">②모모</p>
+            <p>③쯔위</p>
+            <p>④설현</p>
+        </div>
+        <div class="box">
+            <div>1. 다음 중 외국인이 아닌 사람은?</div>
+            <p>①사나</p>
+            <p class="answer">②모모</p>
+            <p>③쯔위</p>
+            <p>④설현</p>
+        </div>
+    </div>
+    <input type="button" value="확인">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+$("input").click(function(){
+   $(".answer").css("background-color","red");
+    
+    var cnt=0;//처음 점수
+    for(var i=0;i<3;i++){
+         for(var j=0;j<4;j++){
+            var x=$("#wrap .box:nth-child("+(i+1)+") p:nth-child("+(j+2)+")").css("color");//rgb(0,0,255)
+            var y=$("#wrap .box:nth-child(1) p:nth-child("+(j+2)+")").css("background-color");//rgb(255,0,0)
+
+            if(x=="rgb(0, 0, 255)" && y=="rgb(255, 0, 0)"){
+                cnt++;
+            }
+         }
+    }
+    alert(cnt);
+    
+});
+    
+    
+    
+$("p").click(function(){
+   $(this).parent().children().removeClass("ans");
+   $(this).addClass("ans");
+});
+    
+    
+});
+</script>
+    
+</body>
+</html>
+
+
+

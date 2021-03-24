@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #wrap{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            border: 1px solid black;
+        }
+        header,nav,footer{
+            width:98%;
+            height: 30px;
+            border : 1px solid black;
+            margin: 1%
+        }
+        header{
+            color: red;
+        }
+        nav{
+            background-color: blue;
+        }
+        section{
+            width:60%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            height: 250px;
+            flex-flow: row wrap;
+            margin: 1%;
+        }
+        section span{
+            width: 90%;
+            height: 10px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        article{
+            width: 70%;
+            height:30%;
+            border: 1px solid black;
+        }
+        aside{
+            width:37%;
+            height: 250px;
+            border: 1px solid black;
+            margin: 1%;
+            margin-left: 0; 
+            padding-top: 100px;
+        }
+        footer{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+    <header>
+        Header
+    </header>
+    <nav>Navigation</nav>
+    <section><span>Section</span>
+    <article>Article</article>
+    <article>Article</article>
+    </section>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+    </div>
+</body>
+</html>

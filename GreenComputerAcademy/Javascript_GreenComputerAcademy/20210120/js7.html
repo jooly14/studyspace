@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 500px;
+            border: 3px solid;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onmousedown="fnc1(event)" onmouseup="fnc2(event)" oncontextmenu="return false" >
+        
+        
+    </div>
+    <script>
+        var sx;
+        var sy;
+        var ex;
+        var ey;
+        var btn;
+        function fnc1(e){
+             sx = e.clientX;
+             sy = e.clientY;
+             console.log(e.buttons);
+            btn = e.buttons;
+        }
+        function fnc2(e){
+             ex = e.clientX;
+             ey = e.clientY;
+            var box = document.createElement('div');
+            box.style.position = 'absolute';
+            box.style.display = 'inline-block';
+            box.style.top = sy<ey?sy+"px":ey+"px";
+            box.style.left = sx<ex?sx+"px":ex+"px";
+            box.style.width = Math.abs(sx-ex)+"px";
+            box.style.height = Math.abs(sy-ey)+"px";
+            
+            if(btn==1){
+                box.style.border = '3px solid red';
+            }else if(btn ==2){
+                
+                box.style.border = '3px solid green';
+            }else if(btn == 3){
+                box.style.border = '3px solid blue';
+            }
+            document.getElementById("box").appendChild(box);
+        }
+        
+    </script>
+</body>
+</html>

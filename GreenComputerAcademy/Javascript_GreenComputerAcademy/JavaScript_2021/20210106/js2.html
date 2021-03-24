@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function CheckWeight(name, height, weight){
+            this.name = name;
+            this.height = height;
+            this.weight = weight;
+            this.minWeight;
+            this.maxWeight;
+           
+            
+        }
+         CheckWeight.prototype.getInfo = function(){
+            var str ="";
+            str += "이름 : "+ this.name +" , ";
+            str += "키 : "+ this.height +" , ";
+            str += "몸무게 : "+ this.weight;
+            return str;
+        }
+         CheckWeight.prototype.getResult = function(){
+            this.minWeight = (this.height-100)*0.9-5;
+            this.maxWeight = (this.height-100)*0.9+5;
+             if(this.weight>=this.minWeight&&this.weight<=this.maxWeight){
+                 return "정상";
+             }else{
+                 return "관리 필요";
+             }
+        }
+         
+        var jang = new CheckWeight("장보리",168,62);
+        console.log(jang);
+        
+        document.write(jang.getInfo(),"<br>");
+        document.write(jang.getResult(),"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

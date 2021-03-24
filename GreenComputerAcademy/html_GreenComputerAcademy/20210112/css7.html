@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 96%;
+            margin: 0 auto;
+            
+        }
+        header{
+            width: 100%;
+            height: 120px;
+            background-color: darkblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+        section{
+            height:400px; 
+        }
+        .content{
+            width: 60%;
+            height: 100%;
+            float: left;
+            background-color: orange;
+            text-align: center;
+        }
+        .right-side{
+            width: 40%;
+           height: 100%;
+            float: right;
+            background-color: green;
+        }
+        footer{
+            width: 100%;
+            height: 120px;
+            background-color: darkred;
+            clear: both;
+        }
+        .content img{
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+        <header><span>고정 그리드 레이아웃</span></header>
+        <section>
+        <article class="content"><img src="../snoopy1.jpg">
+        </article>
+        <article class="right-side"></article>
+        </section>
+        <footer></footer>
+    </div>
+</body>
+</html>

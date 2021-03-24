@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".txt_1 span").text(JSON.stringify($(".box").offset()));$
+            (".txt_2 span").text(JSON.stringify($(".box").position()));
+            $(window).scrollTop($("h1").offset().top);
+            console.log($(window).scrollTop()-$("#wrap").offset().top);
+        });
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        #box_wrap{
+            width: 300px;
+            height: 200px;
+            margin: 50px auto 0;
+            position: relative;
+            background-color: gray;
+        }
+        .box{
+         width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 100px;
+            top: 50px;
+            background-color: red;
+        }
+        #wrap{
+            line-height: 1;
+            height: 5000px;
+            padding-top: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box_wrap">
+        <p class="box">box</p>
+    </div>
+    <p class="txt_1">절대 위칫값:<span></span></p>
+    <p class="txt_2">상대 위칫값:<span></span></p>
+    <br>
+    <div id="wrap">
+        <h1>위치 조작 메서드</h1>
+    </div>
+</body>
+</html>

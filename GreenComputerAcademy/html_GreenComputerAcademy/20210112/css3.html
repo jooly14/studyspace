@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .mousebox{
+            width: 36px;
+            height: 60px;
+            border: 3px solid white;
+            position: absolute;
+            bottom: 40px;
+            left: 400px;
+            border-radius: 18px;
+        }
+        .mouseball{
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 10px;
+            left: 11px;
+            border-radius: 50%;
+            background-color: white;
+            animation: move 1s infinite linear; 
+        }
+        @keyframes move{
+            0%{
+                top: 10px;
+                opacity: 1;
+            }
+            20%{
+                top: 10px;
+                opacity: 0;
+            }
+            40%{
+                top:8px;
+                opacity: 1;
+            }
+            70%{
+                top: 30px;
+                opacity: 1;
+            }
+            100%{
+                top: 45px;
+                opacity: 0;
+            }
+        }
+        
+        #wrap{
+            position: relative;
+            width: 500px;
+           
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+    <img src="../snoopy1.jpg">
+    <div class="mousebox"><div class="mouseball"></div></div>
+    </div>
+</body>
+</html>

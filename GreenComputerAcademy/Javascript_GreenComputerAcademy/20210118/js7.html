@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <input type="button" value="click" onclick="fnc1()">
+    <script>
+        
+        var header = document.createElement("h1");
+        var text = document.createTextNode("hello");
+        header.appendChild(text);
+        document.body.appendChild(header);
+        var btn = document.createElement("button");
+        btn.setAttribute("onclick","fnc1()");
+        btn.innerHTML="hello";
+        
+        document.body.appendChild(btn);
+        function fnc1(){
+            alert("hi");
+            var imgT = document.createElement("img");
+            imgT.setAttribute("src","../snoopy1.jpg");
+            document.body.appendChild(imgT);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+<body>
+   <form name="frm">
+    <input type="text" name="id">
+    <input type="button" value="확인" onclick="fnc1()">
+    </form>
+    <script>
+        function fnc1(){
+            opener.frm.id.value = document.frm.id.value;
+            window.close();
+        }
+    </script>
+</body>
+</html>

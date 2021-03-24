@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #top_menu>li{
+            display: inline-block;
+            position: relative;
+        }
+        #top_menu>li>ul{
+            display: none;
+            position: absolute;
+            width: 80px;
+            padding: 0;
+           
+        }
+        #top_menu>li>ul li{
+             border: 1px solid red;
+        }
+        #top_menu>li:hover ul{
+            display: block;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="top_menu">
+        <li>메뉴1
+            <ul>
+                <li>서브메뉴</li>
+                <li>서브메뉴</li>
+                <li>서브메뉴</li>
+            </ul>
+        </li>
+       <li>메뉴2
+            <ul>
+                <li>서브메뉴2</li>
+                <li>서브메뉴2</li>
+                <li>서브메뉴2</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

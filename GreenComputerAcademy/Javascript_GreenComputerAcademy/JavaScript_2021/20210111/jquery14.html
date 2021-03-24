@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".btn2").hide();
+           $(".btn1").on("click",function(){
+              $(".box").slideUp(1000,"linear",function(){
+                  $(".btn1").hide();
+                  $(".btn2").show();
+              }) ;
+           });
+            $(".btn2").on("click",function(){
+               $(".box").fadeIn(1000,"linear",function(){
+                   $(".btn2").hide();
+                  $(".btn1").show();
+               });
+            });
+            $(".btn3").on("click",function(){
+                $(".box").slideToggle(1000,"linear");
+            });
+            $(".btn4").on("click",function(){
+                $(".box").fadeTo(1000,0.3,"linear");
+            });
+            $(".btn5").on("click",function(){
+                $(".box").fadeTo(500,1,"linear");
+            });
+            $(".btn6").on("click",function(){
+               $(".btn6").animate({ "left":(parseInt($(".btn6").css("left"))+100)+"px"},2000,"linear");
+            });
+            $(".btn7").on("click",function(){
+               $(".btn7").animate({"left":"+=50px"},500,"linear"); 
+            });
+        });
+    </script>
+    <style>
+        *{
+            position: relative;
+        }
+        .box{
+            width: 400px;
+            height: 250px;
+        }
+        .content{
+           position: absolute;
+        }
+        .btn6, .btn7{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: rebeccapurple;
+            position: absolute;
+        }
+        .btn6{
+            top: 0px;
+            left: 0;
+        }
+        .btn7{
+            top: 120px;
+            left: 0;
+        }
+        #ani-box{
+            width: 100%;
+            height: 250px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSlide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+              <p>국가는 법률이 정하는 바에 의하여 재외국민을 보호할 의무를 진다. 지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 법령의 범위안에서 자치에 관한 규정을 제정할 수 있다.</p>
+
+            <p>대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다. 정당은 그 목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다.</p>
+        </div>
+        
+    </div>
+    <div id="ani-box">
+        <p><button class="btn6">move1</button></p>
+        <p><button class="btn7">move2</button></p>
+    </div>
+</body>
+</html>

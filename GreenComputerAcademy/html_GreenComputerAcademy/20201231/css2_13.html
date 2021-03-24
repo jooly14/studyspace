@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .ex-layout{
+            width: 304px;
+            height: 310px;
+            border: solid black 1px;
+            margin: 0 auto;
+        }
+        .menu{
+            width: 300px;
+            height: 40px;
+            border: 2px solid blue;
+            background-color: aquamarine;
+        }
+        .left-menu{
+            float: left;
+            width: 50px;
+            height: 254px;
+            border: 2px solid red;
+            background-color: #ffe7d5;
+        }
+        .content{
+            float: left;
+            width: 250px;
+            height: 250px;
+        }
+        .article{
+            height: 200px;
+            border: 2px solid blue;
+            background-color: #e2e9ff;
+        }
+        .comment{
+            height: 50px;
+            border: 2px solid blue;
+            background-color: #ffddff;
+        }
+    </style>
+</head>
+<body>
+    <div class="ex-layout">
+        <div class="menu">global</div>
+        <div class="main">
+            <div class="left-menu">left menu</div>
+            <div class="content">
+                <div class="article"></div>
+                <div class="comment"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

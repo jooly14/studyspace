@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            var style1 = {"background-color":"red","border":"2px solid blue"};
+            var style2 = {"background-color":"blue","border":"2px dashed red"};
+            var style3 = {"background-color":"purple","border":"2px dashed white"};
+            $(".txt").prev().css(style1);
+            $(".txt+p").css(style2);
+            $(".txt").next().next().css(style3);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>h1</h1>
+        <p>p1</p>
+        <p class="txt">p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        
+    </div>
+</body>
+</html>

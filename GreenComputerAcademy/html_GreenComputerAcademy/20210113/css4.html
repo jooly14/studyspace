@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .con{
+            width: 500px;
+            margin: 0 auto;
+            position: relative;
+            
+        }
+        .c1,.c2{
+            width: 490px;
+            height: 500px;
+            position: absolute;
+        }
+        img{
+            width: 490px;
+            height: 500px;
+            
+        }
+        .c1{
+            clip-path: polygon(100% 0%, 0% 0%, 0% 100%);
+            top: 0;
+        }
+    
+        .c2{
+            clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+            left: 10px;
+        }
+        .blue{
+            width: 500px;
+            height: 500px;
+            background-color: deepskyblue;
+            position: absolute;
+            z-index: -20;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="c1"><img src="../snoopy3.jpg"></div>
+        <div class="c2"><img src="../snoopy3.jpg"></div>
+        <div class="blue"></div>
+    </div>
+</body>
+</html>

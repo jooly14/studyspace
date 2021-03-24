@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+div,p {
+	float: left;
+	margin: 10px;
+	background-color: #FFF;
+}
+
+div#sub {
+	width: 80px;
+	height: 80px;
+	border: #000 thin solid;
+}
+
+p {
+	width: 50px;
+	height: 50px;
+	border: #000 thin solid;
+}
+</style>
+</head>
+
+<body>
+	<div id="container1">
+		<div id="sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	<div id="container2">
+		<div id="sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	<div id="container3">
+		<div id="sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	<div id="container4">
+		<div id="sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	<div id="container5">
+		<div id="sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	<div id="container6">
+		<div id="sub">
+			<p>div p</p>
+		</div>
+		<p id="part1">p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){		
+			$("div#container1").children("p").css("background-color", "yellow");
+			$("div#container2").find("p").css("background-color", "yellow");
+			$("div#container3").children("p#part1").prev().css("background-color", "yellow");
+			$("div#container4").children("#part1").next().css("background-color", "yellow");
+			$("div#container5").children("#part1").siblings().css("background-color", "yellow");
+			$("div#container6").children("p").parent().css("background-color", "yellow");
+                        // 윗줄을 수정하면 원하는 문제를 풀 때 결과를 얻을 수 있습니다.
+		});
+	</script>
+</body>
+</html><!-- 1) 번 문제 답 -->

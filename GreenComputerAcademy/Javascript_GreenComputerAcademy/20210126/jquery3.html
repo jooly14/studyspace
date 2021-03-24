@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #wrap{
+            width: 500px;
+            height: 500px;
+            border: 3px solid;
+        }
+        #menu{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            padding-top: 15px;
+        }
+        #text{
+            width: 100%;
+            height: 450px;
+            border-top: 3px solid;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="menu">
+            <label>찾을 글씨</label>
+            <input type="text" name="word">
+            <input type="button" value="찾기">
+        </div>
+        <div id="text"><p>모든 국민은 법률이 정하는 바에 의하여 선거권을 가진다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다. 헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.</p>
+
+<p>교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+
+<p>각급 선거관리위원회의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.</p>
+
+</div>
+    </div>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script>
+        $(document).ready(function(){
+            $("input[type='button']").click(function(){
+                var word = $("input[name='word']").val();
+                for(var i=0;i<$("#text p").length;i++){
+                    $("#text p:nth-child("+(i+1)+")").html( $("#text p:nth-child("+(i+1)+")").text().replaceAll(word,"<span>"+word+"</span>"));
+                }
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>

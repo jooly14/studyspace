@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $("li:first").css("background-color","red"); 
+            $("li:last").css("background-color","blue");
+            $("li:odd").css("color","green");
+            $("li:even").css("color","yellowgreen");
+            $("li:first-of-type").css("border","3px solid black");
+            $("ul:nth-child(3)").css("border","3px dashed red");
+        });
+    
+    </script>
+</head>
+<body>
+   <h1>위치 탐색 선택자</h1>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+    </ul>
+     <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+    </ul>
+</body>
+</html>

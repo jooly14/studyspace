@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+     var price1 = 3000;
+     var price2 = 6000;
+     var price3 = 3000;
+        
+    document.write(price1+price2+price3>10000?price1+price2+price3-10000+"원 초과":10000-(price1+price2+price3)+"원 절약","<hr>");
+        
+        var quantity = prompt("4분기 판매량을 입력하시오?","0");
+        document.write(quantity>=(1200+1300+1000)/3?"판매량이 평균이상입니다.":"판매량이 평균미달입니다.","<hr>");
+        
+        var walk = prompt("하루 몇 보 걸어?","0");
+        
+        if(walk>=10000){
+            document.write("good","<br>");
+        }
+        document.write("====================end======================","<br>");
+        
+        var favoriteNum = prompt("좋아하는 숫자?","0");
+        
+        if(favoriteNum%2==0){
+            document.write("좋아하는 숫자는 짝수입니다.");
+        }else{
+            document.write("좋아하는 숫자는 홀수입니다.");
+            
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

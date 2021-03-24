@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *,html,body{
+            padding: 0;
+            margin: 0;
+        }
+        #myVideo{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -100;
+        }
+        #bg{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -90;
+            background-color: rgba(0,0,0,0.3);
+        }
+        #container{
+            color: white;
+            height: 120px;
+            background-color: rgba(0,0,0,.6);
+            position: fixed;
+            z-index: -80;
+            bottom: 0px;
+            padding: 20px;
+            
+        }
+        h2{
+            margin-bottom: 10px;
+        }
+        button{
+            background-color: rgba(0,0,0,.5);
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 7px 50px;
+            margin-top: 10px;
+        }
+        button:hover{
+            background-color: rgba(255,255,255,.5);
+            cursor: grab;
+        }
+        button:active{
+            cursor: grabbing;
+        }
+        
+    </style>
+</head>
+<body>
+   <video autoplay muted loop id="myVideo">
+       <source src="../KakaoTalk_20210106_101909748.mp4" type="video/mp4">
+       이 브라우저는 동영상을 지원하지 않음.
+   </video>
+   <div id="bg"></div>
+   
+   <!-- 이하로 화면에 출력될 내용 작성 -->
+   <div id="container">
+       <h2>Heading</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus massa et mauris pretium commodo. Donec sed tortor vel tellus placerat venenatis. Vivamus nec odio tincidunt, gravida enim a, aliquet ipsum. Praesent molestie libero tellus, eu pharetra quam hendrerit at.</p>
+       <button>Pause</button>
+   </div>
+    
+</body>
+</html>

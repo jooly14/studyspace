@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    var result = confirm("정말로 회원 탈퇴?");
+        if(result){
+            document.write("탈퇴 완료");
+        }else{
+            document.write("탈퇴 취소");
+        }
+    document.write("<hr>");
+        
+        var mon = prompt("현재 몇월?","0");
+        if(mon>=9&&mon<=11){
+            document.write("가을");
+        }else if(mon>=6&&mon<=8){
+            document.write("summer");
+        }else if(mon>=3&&mon<=5){
+            document.write("spring");
+        }else{
+            document.write("winter");
+        }
+        document.write("<hr>");
+        
+        var id = "idid";
+        var password = "1234";
+        
+        var user_id = prompt("아이디 입력","");
+        var user_pass = prompt("비밀번호 입력","");
+        
+        if(user_id==id){
+            if(password==user_pass){
+                document.write(id+"님 반갑습니다.");
+            }else{
+                alert("wrong password!!");
+                location.reload();
+            }
+        }else{
+            alert("wrong id!!");
+            location.reload();
+        }
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+          $("#newsWrap_1").load("jquery19.html #news_1");
+             $("#newsWrap_2").load("jquery19.html #news_2");
+            
+            $.ajax({
+               url:"MOCK_DATA.json",
+                dataType:"json",
+                success:function(data){
+                    if(data.length>0){
+                        var tb = $("<table/>");
+                        for(var i in data){
+                            var $id = data[i].id;
+                            var $first_name = data[i].first_name;
+                            var $last_name = data[i].last_name;
+                            var $email = data[i].email;
+                            var row = $("<tr/>").append(
+                                        $("<td/>").text($id),
+                                        $("<td/>").text($first_name),
+                                        $("<td/>").text($last_name),
+                                        $("<td/>").text($email));
+                            tb.append(row);
+                        }
+                        $("#wrap1").append(tb);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>load1</h1>
+    <div id="newsWrap_1"></div>
+    <h1>load2</h1>
+    <div id="newsWrap_2"></div>
+    <h1>$.ajax()</h1>
+    <div id="wrap1"></div>
+</body>
+</html>

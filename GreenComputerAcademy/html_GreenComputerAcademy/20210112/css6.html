@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+    <style>
+        #wrap{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            background-image: url(../snoopy2.jpg);
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .text{
+            width: 120px;
+            height: 50px;
+            background-color: skyblue;
+            position: absolute;
+            bottom: 0;
+            right: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .arrow-back{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: skyblue;
+            display: flex;
+            align-items: center;
+            
+            z-index: 100;
+            overflow: hidden;
+        }
+        .text-back{
+            position: absolute;
+            bottom: 0;
+            right: 50px;
+            width: 120px;
+            height: 50px;
+            background-color: rgba(255,255,255,.5);
+            z-index: 100;
+            transition: all 1s;
+        }
+        .arrow-back:hover ~ .text-back{
+            width: 0px;
+        }
+        .arrow{
+            left: 17px;
+            position: absolute;
+            
+        }
+        .arrow-back:hover .arrow{
+           animation: arrow-move .5s;
+        }
+        
+        @keyframes arrow-move{
+            50%{
+           left: 55px;
+            }
+            51%{
+                left: -6px;
+            }
+            100%{
+                left: 17px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+       <div class="arrow-back">
+            <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="text-back"></div>
+        <div class="text"><span>Learn More...</span></div>
+       
+        
+        
+    </div>
+</body>
+</html>

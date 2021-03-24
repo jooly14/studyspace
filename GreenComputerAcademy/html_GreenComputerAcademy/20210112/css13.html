@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+/*            padding: 10px 0;*/
+            width: 100%;
+            height: 600px;
+            display: flex;
+            flex-flow: wrap row;
+            align-items: center;
+            background-color: dodgerblue;
+        }
+        .container div img,.container div div{
+            width: 125px;
+            height: 100%;
+        }
+        .container div div{
+            text-align: center;
+            padding: 15px 10px;
+            background-color: white;
+            font-weight: bold;
+             width: 125px;
+            height: 100%;
+        }
+        .container>div{
+            display: flex;
+            justify-content: center;
+            
+            min-width: 100px;
+            min-height: 100px;
+            overflow: hidden;
+        }
+        .c1,.c2,.c3{
+            width: 100%;
+            height: 150px;
+        }
+        @media (min-width:800px){
+            .container{
+                width: 800px;
+                margin: 0 auto;
+                align-items: baseline;
+                padding-top: 30px;
+            }
+            .c1,.c3,.c2{
+                width: 33.3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="c1">
+            <img src="../snoopy1.jpg"><div>일 분 전만큼 먼 시간은 없다</div>
+        </div>
+        <div class="c2">
+            <img src="../snoopy2.jpg"><div>일 분 전만큼 먼 시간은 없다</div>
+        </div>
+        <div class="c3">
+            <img src="../snoopy3.jpg"><div>일 분 전만큼 먼 시간은 없다</div>
+        </div>
+    </div>
+</body>
+</html>

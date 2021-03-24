@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            var beforeMenu= null;
+            var i=0;
+            $(".gnb button").on("mouseover focus",function(){
+               if(beforeMenu)beforeMenu.css("background","none");
+                $(this).css("background-color","red");
+                beforeMenu=$(this);
+                console.log(2);
+            });
+            $(".gnb").on("mouseleave focusout",function(){
+               i++;  if(beforeMenu)beforeMenu.css("background","none");
+                
+                console.log(i+" " +1);
+            });
+        });
+    </script>
+    <style>
+        .gnb{
+            width: 300px;
+            height: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <button><a href="#">menu1</a></button>
+        <button><a href="#">menu2</a></button>
+        <button><a href="#">menu3</a></button>
+        <button><a href="#">menu4</a></button>
+    </ul>
+</body>
+</html>

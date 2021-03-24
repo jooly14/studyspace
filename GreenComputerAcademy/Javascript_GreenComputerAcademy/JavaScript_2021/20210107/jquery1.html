@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            var arr1= [{"area":"seoul","name":"moo"},{"area":"pusan","name":"hong"},{"area":"daejeon","name":"park"},{"area":"seoul","name":"big"}];
+            var arr2 = $.map(arr1,function(a,b){
+               if(a.area =="seoul"){
+                   return a;
+               }
+            });
+            console.log(arr2);
+            console.log("===========end===========");
+            
+            var arr3 =$.grep(arr1,function(a,b){
+                if(a.area=="seoul"){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+            console.log(arr3);
+            console.log("===========end===========");
+            
+            var arr4 =["seoul","daejeon","pusan","jeonju","pusan"];
+            var obj = {"name":"park"};
+            console.log($.isArray(obj));
+            console.log($.isArray(arr4));
+            console.log($.inArray("pusan",arr4));
+            
+            console.log($("li").index($("#list3")));
+        });
+    </script>
+</head>
+<body>
+   <ul>
+       <li>1</li>
+       <li>2</li>
+       <li id="list3">3</li>
+       <li>4</li>
+       
+   </ul>
+    
+</body>
+</html>

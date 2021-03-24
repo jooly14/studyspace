@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<p>Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+    <option value="red">빨간색</option>
+  <option value="blue">파란색</option>
+  <option value="green">녹색</option>
+</select>
+
+
+<p id="demo">글자색</p>
+
+<span onmouseover="this.style.color='red'" onmouseout="this.style.color = 'black'">Mouse over me!</span>
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").style.color = x;
+}
+</script>
+
+</body>
+</html>

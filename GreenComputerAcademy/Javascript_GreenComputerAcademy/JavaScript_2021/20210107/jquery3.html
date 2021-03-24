@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $("p:hidden").css({
+                "display":"block",
+                "background-color":"red"
+            });
+            
+            console.log($("#zone1 :selected").val());
+            console.log($("#zone2 :checked").val());
+            console.log($("#zone3 :checked").val());
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>p1</p>
+        <p style="display: none;">p2</p>
+        <p>p3</p>
+    </div>
+    <form action="#">
+       <p id="zone1">
+        <select name="course" id="course">
+            <option value="op1">op1</option>
+            <option value="op2" selected>op2</option>
+            <option value="op3">op3</option>
+        </select>
+        </p>
+       <p id="zone2">
+       <input type="checkbox" name="hobby1" value="독서1">독서1
+       <input type="checkbox" name="hobby2" value="독서2">독서2
+       <input type="checkbox" name="hobby3" value="독서3" checked>독서3
+        </p>
+        <p id="zone3">
+       <input type="radio" name="gender" value="male">male
+       <input type="radio" name="gender" value="female" checked>female
+        </p>
+    </form>
+</body>
+</html>

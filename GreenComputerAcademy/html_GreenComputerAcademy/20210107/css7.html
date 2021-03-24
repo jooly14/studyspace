@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .origin{
+            perspective: 150px;
+            
+        }
+        img{
+            width: 400px;
+            margin-left: 1000px;
+        }
+        .rotatex{
+            transform: rotateX(45deg);
+            border: 1px solid red;
+        }
+        .rotatey{
+            transform: rotateY(45deg);
+            border: 1px solid blue;
+        }
+        .rotatez{
+            border: 1px solid green;
+            transform: rotateZ(45deg);
+        }
+        .rotatexyz{
+            border: 1px solid purple;
+            transform: rotate3d(2.5,1.2,-1.5,45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="rotatex"><img src="../20210106/bg.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatey"><img src="../20210106/bg.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatez"><img src="../20210106/bg.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatexyz"><img src="../20210106/bg.jpg"></div>
+    </div>
+</body>
+</html>

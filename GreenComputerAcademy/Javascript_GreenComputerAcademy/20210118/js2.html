@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //웹에서 사용되는 언어
+        //변수는 하나밖에 없다 => var
+        var apple = "사과";
+//        alert(apple);
+        //상수는 const
+        const PI = 3.14;
+        var boo = true;
+        var flo = 3.14;
+        var str = "안녕";
+        var str2 = "2";
+//        alert(flo + str2);
+        var num = flo + parseInt(str2);
+//        alert(num); 5.14000000001  why??
+        //var가 없어도 되긴 하지만 변수를 처음 선언할 때는 가능하면 var을 입력하기!
+        //덜 헷갈리라고
+        //null 값이 없는것 데이터를 비우고자 할때 사용하기도 함
+        //undefined 값이 등록되지 않은것
+        //NaN Not a Number
+//        alert();
+//        var s = prompt("message","default");
+//        alert(s);
+        var boo2 = confirm("message");
+//         alert(boo2);
+        if(boo2==true){
+            alert(1);
+        }else{
+            alert(2);
+        }
+        for(var i=0;i<3;i++){
+            document.write(i+"<br>");
+        }
+    </script>
+</body>
+</html>

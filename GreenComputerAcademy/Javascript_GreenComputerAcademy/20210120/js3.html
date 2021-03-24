@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid;
+        }
+        #wrap{
+            width: 300px;
+            height: 400px;
+        }
+        #btns{
+            width: 100%;
+            height: 50px;
+        }
+        #menu{
+            border: 1px solid red;
+            width: 100%;
+            height: 350px;
+            position: relative;
+        }
+        #menu div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border: none;
+        }
+        #m1{
+            background-color: red;
+        }
+        #m2{
+            background-color: orange;
+        }
+        #m3{
+            background-color: yellow;
+        }
+        #m4{
+            background-color: green;
+        }
+        #m5{
+            background-color: blue;
+        }
+        #m6{
+            background-color: purple;
+        }
+        #btns{
+            display: flex;
+            justify-content: center;
+        }
+        #btns input{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+   <div id="btns">
+    <input type="button" value="<" onclick="back()">
+    <input type="button" value=">" onclick="front()">
+    </div>
+    <div id="menu">
+        <div id="m1"><h1>1</h1></div>
+        <div id="m2"><h1>2</h1></div>
+        <div id="m3"><h1>3</h1></div>
+        <div id="m4"><h1>4</h1></div>
+        <div id="m5"><h1>5</h1></div>
+        <div id="m6"><h1>6</h1></div>
+    </div>
+    </div>
+    <script>
+        document.querySelector("#m1").style.display = 'inline-block';
+        document.querySelector("#m2").style.display = "none";
+        document.querySelector("#m3").style.display = "none";
+        document.querySelector("#m4").style.display = "none";
+        document.querySelector("#m5").style.display = "none";
+        document.querySelector("#m6").style.display = "none";
+        function back(){
+            var cur;
+            for(var i=0;i<6;i++){
+                console.log(document.querySelector("#m"+(i+1)).style.display);
+                if( document.querySelector("#m"+(i+1)).style.display == 'inline-block'){
+                   cur = i+1;
+                }
+            }
+            if(cur==1){
+                  document.querySelector("#m6").style.display = 'inline-block';
+                document.querySelector("#m1").style.display = "none";
+            }else if(cur!=1){
+               document.querySelector("#m"+(cur-1)).style.display = 'inline-block';
+                document.querySelector("#m"+cur).style.display = "none";
+            }
+          
+        }
+         function front(){
+            var cur;
+            for(var i=0;i<6;i++){
+                console.log(document.querySelector("#m"+(i+1)).style.display);
+                if( document.querySelector("#m"+(i+1)).style.display == 'inline-block'){
+                   cur = i+1;
+                }
+            }
+            if(cur==6){
+                  document.querySelector("#m1").style.display = 'inline-block';
+                document.querySelector("#m6").style.display = "none";
+            }else if(cur!=6){
+               document.querySelector("#m"+(cur+1)).style.display = 'inline-block';
+                document.querySelector("#m"+cur).style.display = "none";
+            }
+          
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 200px;
+            border: 3px solid black;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 30px;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+            border: 3px solid;
+        }
+        input:nth-child(1){
+            background-color: red;
+        }
+        input:nth-child(2){
+            background-color: green;
+        }
+        input:nth-child(3){
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" onclick="red()">        
+        <input type="button" onclick="green()">        
+        <input type="button" onclick="blue()">        
+    </div>
+    <script>
+        function red(){
+            document.getElementsByTagName('div')[0].style.backgroundColor = "red";
+        }
+        function green(){
+            document.getElementsByTagName('div')[0].style.backgroundColor = "green";
+        }
+        function blue(){
+            document.getElementsByTagName('div')[0].style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>

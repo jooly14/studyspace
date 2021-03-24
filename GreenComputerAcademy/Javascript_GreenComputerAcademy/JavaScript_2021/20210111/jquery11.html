@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+           $("#wrap1 li a").on({
+              "click":function(){
+                  $("#wrap1 li a").css("background-color","brown");
+                  $(this).css("background-color","yellow");
+              } 
+           });
+             $("#wrap2 li a").on({
+              "click":function(){
+                  $("#wrap2 li a").css("background-color","yellowgreen");
+                  console.log( $("#wrap2 li a").index(this));
+                  $("#wrap2 li a").eq($("#wrap2 li a").index(this)).css("background-color","yellow");
+              } 
+           });
+            $(document).on("click","#wrap3 .btn_1.on",function(){
+               alert("welcome"); 
+            });
+            $("#wrap3 .btn_1").addClass("on");
+            $("#wrap3 .btn2.on").on({"click":function(){
+                alert("hello");
+            }});
+            $("#wrap3 .btn2").addClass("on");
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap1">
+        <ul>
+            <li><a href="#">li1</a></li>
+            <li><a href="#">li2</a></li>
+            <li><a href="#">li3</a></li>
+        </ul>
+    </div> 
+    <div id="wrap2">
+        <ul>
+            <li><a href="#">li1</a></li>
+            <li><a href="#">li2</a></li>
+            <li><a href="#">li3</a></li>
+        </ul>
+    </div> 
+      <div id="wrap3">
+       <button class="btn_1">btn1</button>
+       <button class="btn_2">btn2</button>
+    </div> 
+</body>
+</html>

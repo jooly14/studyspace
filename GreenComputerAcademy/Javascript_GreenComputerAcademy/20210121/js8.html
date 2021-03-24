@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p{
+            display: inline-block;
+            padding-right: 10px;
+        }
+        .col{
+            background-color: greenyellow;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <p>찾을글 :</p><input type="text" name="findW"><input type="button" value="찾기" onclick="findWord()">
+    <div id="txt">해야할 일이 많이 밀렸다거나, 도무지 능률이 오르지 않을때에는 과감히 밖으로 나가서 산책도 즐기고 사람도 구경하면서 휴시을 취하여 보세요. 그리고 다시 돌아와 책상앞에 앉으면 아시발 아까할 껄 이란느 생각이 들곤 합니다.</div>
+    <script>
+        function findWord(){
+            var word = document.getElementsByName("findW")[0].value;
+            var txt = document.getElementById('txt').innerHTML;
+            console.log(txt);
+            console.log(word);
+            txt = txt.replaceAll(word,"<span class='col'>"+word+"</span>")
+            document.getElementById("txt").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

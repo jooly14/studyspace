@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+   <div style="width:100px">hello</div>
+    <script>
+        var num = 100;
+        var str = num +"";
+        console.log(typeof str);
+        var num2 = "10px";
+        num3 = parseInt(num2);
+        console.log(num3);
+        console.log(typeof num3);
+        var w = document.querySelector("div").style.width;
+        var c = document.querySelector("div").style.color;
+        console.log(w);
+        console.log(c);
+        console.log(document.styleSheets[0]["cssRules"][0].style["backgroundColor"]);
+        document.styleSheets[0]["cssRules"][0].style["backgroundColor"] = "blue";
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> Document</title>
+</head>
+<body>
+    <h1 align="center">회원가입</h1>
+    <br>
+    <form>
+    <table border="1" cellspacing="1" width="570" align ="center" bgcolor="lightyellow">
+        <tr>
+            <td width="70">아이디</td>
+            <td><input type="text"> <input type="button" value="중복확인"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td><input type="radio" name="gender" checked>남 <input type="radio" name ="gender">여</td>
+        </tr>
+        <tr>
+            <td>암호</td>
+            <td><input type="password"></td>
+        </tr>
+        <tr>
+            <td>암호확인</td>
+            <td><input type="password"> *같은 암호를 입력하세요</td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="mail"> @ <input type="mail">
+            <select>
+                <option value="naver.com">naver.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="kakao.com">kakao.com</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text"> <input type="button" value ="주소찾기"></td>
+        </tr>
+        <tr>
+            <td>휴대폰</td>
+            <td>
+            <input type="radio" name="phone" value="SKT">SKT 
+            <input type="radio" name="phone" value="KT">KT 
+            <input type="radio" name="phone" value="LGU">LGU+<br>
+            <select>
+                <option>010</option>
+                <option>011</option>
+                <option>019</option>
+            </select> - 
+            <input type="text" size="3"> - 
+            <input type="text" size="3">
+            </td>
+        </tr>
+        <tr>
+            <td>관심</td>
+            <td>
+            <input type="checkbox">쇼핑
+            <input type="checkbox">게임
+            <input type="checkbox">여행
+            <input type="checkbox">기타
+            </td>
+        </tr>
+        <tr>
+            <td>자기소개</td>
+            <td>
+                <textarea rows="10" cols="50"></textarea>
+            </td>
+        </tr>
+    </table>
+       <div align="center">
+        <input type="submit" value="확인">
+        <input type="reset" value="다시입력">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .boxgroup{
+            white-space: nowrap;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            height: 150px;
+/*            font-size: 0;*/
+        }
+        .box{
+            display: inline-block;
+            width: 400px;
+            height: 100%;
+            border: 1px solid;
+            background-color: lightsteelblue;
+        }
+        .boxgroup.active{
+            background-color: rgba(0,0,0,.3);
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body>
+  <div class="boxgroup">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+  </div>
+  <p>좌표</p>
+  <p>좌표</p>
+  <p>좌표</p>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            var isDown = false;
+            var startx = 0;
+            var scrollLeft = 0;
+           $(".boxgroup").mousedown(function(e){
+               if(e.buttons==1){
+                   isDown= true;
+                   startx = e.pageX;
+                   scrollLeft = $(".boxgroup").scrollLeft();
+                   $("p").eq(0).text(startx);
+                   $("p").eq(1).text(scrollLeft);
+                   
+                   $(".boxgroup").addClass("active");
+               }
+           }); 
+            $(".boxgroup").on("mouseup mouseleave",function(){
+                 isDown= false;
+                $(".boxgroup").removeClass("active");
+            });
+            $(".boxgroup").mousemove(function(e){
+                if(isDown){
+                    var endx = e.pageX;
+                    endx = endx-startx;
+                    $(this).scrollLeft(scrollLeft-endx);
+                }
+            });
+          $(".boxgroup").on("mousewheel DOMMouseScroll",function(e){
+                e.preventDefault();
+                var E = e.originalEvent;
+                var delta = 0;
+                if(E.detail){
+                    delta = E.detail;
+                }else{
+                    delta = E.wheelDelta;
+                    if(window.opera){
+                        delta = -delta;
+                    }
+                }
+                var moveLeft = 100
+                var scrollleft = $(this).scrollLeft();
+                
+                if(delta>0){
+                    moveLeft = -100;
+                }else{
+                    //밑으로
+                    moveLeft = 100;
+                }
+                $(this).scrollLeft(scrollleft+moveLeft);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input[type="radio"]{
+            display: none;
+        }
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .blue{
+            color: blue;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <div class="exam">
+       <p>1. 다음 중 외국인이 아닌 사람은?</p>
+       <input type="radio" name="e1" id="a1"><label for="a1">①설현</label>
+       <input type="radio" name="e1" id="a2"><label for="a2">②모모</label>
+       <input type="radio" name="e1" id="a3"><label for="a3">③쯔위</label>
+       <input type="radio" name="e1" id="a4"><label for="a4">④사나</label>
+   </div>
+   <div class="exam">
+        <p>2. 다음 중 외국인이 아닌 사람은?</p>
+       <input type="radio" name="e1" id="a1"><label for="a1">①사나</label>
+       <input type="radio" name="e1" id="a2"><label for="a2">②설현</label>
+       <input type="radio" name="e1" id="a3"><label for="a3">③쯔위</label>
+       <input type="radio" name="e1" id="a4"><label for="a4">④모모</label>
+   </div>
+   <div class="exam">
+        <p>3. 다음 중 외국인이 아닌 사람은?</p>
+       <input type="radio" name="e1" id="a1"><label for="a1">①사나</label>
+       <input type="radio" name="e1" id="a2"><label for="a2">②모모</label>
+       <input type="radio" name="e1" id="a3"><label for="a3">③설현</label>
+       <input type="radio" name="e1" id="a4"><label for="a4">④쯔위</label>
+   </div>
+   <input type="button" value="정답 확인" id="btn"><p class="point"></p>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $("label").click(function(){
+               $(this).siblings().removeClass("blue");
+                $(this).addClass("blue"); 
+            });
+            $("#btn").click(function(){
+                $(".exam:eq(0) label:eq(0)").addClass("red");
+                $(".exam:eq(1) label:eq(1)").addClass("red");
+                $(".exam:eq(2) label:eq(2)").addClass("red");
+               
+                var point = 0;
+                for(var i=0;i<$(".exam").length;i++){
+                    for(var j=0;j<$(".exam:eq("+i+") label").length;j++){
+                          if( $(".exam:eq("+i+") label:eq("+j+")").css("background-color")=="rgb(255, 0, 0)" &&$(".exam:eq("+i+") label:eq("+j+")").css("color")=="rgb(0, 0, 255)"){
+                              point++;
+                          }
+                    }
+                }
+                alert(point);
+                $(".point").text("점수 : "+point);
+            });
+           
+        });
+    </script>
+</body>
+</html>
