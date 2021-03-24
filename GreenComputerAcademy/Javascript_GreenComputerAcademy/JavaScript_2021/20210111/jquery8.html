@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        
+        $(function(){
+            $(".btn1").click(function(){
+                if( $(".btn1").parent().next().css("color")==="rgb(255, 0, 0)"){
+                    $(".btn1").parent().next().css("color","blue");
+                }else{
+                    $(".btn1").parent().next().css("color","red");
+                }
+            });
+            
+            $(".btn2").on({
+                "click":function(){
+                  console.log("click")  ;
+                    $(".btn2").parent().next().css("color","red");
+                },"dblclick":function(){
+                    console.log("dblclick");
+                     $(".btn2").parent().next().css("color","blue");
+
+                }
+            });   
+             $(document).on({"mousemove":function(e){
+                    $(".mousemove").text("X: "+ e.pageX+"px Y: "+e.pageY+"px");
+                }
+           });
+            $(document).ready(function(){
+               console.log("ready");
+            });
+//            $(window).on("load",function(){
+//               console.log("load");
+//            });
+            $(".btn1").click();
+            $(".btn2").trigger("dblclick");
+            $(".btn2").off("dblclick");
+            $("#btn3").on({"mouseover":function(){
+               $("#btn3").css("background-color","red"); 
+            },
+                "mouseout":function(){
+               $("#btn3").css("background-color","blue");    
+            }
+            });
+            $("#btn4").hover(function(){
+                $("#btn4").css("background-color","red");
+            },function(){
+                $("#btn4").css("background-color","blue");
+            })
+            $(".btn5").on({
+               "mouseenter":function(){
+                   $(".btn5").css("background-color","red");
+               },
+                "mouseleave":function(){
+                   $(".btn5").css("background-color","blue");
+                }
+                
+            });
+            $(".txt1").on({
+               "mouseout":function(){
+                   $(".txt1").css("background-color","pink");
+               } 
+            });
+            $(".txt2").on({
+               "mouseleave":function(){
+                   $(".txt2").css("background-color","skyblue");
+               } 
+            });
+            $(window).scrollTop($(".txt1").offset().top);
+           
+        });
+    </script>
+    <style>
+        div{
+            width: 100%;
+            border: 1px solid;
+        }
+        button{
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+        <p>
+            <button class="btn1">btn1</button>
+        </p>
+       <p>paragraph1</p>
+       <p>
+            <button class="btn2">btn2</button>
+        </p>
+       <p>paragraph2</p>
+       <button id="btn3">btn3</button><br><br>
+       <button id="btn4">btn4</button>
+       <div>
+            <button class="btn5">btn5</button>
+            <button class="btn6">btn6</button>
+        </div>
+        <p class="txt1">내용<br>내용<br>내용<br></p>
+        <p class="txt2">내용<br>내용<br>내용<br></p>
+        <h1>mousemove</h1>
+        <p class="mousemove"></p>
+</body>
+</html>

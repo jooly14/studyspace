@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var count = 0;
+        
+        myFnc();
+        
+        function myFnc(){
+            count++;
+            document.write("hello",count,"<br>");
+        }
+        
+        myFnc();
+        
+        var theFnc = function(){
+            count++;
+            document.write("bye",count,"<br>");
+        }
+        
+        theFnc();
+        
+        var color = ["white","yellow","aqua","purple"];
+        var i =0;
+        function changeColor(){
+            i++;
+            if(i>=color.length){
+                i=0;
+            }
+        var bodyTag = document.getElementById("theBody");
+        bodyTag.style.backgroundColor = color[i];
+        }
+        
+        function sum(){
+            var result =0;
+            for(var i=0;i<arguments.length;i++){
+                result +=arguments[i];
+            }
+            document.write(result,"<br>");
+        }
+        sum(1,2,3,4);
+        
+        function testAvg(arrData){
+            var sum =0;
+            for(var i=0;i<arrData.length;i++){
+                sum += Number(prompt(arrData[i]+" 점수?","0"));
+                
+            }
+                return sum/arrData.length;
+                return sum/arrData.length;
+        }
+        
+        var subArr = ["영어","국어","수학"];
+        var res = testAvg(subArr);
+        document.write("평균:",res,"<br>");
+        
+        (function(){
+            var num =20;
+            function menu(){
+                document.write(num," menu()<br>");
+            }
+            menu();
+        }());
+        (function(){
+            var num =50;
+            function menu(){
+                document.write(num," menu()<br>");
+            }
+            menu();
+        }());
+        
+    </script>
+</head>
+<body id="theBody">
+    <button onclick="changeColor();">배경색 변경</button>
+</body>
+</html>

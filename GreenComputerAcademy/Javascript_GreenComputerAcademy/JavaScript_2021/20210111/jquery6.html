@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#wrap p:nth-child(1)").before("<p>txt0</p>");
+            $("<p>txt0.5</p>").insertBefore("#wrap p:nth-child(2)");
+            $("#wrap p:nth-child(3)").after("<p>txt1.5</p>");
+            $("<p>txt2.5</p>").insertAfter("#wrap p:nth-child(5)");
+            $("#wrap").append("<ul><li>list1</li></ul>");
+            $("<li>list2</li>").appendTo("#wrap ul");
+            $("<li>list0</li>").prependTo("#wrap ul");
+            $("body").append( $("#wrap").clone("false"));
+            $("body div:nth-child(2)").attr("id","wrap2");
+            $("#wrap2 ul").remove();
+            $("#wrap2 p").replaceWith("<p>hello</p>");
+            $("<p>bye</p>").replaceAll($("#wrap2 p").slice(2,5));
+            $("#wrap").wrap("<div class='wrap'></div>");
+            $("#wrap p").unwrap();
+            $(".wrap p").wrapAll("<div class='wrap'></div>");
+            $(".wrap p").wrapInner("<div class='wrap'></div>");
+        });
+    </script>
+    <style>
+        .wrap{
+            border: 2px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>txt1</p>
+        <p>txt2</p>
+        <p>txt3</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+      <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+           $(".form1 #id1 , .form1 #pw1").on({
+              "focus mouseover":function(){
+                  $(this).css("background-color","gray");
+              } ,
+               "blur mouseout":function(){
+                   $(this).css("background-color","white");
+               }
+           });
+            $(".form2").on({
+               "focusin":function(){
+                   $(this).css("background-color","pink");
+               } ,
+                "focusout":function(){
+                   $(this).css("background-color","white");
+                }
+            });
+            $("#wrap3 #btn1")
+                .data({"text":"javascript"})
+                .on({
+                "mouseover": overFnc,
+                "mouseout" : outFnc
+            });
+            $("#wrap3 #btn2")
+                .data({"text":"welcome!"})
+                .on({
+                "mouseenter focus":overFnc,
+                "mouseout blur"   :outFnc
+            });
+            function overFnc(){
+                $("#wrap3 .txt").text($(this).data("text"));
+            }
+            function outFnc(){
+                $("#wrap3 .txt").text("");
+            }
+            $("#wrap4 #sel_1").on({
+               "change":function(){
+                   $("#txt2").text($(this).val());
+               } 
+            });
+            $("#sel_1").change();
+            $(document).on({
+               "keydown":function(e){
+                   if(e.keyCode==37){
+                       $("#wrap5 input").val("left");
+                   }else if(e.keyCode==38){
+                       $("#wrap5 input").val("top");
+                   }else if(e.keyCode==39){
+                       $("#wrap5 input").val("right");
+                   }else if(e.keyCode==40){
+                       $("#wrap5 input").val("bottom");
+                   }
+               } 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap2">
+        <form action="#" class="form1">
+           <fieldset>
+           <legend>form1</legend>
+            <label for="id1">id1</label>
+            <input type="text" id="id1" name="id1">
+            <label for="pw1">pw1</label>
+            <input type="password" id="pw1" name="pw1">
+            </fieldset>
+        </form>
+        <form action="#" class="form2">
+           <fieldset>
+           <legend>form2</legend>
+            <label for="id2">id2</label>
+            <input type="text" id="id2" name="id2">
+            <label for="pw2">pw2</label>
+            <input type="password" id="pw2" name="pw2">
+            </fieldset>
+        </form>
+    </div>
+    <div id="wrap3">
+        <button id="btn1">btn1</button>
+        <button id="btn2">btn2</button>
+        <p class="txt"></p>
+    </div>
+    <div id="wrap4">
+       <form action="#" id="form3">
+           <select id="sel_1">
+               <option value="op1">option1</option>
+               <option value="op2">option2</option>
+               <option value="op3" selected>option3</option>
+           </select>
+       </form>
+       <p id="txt2"></p>
+    </div>
+    <div id="wrap5">
+        <input type="text" id="txt3" name="txt3">
+    </div>
+</body>
+</html>

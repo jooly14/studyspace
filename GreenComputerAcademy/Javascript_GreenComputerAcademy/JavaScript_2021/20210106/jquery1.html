@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="c:/javalec/workspace_html/jquery-3.5.1.min.js">
+    </script>
+    <script>
+        $(function(){
+            console.log("hi");
+            $("p").css("color","red");
+            $("*").css("border","2px solid blue");
+            $("body").css("border","2px solid red");
+            $("#tit").css("color","purple").css("background-color","gray");
+            $(".tit2").css("color","yellowgreen");
+            $(".tit2, #tit").css("border","3px dashed pink");
+            $("p.tit2").css("background-color","aqua");
+        });
+    </script>
+</head>
+<body>
+   <h1>h1</h1>
+   <h2 id="tit">h2</h2>
+   <h3 class="tit2">h3</h3>
+    <p class="tit2">내용</p>
+</body>
+</html>

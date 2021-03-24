@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.write("hello world<br>");
+//        주석
+        /*주석 
+        주석*/
+        var box;
+        box = 100;
+        box = 30;
+        document.write(box+"<br>");
+        document.write((Number("100")+Number("10"))+"<br>");
+        document.write(Boolean("hello")+"<br><br><br>");
+        
+        var a = true;
+        var b = false;
+        var c = 10>5;
+        var d = Boolean(null);
+        document.write(a+"<br>");
+        document.write(b+"<br>");
+        document.write(c+"<br>");
+        document.write(d+"<br>");
+        
+        var e;
+        document.write(e+"<br>");
+        document.write(typeof box+"<hr>");
+        
+        var num1 = 15;
+        var num2 = 2;
+        document.write(num1+num2,"<br>");
+        document.write(num1-num2,"<br>");
+        document.write(num1*num2,"<br>");
+        document.write(num1/num2,"<br>");
+        document.write(num1%num2,"<br>");
+        document.write("100 "+"100","<br>");
+        
+        var result = 10 =="10";
+        document.write(result,"<hr>");
+        
+        var name = prompt("당신의 이름은","");
+        var UserHeight = prompt("당신의 신장은?","0");
+        var UserWeight = prompt("당신의 체중은?","0");
+        
+        var normal_w = (UserHeight-100)*0.9;
+        document.write("name님은 ",UserWeight>=normal_w-5&&UserWeight<=normal_w+5?"적정체중입니다.":"적정 체중이 아닙니다.","<hr>");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
